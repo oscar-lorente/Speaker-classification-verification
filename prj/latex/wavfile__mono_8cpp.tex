@@ -1,0 +1,34 @@
+\hypertarget{wavfile__mono_8cpp}{}\section{pav/wavfile\+\_\+mono.cpp File Reference}
+\label{wavfile__mono_8cpp}\index{pav/wavfile\+\_\+mono.\+cpp@{pav/wavfile\+\_\+mono.\+cpp}}
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include $<$sndfile.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}wavfile\+\_\+mono.\+h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{wavfile__mono_8cpp_a4520ce28d4225a186fbdc50ba39221b9}{readwav\+\_\+mono} (const string \&filename, unsigned int \&sampling\+\_\+freq, vector$<$ \hyperlink{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}{float} $>$ \&\hyperlink{FFTReal__readme_8txt_a9c92ac89d1560f812393ca39a19e581e}{x})
+\item 
+int \hyperlink{wavfile__mono_8cpp_a044fc29ca8222e16e340036e9b28c0e8}{writewav\+\_\+mono} (const string \&filename, unsigned int sampling\+\_\+freq, const vector$<$ \hyperlink{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}{float} $>$ \&\hyperlink{FFTReal__readme_8txt_a9c92ac89d1560f812393ca39a19e581e}{x})
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{wavfile\+\_\+mono.\+cpp@{wavfile\+\_\+mono.\+cpp}!readwav\+\_\+mono@{readwav\+\_\+mono}}
+\index{readwav\+\_\+mono@{readwav\+\_\+mono}!wavfile\+\_\+mono.\+cpp@{wavfile\+\_\+mono.\+cpp}}
+\subsubsection[{\texorpdfstring{readwav\+\_\+mono(const string \&filename, unsigned int \&sampling\+\_\+freq, vector$<$ float $>$ \&x)}{readwav_mono(const string &filename, unsigned int &sampling_freq, vector< float > &x)}}]{\setlength{\rightskip}{0pt plus 5cm}int readwav\+\_\+mono (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{filename, }
+\item[{unsigned int \&}]{sampling\+\_\+freq, }
+\item[{vector$<$ {\bf float} $>$ \&}]{x}
+\end{DoxyParamCaption}
+)}\hypertarget{wavfile__mono_8cpp_a4520ce28d4225a186fbdc50ba39221b9}{}\label{wavfile__mono_8cpp_a4520ce28d4225a186fbdc50ba39221b9}
+Read input filename and returns sampling\+\_\+freq and samples Input file should be mono Return\+: 0 =$>$ OK; $<$ 0 =$>$ Error\index{wavfile\+\_\+mono.\+cpp@{wavfile\+\_\+mono.\+cpp}!writewav\+\_\+mono@{writewav\+\_\+mono}}
+\index{writewav\+\_\+mono@{writewav\+\_\+mono}!wavfile\+\_\+mono.\+cpp@{wavfile\+\_\+mono.\+cpp}}
+\subsubsection[{\texorpdfstring{writewav\+\_\+mono(const string \&filename, unsigned int sampling\+\_\+freq, const vector$<$ float $>$ \&x)}{writewav_mono(const string &filename, unsigned int sampling_freq, const vector< float > &x)}}]{\setlength{\rightskip}{0pt plus 5cm}int writewav\+\_\+mono (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{filename, }
+\item[{unsigned int}]{sampling\+\_\+freq, }
+\item[{const vector$<$ {\bf float} $>$ \&}]{x}
+\end{DoxyParamCaption}
+)}\hypertarget{wavfile__mono_8cpp_a044fc29ca8222e16e340036e9b28c0e8}{}\label{wavfile__mono_8cpp_a044fc29ca8222e16e340036e9b28c0e8}
+Write output filename Output file is mono Return\+: 0 =$>$ OK; $<$0 =$>$ Error

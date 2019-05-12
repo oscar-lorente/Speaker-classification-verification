@@ -1,0 +1,148 @@
+\hypertarget{classupc_1_1KeyValue}{}\section{upc\+:\+:Key\+Value Class Reference}
+\label{classupc_1_1KeyValue}\index{upc\+::\+Key\+Value@{upc\+::\+Key\+Value}}
+
+
+{\ttfamily \#include $<$keyvalue.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classupc_1_1KeyValue_a16e43218b2cdf234929ad76c6a28de51}{Key\+Value} (const std\+::string \&raw\+\_\+parameters=\char`\"{}\char`\"{})
+\item 
+void \hyperlink{classupc_1_1KeyValue_aff88fb11aa97cd85fa0b398e34ed763a}{set} (const std\+::string \&raw\+\_\+parameters)
+\begin{DoxyCompactList}\small\item\em Initialize table from string, e.\+g. \char`\"{}city=\+Barcelona; year=2015\char`\"{}. \end{DoxyCompactList}\item 
+const std\+::string \& \hyperlink{classupc_1_1KeyValue_a26cd081e33ed9d29937a266688f250eb}{operator()} (const std\+::string \&key) const 
+\begin{DoxyCompactList}\small\item\em Give the value (as a string) of a given key. \end{DoxyCompactList}\item 
+bool \hyperlink{classupc_1_1KeyValue_ab0e78c55886853b14ed0b0a12d54ffe8}{to\+\_\+float} (const std\+::string \&key, \hyperlink{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}{float} \&) const 
+\begin{DoxyCompactList}\small\item\em Get the value as a float. \end{DoxyCompactList}\item 
+bool \hyperlink{classupc_1_1KeyValue_aec285f4f4eb0eb6dda44c15138f4a3d9}{to\+\_\+int} (const std\+::string \&key, int \&) const 
+\begin{DoxyCompactList}\small\item\em Get the value as an int. \end{DoxyCompactList}\item 
+bool \hyperlink{classupc_1_1KeyValue_a8413af4543c0103f01a4bf2c7e480650}{to\+\_\+vector} (const std\+::string \&key, std\+::vector$<$ \hyperlink{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}{float} $>$ \&) const 
+\begin{DoxyCompactList}\small\item\em Get the value as a vector of floats. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::map$<$ std\+::string, std\+::string $>$ \hyperlink{classupc_1_1KeyValue_a7f07bc656bce50d056f5ad0d118b2562}{S2\+S\+M\+AP}
+\item 
+typedef S2\+S\+M\+A\+P\+::iterator \hyperlink{classupc_1_1KeyValue_a3c6dedd86b7be8eadf7334b08d97364c}{iterator}
+\item 
+typedef S2\+S\+M\+A\+P\+::const\+\_\+iterator \hyperlink{classupc_1_1KeyValue_a1979eeaeda79e31e99fc6dc75b971373}{const\+\_\+iterator}
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classupc_1_1KeyValue_a7f07bc656bce50d056f5ad0d118b2562}{S2\+S\+M\+AP} \hyperlink{classupc_1_1KeyValue_a5a75d6c2fb82f07ba0798cfeceefff01}{kv}
+\begin{DoxyCompactList}\small\item\em Map to store key/value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class to tranform parameters in a string format as a key/value table
+
+string s = \char`\"{}\+A=3; B=hola; lista=3,2,5;\char`\"{} \hyperlink{classupc_1_1KeyValue}{Key\+Value} kv(s); cout $<$$<$ kv(\char`\"{}\+A\char`\"{}) $<$$<$ \textquotesingle{}~\newline
+\textquotesingle{}; cout $<$$<$ kv(\char`\"{}\+B\char`\"{}) $<$$<$ \textquotesingle{}~\newline
+\textquotesingle{}; cout $<$$<$ kv(\char`\"{}lista\char`\"{}) $<$$<$ \textquotesingle{}~\newline
+\textquotesingle{};
+
+This will show \char`\"{}3\char`\"{} \char`\"{}hola\char`\"{} \char`\"{}3,2,5\char`\"{}
+
+Furthermore, it can transform the result to int, float, vector.
+
+E.\+g.\+: int i; kv.\+to\+\_\+int(\char`\"{}\+A\char`\"{},i); vector$<$float$>$ x; kv.\+to\+\_\+vector(\char`\"{}lista\char`\"{}, x); 
+
+\subsection{Member Typedef Documentation}
+\index{upc\+::\+Key\+Value@{upc\+::\+Key\+Value}!const\+\_\+iterator@{const\+\_\+iterator}}
+\index{const\+\_\+iterator@{const\+\_\+iterator}!upc\+::\+Key\+Value@{upc\+::\+Key\+Value}}
+\subsubsection[{\texorpdfstring{const\+\_\+iterator}{const_iterator}}]{\setlength{\rightskip}{0pt plus 5cm}typedef S2\+S\+M\+A\+P\+::const\+\_\+iterator {\bf upc\+::\+Key\+Value\+::const\+\_\+iterator}\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classupc_1_1KeyValue_a1979eeaeda79e31e99fc6dc75b971373}{}\label{classupc_1_1KeyValue_a1979eeaeda79e31e99fc6dc75b971373}
+\index{upc\+::\+Key\+Value@{upc\+::\+Key\+Value}!iterator@{iterator}}
+\index{iterator@{iterator}!upc\+::\+Key\+Value@{upc\+::\+Key\+Value}}
+\subsubsection[{\texorpdfstring{iterator}{iterator}}]{\setlength{\rightskip}{0pt plus 5cm}typedef S2\+S\+M\+A\+P\+::iterator {\bf upc\+::\+Key\+Value\+::iterator}\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classupc_1_1KeyValue_a3c6dedd86b7be8eadf7334b08d97364c}{}\label{classupc_1_1KeyValue_a3c6dedd86b7be8eadf7334b08d97364c}
+\index{upc\+::\+Key\+Value@{upc\+::\+Key\+Value}!S2\+S\+M\+AP@{S2\+S\+M\+AP}}
+\index{S2\+S\+M\+AP@{S2\+S\+M\+AP}!upc\+::\+Key\+Value@{upc\+::\+Key\+Value}}
+\subsubsection[{\texorpdfstring{S2\+S\+M\+AP}{S2SMAP}}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\+::map$<$std\+::string, std\+::string$>$ {\bf upc\+::\+Key\+Value\+::\+S2\+S\+M\+AP}\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classupc_1_1KeyValue_a7f07bc656bce50d056f5ad0d118b2562}{}\label{classupc_1_1KeyValue_a7f07bc656bce50d056f5ad0d118b2562}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{upc\+::\+Key\+Value@{upc\+::\+Key\+Value}!Key\+Value@{Key\+Value}}
+\index{Key\+Value@{Key\+Value}!upc\+::\+Key\+Value@{upc\+::\+Key\+Value}}
+\subsubsection[{\texorpdfstring{Key\+Value(const std\+::string \&raw\+\_\+parameters="""")}{KeyValue(const std::string &raw_parameters="")}}]{\setlength{\rightskip}{0pt plus 5cm}Key\+Value\+::\+Key\+Value (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{raw\+\_\+parameters = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)}\hypertarget{classupc_1_1KeyValue_a16e43218b2cdf234929ad76c6a28de51}{}\label{classupc_1_1KeyValue_a16e43218b2cdf234929ad76c6a28de51}
+
+
+\subsection{Member Function Documentation}
+\index{upc\+::\+Key\+Value@{upc\+::\+Key\+Value}!operator()@{operator()}}
+\index{operator()@{operator()}!upc\+::\+Key\+Value@{upc\+::\+Key\+Value}}
+\subsubsection[{\texorpdfstring{operator()(const std\+::string \&key) const }{operator()(const std::string &key) const }}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::string \& Key\+Value\+::operator() (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{key}
+\end{DoxyParamCaption}
+) const}\hypertarget{classupc_1_1KeyValue_a26cd081e33ed9d29937a266688f250eb}{}\label{classupc_1_1KeyValue_a26cd081e33ed9d29937a266688f250eb}
+
+
+Give the value (as a string) of a given key. 
+
+\index{upc\+::\+Key\+Value@{upc\+::\+Key\+Value}!set@{set}}
+\index{set@{set}!upc\+::\+Key\+Value@{upc\+::\+Key\+Value}}
+\subsubsection[{\texorpdfstring{set(const std\+::string \&raw\+\_\+parameters)}{set(const std::string &raw_parameters)}}]{\setlength{\rightskip}{0pt plus 5cm}void Key\+Value\+::set (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{raw\+\_\+parameters}
+\end{DoxyParamCaption}
+)}\hypertarget{classupc_1_1KeyValue_aff88fb11aa97cd85fa0b398e34ed763a}{}\label{classupc_1_1KeyValue_aff88fb11aa97cd85fa0b398e34ed763a}
+
+
+Initialize table from string, e.\+g. \char`\"{}city=\+Barcelona; year=2015\char`\"{}. 
+
+\index{upc\+::\+Key\+Value@{upc\+::\+Key\+Value}!to\+\_\+float@{to\+\_\+float}}
+\index{to\+\_\+float@{to\+\_\+float}!upc\+::\+Key\+Value@{upc\+::\+Key\+Value}}
+\subsubsection[{\texorpdfstring{to\+\_\+float(const std\+::string \&key, float \&) const }{to_float(const std::string &key, float &) const }}]{\setlength{\rightskip}{0pt plus 5cm}bool Key\+Value\+::to\+\_\+float (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{key, }
+\item[{{\bf float} \&}]{f}
+\end{DoxyParamCaption}
+) const}\hypertarget{classupc_1_1KeyValue_ab0e78c55886853b14ed0b0a12d54ffe8}{}\label{classupc_1_1KeyValue_ab0e78c55886853b14ed0b0a12d54ffe8}
+
+
+Get the value as a float. 
+
+\index{upc\+::\+Key\+Value@{upc\+::\+Key\+Value}!to\+\_\+int@{to\+\_\+int}}
+\index{to\+\_\+int@{to\+\_\+int}!upc\+::\+Key\+Value@{upc\+::\+Key\+Value}}
+\subsubsection[{\texorpdfstring{to\+\_\+int(const std\+::string \&key, int \&) const }{to_int(const std::string &key, int &) const }}]{\setlength{\rightskip}{0pt plus 5cm}bool Key\+Value\+::to\+\_\+int (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{key, }
+\item[{int \&}]{i}
+\end{DoxyParamCaption}
+) const}\hypertarget{classupc_1_1KeyValue_aec285f4f4eb0eb6dda44c15138f4a3d9}{}\label{classupc_1_1KeyValue_aec285f4f4eb0eb6dda44c15138f4a3d9}
+
+
+Get the value as an int. 
+
+\index{upc\+::\+Key\+Value@{upc\+::\+Key\+Value}!to\+\_\+vector@{to\+\_\+vector}}
+\index{to\+\_\+vector@{to\+\_\+vector}!upc\+::\+Key\+Value@{upc\+::\+Key\+Value}}
+\subsubsection[{\texorpdfstring{to\+\_\+vector(const std\+::string \&key, std\+::vector$<$ float $>$ \&) const }{to_vector(const std::string &key, std::vector< float > &) const }}]{\setlength{\rightskip}{0pt plus 5cm}bool Key\+Value\+::to\+\_\+vector (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{key, }
+\item[{std\+::vector$<$ {\bf float} $>$ \&}]{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classupc_1_1KeyValue_a8413af4543c0103f01a4bf2c7e480650}{}\label{classupc_1_1KeyValue_a8413af4543c0103f01a4bf2c7e480650}
+
+
+Get the value as a vector of floats. 
+
+
+
+\subsection{Member Data Documentation}
+\index{upc\+::\+Key\+Value@{upc\+::\+Key\+Value}!kv@{kv}}
+\index{kv@{kv}!upc\+::\+Key\+Value@{upc\+::\+Key\+Value}}
+\subsubsection[{\texorpdfstring{kv}{kv}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S2\+S\+M\+AP} upc\+::\+Key\+Value\+::kv\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classupc_1_1KeyValue_a5a75d6c2fb82f07ba0798cfeceefff01}{}\label{classupc_1_1KeyValue_a5a75d6c2fb82f07ba0798cfeceefff01}
+
+
+Map to store key/value. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{keyvalue_8h}{keyvalue.\+h}\item 
+pav/\hyperlink{keyvalue_8cpp}{keyvalue.\+cpp}\end{DoxyCompactItemize}

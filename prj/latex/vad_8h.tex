@@ -1,0 +1,99 @@
+\hypertarget{vad_8h}{}\section{include/vad.h File Reference}
+\label{vad_8h}\index{include/vad.\+h@{include/vad.\+h}}
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structVAD__DATA}{V\+A\+D\+\_\+\+D\+A\+TA}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{vad_8h_a655a5d992101d81e27b861d90c712d65}{V\+A\+D\+\_\+\+S\+T\+A\+TE} \{ \hyperlink{vad_8h_a655a5d992101d81e27b861d90c712d65a1304275ad7093093032465cc2be35974}{S\+T\+\_\+\+U\+N\+D\+EF} =0, 
+\hyperlink{vad_8h_a655a5d992101d81e27b861d90c712d65a2a5c7ca66a2124e9bc80843608a1d96b}{S\+T\+\_\+\+S\+I\+L\+E\+N\+CE}, 
+\hyperlink{vad_8h_a655a5d992101d81e27b861d90c712d65acf8e29e294dcf56289fbc382c5fc473c}{S\+T\+\_\+\+V\+O\+I\+CE}, 
+\hyperlink{vad_8h_a655a5d992101d81e27b861d90c712d65ad7fd527e9b09b1822fbee87683a69937}{S\+T\+\_\+\+I\+N\+IT}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ \hyperlink{vad_8h_afa50d0be16dbf537eef6fc5d2cedd64f}{state2str} (\hyperlink{vad_8h_a655a5d992101d81e27b861d90c712d65}{V\+A\+D\+\_\+\+S\+T\+A\+TE} st)
+\item 
+\hyperlink{structVAD__DATA}{V\+A\+D\+\_\+\+D\+A\+TA} $\ast$ \hyperlink{vad_8h_ac24b4ee983693460003682c302be68c5}{vad\+\_\+open} (\hyperlink{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}{float} sampling\+\_\+rate)
+\item 
+unsigned int \hyperlink{vad_8h_a03913fc4fc1a6f97dee805b6530c400b}{vad\+\_\+frame\+\_\+size} (\hyperlink{structVAD__DATA}{V\+A\+D\+\_\+\+D\+A\+TA} $\ast$)
+\item 
+\hyperlink{vad_8h_a655a5d992101d81e27b861d90c712d65}{V\+A\+D\+\_\+\+S\+T\+A\+TE} \hyperlink{vad_8h_a2c7956e64d1a5f94adf1852e76fb4208}{vad} (\hyperlink{structVAD__DATA}{V\+A\+D\+\_\+\+D\+A\+TA} $\ast$vad\+\_\+data, \hyperlink{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}{float} $\ast$\hyperlink{FFTReal__readme_8txt_a9c92ac89d1560f812393ca39a19e581e}{x}, \hyperlink{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}{float} pot\+\_\+media)
+\item 
+\hyperlink{vad_8h_a655a5d992101d81e27b861d90c712d65}{V\+A\+D\+\_\+\+S\+T\+A\+TE} \hyperlink{vad_8h_ae03a22f498f04499bc665da5196aedf4}{vad\+\_\+close} (\hyperlink{structVAD__DATA}{V\+A\+D\+\_\+\+D\+A\+TA} $\ast$vad\+\_\+data)
+\item 
+void \hyperlink{vad_8h_a18dc5ba22b3015351ec225f73517cdd3}{vad\+\_\+show\+\_\+state} (const \hyperlink{structVAD__DATA}{V\+A\+D\+\_\+\+D\+A\+TA} $\ast$, F\+I\+LE $\ast$)
+\end{DoxyCompactItemize}
+
+
+\subsection{Enumeration Type Documentation}
+\index{vad.\+h@{vad.\+h}!V\+A\+D\+\_\+\+S\+T\+A\+TE@{V\+A\+D\+\_\+\+S\+T\+A\+TE}}
+\index{V\+A\+D\+\_\+\+S\+T\+A\+TE@{V\+A\+D\+\_\+\+S\+T\+A\+TE}!vad.\+h@{vad.\+h}}
+\subsubsection[{\texorpdfstring{V\+A\+D\+\_\+\+S\+T\+A\+TE}{VAD_STATE}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf V\+A\+D\+\_\+\+S\+T\+A\+TE}}\hypertarget{vad_8h_a655a5d992101d81e27b861d90c712d65}{}\label{vad_8h_a655a5d992101d81e27b861d90c712d65}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{S\+T\+\_\+\+U\+N\+D\+EF@{S\+T\+\_\+\+U\+N\+D\+EF}!vad.\+h@{vad.\+h}}\index{vad.\+h@{vad.\+h}!S\+T\+\_\+\+U\+N\+D\+EF@{S\+T\+\_\+\+U\+N\+D\+EF}}\item[{\em 
+S\+T\+\_\+\+U\+N\+D\+EF\hypertarget{vad_8h_a655a5d992101d81e27b861d90c712d65a1304275ad7093093032465cc2be35974}{}\label{vad_8h_a655a5d992101d81e27b861d90c712d65a1304275ad7093093032465cc2be35974}
+}]\index{S\+T\+\_\+\+S\+I\+L\+E\+N\+CE@{S\+T\+\_\+\+S\+I\+L\+E\+N\+CE}!vad.\+h@{vad.\+h}}\index{vad.\+h@{vad.\+h}!S\+T\+\_\+\+S\+I\+L\+E\+N\+CE@{S\+T\+\_\+\+S\+I\+L\+E\+N\+CE}}\item[{\em 
+S\+T\+\_\+\+S\+I\+L\+E\+N\+CE\hypertarget{vad_8h_a655a5d992101d81e27b861d90c712d65a2a5c7ca66a2124e9bc80843608a1d96b}{}\label{vad_8h_a655a5d992101d81e27b861d90c712d65a2a5c7ca66a2124e9bc80843608a1d96b}
+}]\index{S\+T\+\_\+\+V\+O\+I\+CE@{S\+T\+\_\+\+V\+O\+I\+CE}!vad.\+h@{vad.\+h}}\index{vad.\+h@{vad.\+h}!S\+T\+\_\+\+V\+O\+I\+CE@{S\+T\+\_\+\+V\+O\+I\+CE}}\item[{\em 
+S\+T\+\_\+\+V\+O\+I\+CE\hypertarget{vad_8h_a655a5d992101d81e27b861d90c712d65acf8e29e294dcf56289fbc382c5fc473c}{}\label{vad_8h_a655a5d992101d81e27b861d90c712d65acf8e29e294dcf56289fbc382c5fc473c}
+}]\index{S\+T\+\_\+\+I\+N\+IT@{S\+T\+\_\+\+I\+N\+IT}!vad.\+h@{vad.\+h}}\index{vad.\+h@{vad.\+h}!S\+T\+\_\+\+I\+N\+IT@{S\+T\+\_\+\+I\+N\+IT}}\item[{\em 
+S\+T\+\_\+\+I\+N\+IT\hypertarget{vad_8h_a655a5d992101d81e27b861d90c712d65ad7fd527e9b09b1822fbee87683a69937}{}\label{vad_8h_a655a5d992101d81e27b861d90c712d65ad7fd527e9b09b1822fbee87683a69937}
+}]\end{description}
+\end{Desc}
+
+
+\subsection{Function Documentation}
+\index{vad.\+h@{vad.\+h}!state2str@{state2str}}
+\index{state2str@{state2str}!vad.\+h@{vad.\+h}}
+\subsubsection[{\texorpdfstring{state2str(\+V\+A\+D\+\_\+\+S\+T\+A\+T\+E st)}{state2str(VAD_STATE st)}}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ state2str (
+\begin{DoxyParamCaption}
+\item[{{\bf V\+A\+D\+\_\+\+S\+T\+A\+TE}}]{st}
+\end{DoxyParamCaption}
+)}\hypertarget{vad_8h_afa50d0be16dbf537eef6fc5d2cedd64f}{}\label{vad_8h_afa50d0be16dbf537eef6fc5d2cedd64f}
+\index{vad.\+h@{vad.\+h}!vad@{vad}}
+\index{vad@{vad}!vad.\+h@{vad.\+h}}
+\subsubsection[{\texorpdfstring{vad(\+V\+A\+D\+\_\+\+D\+A\+T\+A $\ast$vad\+\_\+data, float $\ast$x, float pot\+\_\+media)}{vad(VAD_DATA *vad_data, float *x, float pot_media)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf V\+A\+D\+\_\+\+S\+T\+A\+TE} vad (
+\begin{DoxyParamCaption}
+\item[{{\bf V\+A\+D\+\_\+\+D\+A\+TA} $\ast$}]{vad\+\_\+data, }
+\item[{{\bf float} $\ast$}]{x, }
+\item[{{\bf float}}]{pot\+\_\+media}
+\end{DoxyParamCaption}
+)}\hypertarget{vad_8h_a2c7956e64d1a5f94adf1852e76fb4208}{}\label{vad_8h_a2c7956e64d1a5f94adf1852e76fb4208}
+\index{vad.\+h@{vad.\+h}!vad\+\_\+close@{vad\+\_\+close}}
+\index{vad\+\_\+close@{vad\+\_\+close}!vad.\+h@{vad.\+h}}
+\subsubsection[{\texorpdfstring{vad\+\_\+close(\+V\+A\+D\+\_\+\+D\+A\+T\+A $\ast$vad\+\_\+data)}{vad_close(VAD_DATA *vad_data)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf V\+A\+D\+\_\+\+S\+T\+A\+TE} vad\+\_\+close (
+\begin{DoxyParamCaption}
+\item[{{\bf V\+A\+D\+\_\+\+D\+A\+TA} $\ast$}]{vad\+\_\+data}
+\end{DoxyParamCaption}
+)}\hypertarget{vad_8h_ae03a22f498f04499bc665da5196aedf4}{}\label{vad_8h_ae03a22f498f04499bc665da5196aedf4}
+\index{vad.\+h@{vad.\+h}!vad\+\_\+frame\+\_\+size@{vad\+\_\+frame\+\_\+size}}
+\index{vad\+\_\+frame\+\_\+size@{vad\+\_\+frame\+\_\+size}!vad.\+h@{vad.\+h}}
+\subsubsection[{\texorpdfstring{vad\+\_\+frame\+\_\+size(\+V\+A\+D\+\_\+\+D\+A\+T\+A $\ast$)}{vad_frame_size(VAD_DATA *)}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int vad\+\_\+frame\+\_\+size (
+\begin{DoxyParamCaption}
+\item[{{\bf V\+A\+D\+\_\+\+D\+A\+TA} $\ast$}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{vad_8h_a03913fc4fc1a6f97dee805b6530c400b}{}\label{vad_8h_a03913fc4fc1a6f97dee805b6530c400b}
+\index{vad.\+h@{vad.\+h}!vad\+\_\+open@{vad\+\_\+open}}
+\index{vad\+\_\+open@{vad\+\_\+open}!vad.\+h@{vad.\+h}}
+\subsubsection[{\texorpdfstring{vad\+\_\+open(float sampling\+\_\+rate)}{vad_open(float sampling_rate)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf V\+A\+D\+\_\+\+D\+A\+TA}$\ast$ vad\+\_\+open (
+\begin{DoxyParamCaption}
+\item[{{\bf float}}]{sampling\+\_\+rate}
+\end{DoxyParamCaption}
+)}\hypertarget{vad_8h_ac24b4ee983693460003682c302be68c5}{}\label{vad_8h_ac24b4ee983693460003682c302be68c5}
+\index{vad.\+h@{vad.\+h}!vad\+\_\+show\+\_\+state@{vad\+\_\+show\+\_\+state}}
+\index{vad\+\_\+show\+\_\+state@{vad\+\_\+show\+\_\+state}!vad.\+h@{vad.\+h}}
+\subsubsection[{\texorpdfstring{vad\+\_\+show\+\_\+state(const V\+A\+D\+\_\+\+D\+A\+T\+A $\ast$, F\+I\+L\+E $\ast$)}{vad_show_state(const VAD_DATA *, FILE *)}}]{\setlength{\rightskip}{0pt plus 5cm}void vad\+\_\+show\+\_\+state (
+\begin{DoxyParamCaption}
+\item[{const {\bf V\+A\+D\+\_\+\+D\+A\+TA} $\ast$}]{, }
+\item[{F\+I\+LE $\ast$}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{vad_8h_a18dc5ba22b3015351ec225f73517cdd3}{}\label{vad_8h_a18dc5ba22b3015351ec225f73517cdd3}

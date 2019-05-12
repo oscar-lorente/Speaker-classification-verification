@@ -1,0 +1,160 @@
+\hypertarget{FFTReal__readme_8txt}{}\section{include/ffft/\+F\+F\+T\+Real\+\_\+readme.txt File Reference}
+\label{FFTReal__readme_8txt}\index{include/ffft/\+F\+F\+T\+Real\+\_\+readme.\+txt@{include/ffft/\+F\+F\+T\+Real\+\_\+readme.\+txt}}
+{\ttfamily \#include \char`\"{}ffft/\+F\+F\+T\+Real.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ffft/\+F\+F\+T\+Real\+Fix\+Len.\+h\char`\"{}}\\*
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \hyperlink{FFTReal__readme_8txt_a555609f588a3dd8483e643133ba24b82}{len} = 1024
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classffft_1_1FFTReal}{ffft\+::\+F\+F\+T\+Real}$<$ \hyperlink{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}{float} $>$ \hyperlink{FFTReal__readme_8txt_a38b2d99092edb3ec444550a95aa1951f}{fft\+\_\+object} (\hyperlink{FFTReal__readme_8txt_a555609f588a3dd8483e643133ba24b82}{len})
+\item 
+\hyperlink{FFTReal__readme_8txt_a38b2d99092edb3ec444550a95aa1951f}{fft\+\_\+object} \hyperlink{FFTReal__readme_8txt_a601296d1e380b29c96683b649d7d1518}{do\+\_\+fft} (\hyperlink{FFTReal__readme_8txt_abbf3cc73d1e3e4714ab1639819396eca}{f}, \hyperlink{FFTReal__readme_8txt_a9c92ac89d1560f812393ca39a19e581e}{x})
+\item 
+\hyperlink{FFTReal__readme_8txt_a38b2d99092edb3ec444550a95aa1951f}{fft\+\_\+object} \hyperlink{FFTReal__readme_8txt_a1a33a3b7245f269d5150c436da7d5ed6}{do\+\_\+ifft} (\hyperlink{FFTReal__readme_8txt_abbf3cc73d1e3e4714ab1639819396eca}{f}, \hyperlink{FFTReal__readme_8txt_a9c92ac89d1560f812393ca39a19e581e}{x})
+\item 
+\hyperlink{FFTReal__readme_8txt_a38b2d99092edb3ec444550a95aa1951f}{fft\+\_\+object} \hyperlink{FFTReal__readme_8txt_ab87096300f2c26c87aa35b0623fdfd1e}{rescale} (\hyperlink{FFTReal__readme_8txt_a9c92ac89d1560f812393ca39a19e581e}{x})
+\item 
+Warning depending on the compiler and its optimisation options If compilation time is too encapsulate the F\+FT \hyperlink{FFTReal__readme_8txt_a5057f8d0a8b36ba2bdea206a5592c87a}{object} in a seprate \hyperlink{FFTReal__readme_8txt_ad229ab5c8241df85a2096743cc8c4e9f}{class} whose header doesn t need to include F\+F\+T\+Real\+Fix\+Len \hyperlink{FFTReal__readme_8txt_a5a475fe9e77e2d776b063abc32a10e20}{h} so you just have to compile the wrapper once and only link it the other times For \hyperlink{FFTReal__readme_8txt_a22165307fc7fb8edc069828217b871ec}{example} (quick, dirty and incomplete)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+it can be changed by modifying the Data\+Type typedef in F\+F\+T\+Real\+Fix\+Len\+Param \hyperlink{FFTReal__readme_8txt_a5a475fe9e77e2d776b063abc32a10e20}{h} As \hyperlink{FFTReal__readme_8txt_afc545541c7ab0be25cf239418fc47b65}{F\+F\+T\+Real} \hyperlink{FFTReal__readme_8txt_ad229ab5c8241df85a2096743cc8c4e9f}{class}
+\item 
+it can be changed by modifying the Data\+Type typedef in F\+F\+T\+Real\+Fix\+Len\+Param \hyperlink{FFTReal__readme_8txt_a5a475fe9e77e2d776b063abc32a10e20}{h} As \hyperlink{FFTReal__readme_8txt_afc545541c7ab0be25cf239418fc47b65}{F\+F\+T\+Real} it supports only floating point types or equivalent Use is similar as the one of \hyperlink{FFTReal__readme_8txt_afc545541c7ab0be25cf239418fc47b65}{F\+F\+T\+Real} To instanciate the \hyperlink{FFTReal__readme_8txt_a5057f8d0a8b36ba2bdea206a5592c87a}{object}
+\item 
+it can be changed by modifying the Data\+Type typedef in F\+F\+T\+Real\+Fix\+Len\+Param \hyperlink{FFTReal__readme_8txt_a5a475fe9e77e2d776b063abc32a10e20}{h} As \hyperlink{FFTReal__readme_8txt_afc545541c7ab0be25cf239418fc47b65}{F\+F\+T\+Real} it supports only floating point types or equivalent Use is similar as the one of \hyperlink{FFTReal__readme_8txt_afc545541c7ab0be25cf239418fc47b65}{F\+F\+T\+Real} To instanciate the just proceed as indicated \hyperlink{FFTReal__readme_8txt_aadd6d22385a49baac7311a220729ab52}{below}
+\item 
+some of them are of particular \hyperlink{FFTReal__readme_8txt_a8dd124b3ee508be769f386edc2b8ccc7}{interest}
+\item 
+some of them are of particular length fixed at run time ffft F\+F\+T\+Real\+Fix\+Len \hyperlink{FFTReal__readme_8txt_a5a475fe9e77e2d776b063abc32a10e20}{h}
+\item 
+some of them are of particular length fixed at run time ffft F\+F\+T\+Real\+Fix\+Len length fixed at compile time delphi \hyperlink{FFTReal__readme_8txt_afc545541c7ab0be25cf239418fc47b65}{F\+F\+T\+Real} \hyperlink{FFTReal__readme_8txt_a6cf8b214cfb6bfb689594a776ceb1ea0}{pas}
+\item 
+Then you can use this \hyperlink{FFTReal__readme_8txt_a5057f8d0a8b36ba2bdea206a5592c87a}{object} to compute as many F\+F\+Ts and I\+F\+F\+Ts as you want They will be computed very quickly because a lot of work has been done in the \hyperlink{FFTReal__readme_8txt_a5057f8d0a8b36ba2bdea206a5592c87a}{object} construction \hyperlink{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}{float} \hyperlink{FFTReal__readme_8txt_a9c92ac89d1560f812393ca39a19e581e}{x} \mbox{[}1024\mbox{]}
+\item 
+\hyperlink{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}{float} \hyperlink{FFTReal__readme_8txt_abbf3cc73d1e3e4714ab1639819396eca}{f} \mbox{[}1024\mbox{]}
+\item 
+\hyperlink{FFTReal__readme_8txt_a9c92ac89d1560f812393ca39a19e581e}{x}\mbox{[}$\,$\mbox{]} and \hyperlink{FFTReal__readme_8txt_abbf3cc73d1e3e4714ab1639819396eca}{f}\mbox{[}$\,$\mbox{]} are floating point number arrays \hyperlink{FFTReal__readme_8txt_a9c92ac89d1560f812393ca39a19e581e}{x}\mbox{[}$\,$\mbox{]} is the real number sequence which we want to compute the F\+FT \hyperlink{FFTReal__readme_8txt_abbf3cc73d1e3e4714ab1639819396eca}{f}\mbox{[}$\,$\mbox{]} is the \hyperlink{FFTReal__readme_8txt_af64dcf51fedf6a89308c7e46c0868511}{result}
+\item 
+\hyperlink{FFTReal__readme_8txt_a9c92ac89d1560f812393ca39a19e581e}{x}\mbox{[}$\,$\mbox{]} and \hyperlink{FFTReal__readme_8txt_abbf3cc73d1e3e4714ab1639819396eca}{f}\mbox{[}$\,$\mbox{]} are floating point number arrays \hyperlink{FFTReal__readme_8txt_a9c92ac89d1560f812393ca39a19e581e}{x}\mbox{[}$\,$\mbox{]} is the real number sequence which we want to compute the F\+FT \hyperlink{FFTReal__readme_8txt_abbf3cc73d1e3e4714ab1639819396eca}{f}\mbox{[}$\,$\mbox{]} is the in the frequency domain \hyperlink{FFTReal__readme_8txt_abbf3cc73d1e3e4714ab1639819396eca}{f} has the same number of elements as but \hyperlink{FFTReal__readme_8txt_abbf3cc73d1e3e4714ab1639819396eca}{f}\mbox{[}$\,$\mbox{]} elements are complex numbers The routine uses some F\+FT properties to optimize memory and to reduce \hyperlink{FFTReal__readme_8txt_a65cbf8e61482778d7aa2ebe890cc7d7c}{calculations}
+\item 
+\hyperlink{FFTReal__readme_8txt_a9c92ac89d1560f812393ca39a19e581e}{x}\mbox{[}$\,$\mbox{]} and \hyperlink{FFTReal__readme_8txt_abbf3cc73d1e3e4714ab1639819396eca}{f}\mbox{[}$\,$\mbox{]} are floating point number arrays \hyperlink{FFTReal__readme_8txt_a9c92ac89d1560f812393ca39a19e581e}{x}\mbox{[}$\,$\mbox{]} is the real number sequence which we want to compute the F\+FT \hyperlink{FFTReal__readme_8txt_abbf3cc73d1e3e4714ab1639819396eca}{f}\mbox{[}$\,$\mbox{]} is the in the frequency domain \hyperlink{FFTReal__readme_8txt_abbf3cc73d1e3e4714ab1639819396eca}{f} has the same number of elements as but \hyperlink{FFTReal__readme_8txt_abbf3cc73d1e3e4714ab1639819396eca}{f}\mbox{[}$\,$\mbox{]} elements are complex numbers The routine uses some F\+FT properties to optimize memory and to reduce giving a speed gain between and The template parameter is the base logarithm of the F\+FT length The datatype is \hyperlink{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}{float}
+\item 
+Warning \hyperlink{FFTReal__readme_8txt_a18c0aa5889d7cc9c9c4e4ac7474f1dc7}{\+\_\+\+\_\+pad0\+\_\+\+\_\+}
+\item 
+Warning depending on the compiler and its optimisation options If compilation time is too \hyperlink{FFTReal__readme_8txt_af1a4dd6a27c987e5516ef3295e3e51f0}{high}
+\item 
+Data organisation Mathematically \hyperlink{FFTReal__readme_8txt_a2c9b06685d7b48b69727762751de915d}{speaking}
+\item 
+Data organisation Mathematically D\+FT formulas \hyperlink{FFTReal__readme_8txt_aadd6d22385a49baac7311a220729ab52}{below} show what does \hyperlink{FFTReal__readme_8txt_afc545541c7ab0be25cf239418fc47b65}{F\+F\+T\+Real}
+\item 
+Data organisation Mathematically D\+FT formulas \hyperlink{FFTReal__readme_8txt_aadd6d22385a49baac7311a220729ab52}{below} show what does \hyperlink{FFTReal__readme_8txt_a049dd452c22185832440207517cffdaa}{N}
+\item 
+Data organisation Mathematically D\+FT formulas \hyperlink{FFTReal__readme_8txt_aadd6d22385a49baac7311a220729ab52}{below} show what does \hyperlink{FFTReal__readme_8txt_a9c92ac89d1560f812393ca39a19e581e}{x}(p)$\ast$exp(+j $\ast$2 $\ast$pi $\ast$k $\ast$p/\hyperlink{FFTReal__readme_8txt_a049dd452c22185832440207517cffdaa}{N})) \hyperlink{FFTReal__readme_8txt_a1a33a3b7245f269d5150c436da7d5ed6}{do\+\_\+ifft}() they are not needed to use \hyperlink{FFTReal__readme_8txt_afc545541c7ab0be25cf239418fc47b65}{F\+F\+T\+Real} in your own programs \hyperlink{FFTReal__readme_8txt_afc545541c7ab0be25cf239418fc47b65}{F\+F\+T\+Real} may be compiled in tw \hyperlink{FFTReal__readme_8txt_a4c3ae4ba9b2751ae5f224f21fdfbb46d}{versions} )
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\index{F\+F\+T\+Real\+\_\+readme.\+txt@{F\+F\+T\+Real\+\_\+readme.\+txt}!len@{len}}
+\index{len@{len}!F\+F\+T\+Real\+\_\+readme.\+txt@{F\+F\+T\+Real\+\_\+readme.\+txt}}
+\subsubsection[{\texorpdfstring{len}{len}}]{\setlength{\rightskip}{0pt plus 5cm}using {\bf len} =  1024}\hypertarget{FFTReal__readme_8txt_a555609f588a3dd8483e643133ba24b82}{}\label{FFTReal__readme_8txt_a555609f588a3dd8483e643133ba24b82}
+
+
+\subsection{Function Documentation}
+\index{F\+F\+T\+Real\+\_\+readme.\+txt@{F\+F\+T\+Real\+\_\+readme.\+txt}!do\+\_\+fft@{do\+\_\+fft}}
+\index{do\+\_\+fft@{do\+\_\+fft}!F\+F\+T\+Real\+\_\+readme.\+txt@{F\+F\+T\+Real\+\_\+readme.\+txt}}
+\subsubsection[{\texorpdfstring{do\+\_\+fft(f, x)}{do_fft(f, x)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf fft\+\_\+object} do\+\_\+fft (
+\begin{DoxyParamCaption}
+\item[{{\bf f}}]{, }
+\item[{{\bf x}}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{FFTReal__readme_8txt_a601296d1e380b29c96683b649d7d1518}{}\label{FFTReal__readme_8txt_a601296d1e380b29c96683b649d7d1518}
+\index{F\+F\+T\+Real\+\_\+readme.\+txt@{F\+F\+T\+Real\+\_\+readme.\+txt}!do\+\_\+ifft@{do\+\_\+ifft}}
+\index{do\+\_\+ifft@{do\+\_\+ifft}!F\+F\+T\+Real\+\_\+readme.\+txt@{F\+F\+T\+Real\+\_\+readme.\+txt}}
+\subsubsection[{\texorpdfstring{do\+\_\+ifft(f, x)}{do_ifft(f, x)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf fft\+\_\+object} do\+\_\+ifft (
+\begin{DoxyParamCaption}
+\item[{{\bf f}}]{, }
+\item[{{\bf x}}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{FFTReal__readme_8txt_a1a33a3b7245f269d5150c436da7d5ed6}{}\label{FFTReal__readme_8txt_a1a33a3b7245f269d5150c436da7d5ed6}
+\index{F\+F\+T\+Real\+\_\+readme.\+txt@{F\+F\+T\+Real\+\_\+readme.\+txt}!example@{example}}
+\index{example@{example}!F\+F\+T\+Real\+\_\+readme.\+txt@{F\+F\+T\+Real\+\_\+readme.\+txt}}
+\subsubsection[{\texorpdfstring{example(quick, dirty and incomplete)}{example(quick, dirty and incomplete)}}]{\setlength{\rightskip}{0pt plus 5cm}Warning depending on the compiler and its optimisation options If compilation time is too encapsulate the F\+FT {\bf object} in a seprate {\bf class} whose header doesn t need to include F\+F\+T\+Real\+Fix\+Len {\bf h} so you just have to compile the wrapper once and only link it the other times For example (
+\begin{DoxyParamCaption}
+\item[{quick}]{, }
+\item[{dirty and}]{incomplete}
+\end{DoxyParamCaption}
+)}\hypertarget{FFTReal__readme_8txt_a22165307fc7fb8edc069828217b871ec}{}\label{FFTReal__readme_8txt_a22165307fc7fb8edc069828217b871ec}
+\index{F\+F\+T\+Real\+\_\+readme.\+txt@{F\+F\+T\+Real\+\_\+readme.\+txt}!fft\+\_\+object@{fft\+\_\+object}}
+\index{fft\+\_\+object@{fft\+\_\+object}!F\+F\+T\+Real\+\_\+readme.\+txt@{F\+F\+T\+Real\+\_\+readme.\+txt}}
+\subsubsection[{\texorpdfstring{fft\+\_\+object(len)}{fft_object(len)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ffft\+::\+F\+F\+T\+Real}$<${\bf float}$>$ fft\+\_\+object (
+\begin{DoxyParamCaption}
+\item[{{\bf len}}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{FFTReal__readme_8txt_a38b2d99092edb3ec444550a95aa1951f}{}\label{FFTReal__readme_8txt_a38b2d99092edb3ec444550a95aa1951f}
+\index{F\+F\+T\+Real\+\_\+readme.\+txt@{F\+F\+T\+Real\+\_\+readme.\+txt}!rescale@{rescale}}
+\index{rescale@{rescale}!F\+F\+T\+Real\+\_\+readme.\+txt@{F\+F\+T\+Real\+\_\+readme.\+txt}}
+\subsubsection[{\texorpdfstring{rescale(x)}{rescale(x)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf fft\+\_\+object} rescale (
+\begin{DoxyParamCaption}
+\item[{{\bf x}}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{FFTReal__readme_8txt_ab87096300f2c26c87aa35b0623fdfd1e}{}\label{FFTReal__readme_8txt_ab87096300f2c26c87aa35b0623fdfd1e}
+
+
+\subsection{Variable Documentation}
+\index{F\+F\+T\+Real\+\_\+readme.\+txt@{F\+F\+T\+Real\+\_\+readme.\+txt}!\+\_\+\+\_\+pad0\+\_\+\+\_\+@{\+\_\+\+\_\+pad0\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+pad0\+\_\+\+\_\+@{\+\_\+\+\_\+pad0\+\_\+\+\_\+}!F\+F\+T\+Real\+\_\+readme.\+txt@{F\+F\+T\+Real\+\_\+readme.\+txt}}
+\subsubsection[{\texorpdfstring{\+\_\+\+\_\+pad0\+\_\+\+\_\+}{__pad0__}}]{\setlength{\rightskip}{0pt plus 5cm}Warning \+\_\+\+\_\+pad0\+\_\+\+\_\+}\hypertarget{FFTReal__readme_8txt_a18c0aa5889d7cc9c9c4e4ac7474f1dc7}{}\label{FFTReal__readme_8txt_a18c0aa5889d7cc9c9c4e4ac7474f1dc7}
+\index{F\+F\+T\+Real\+\_\+readme.\+txt@{F\+F\+T\+Real\+\_\+readme.\+txt}!below@{below}}
+\index{below@{below}!F\+F\+T\+Real\+\_\+readme.\+txt@{F\+F\+T\+Real\+\_\+readme.\+txt}}
+\subsubsection[{\texorpdfstring{below}{below}}]{\setlength{\rightskip}{0pt plus 5cm}it can be changed by modifying the Data\+Type typedef in F\+F\+T\+Real\+Fix\+Len\+Param {\bf h} As {\bf F\+F\+T\+Real} it supports only floating point types or equivalent Use is similar as the one of {\bf F\+F\+T\+Real} To instanciate the just proceed as indicated below}\hypertarget{FFTReal__readme_8txt_aadd6d22385a49baac7311a220729ab52}{}\label{FFTReal__readme_8txt_aadd6d22385a49baac7311a220729ab52}
+\index{F\+F\+T\+Real\+\_\+readme.\+txt@{F\+F\+T\+Real\+\_\+readme.\+txt}!calculations@{calculations}}
+\index{calculations@{calculations}!F\+F\+T\+Real\+\_\+readme.\+txt@{F\+F\+T\+Real\+\_\+readme.\+txt}}
+\subsubsection[{\texorpdfstring{calculations}{calculations}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf x} \mbox{[}$\,$\mbox{]} and {\bf f} \mbox{[}$\,$\mbox{]} are floating point number arrays {\bf x} \mbox{[}$\,$\mbox{]} is the real number sequence which we want to compute the F\+FT {\bf f} \mbox{[}$\,$\mbox{]} is the in the frequency domain {\bf f} has the same number of elements as but {\bf f} \mbox{[}$\,$\mbox{]} elements are complex numbers The routine uses some F\+FT properties to optimize memory and to reduce calculations}\hypertarget{FFTReal__readme_8txt_a65cbf8e61482778d7aa2ebe890cc7d7c}{}\label{FFTReal__readme_8txt_a65cbf8e61482778d7aa2ebe890cc7d7c}
+\index{F\+F\+T\+Real\+\_\+readme.\+txt@{F\+F\+T\+Real\+\_\+readme.\+txt}!class@{class}}
+\index{class@{class}!F\+F\+T\+Real\+\_\+readme.\+txt@{F\+F\+T\+Real\+\_\+readme.\+txt}}
+\subsubsection[{\texorpdfstring{class}{class}}]{\setlength{\rightskip}{0pt plus 5cm}it can be changed by modifying the Data\+Type typedef in F\+F\+T\+Real\+Fix\+Len\+Param {\bf h} As {\bf F\+F\+T\+Real} class}\hypertarget{FFTReal__readme_8txt_ad229ab5c8241df85a2096743cc8c4e9f}{}\label{FFTReal__readme_8txt_ad229ab5c8241df85a2096743cc8c4e9f}
+\index{F\+F\+T\+Real\+\_\+readme.\+txt@{F\+F\+T\+Real\+\_\+readme.\+txt}!f@{f}}
+\index{f@{f}!F\+F\+T\+Real\+\_\+readme.\+txt@{F\+F\+T\+Real\+\_\+readme.\+txt}}
+\subsubsection[{\texorpdfstring{f}{f}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf float} f\mbox{[}1024\mbox{]}}\hypertarget{FFTReal__readme_8txt_abbf3cc73d1e3e4714ab1639819396eca}{}\label{FFTReal__readme_8txt_abbf3cc73d1e3e4714ab1639819396eca}
+\index{F\+F\+T\+Real\+\_\+readme.\+txt@{F\+F\+T\+Real\+\_\+readme.\+txt}!F\+F\+T\+Real@{F\+F\+T\+Real}}
+\index{F\+F\+T\+Real@{F\+F\+T\+Real}!F\+F\+T\+Real\+\_\+readme.\+txt@{F\+F\+T\+Real\+\_\+readme.\+txt}}
+\subsubsection[{\texorpdfstring{F\+F\+T\+Real}{FFTReal}}]{\setlength{\rightskip}{0pt plus 5cm}Data organisation Mathematically D\+FT formulas {\bf below} show what does F\+F\+T\+Real}\hypertarget{FFTReal__readme_8txt_afc545541c7ab0be25cf239418fc47b65}{}\label{FFTReal__readme_8txt_afc545541c7ab0be25cf239418fc47b65}
+\index{F\+F\+T\+Real\+\_\+readme.\+txt@{F\+F\+T\+Real\+\_\+readme.\+txt}!float@{float}}
+\index{float@{float}!F\+F\+T\+Real\+\_\+readme.\+txt@{F\+F\+T\+Real\+\_\+readme.\+txt}}
+\subsubsection[{\texorpdfstring{float}{float}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf x} \mbox{[}$\,$\mbox{]} and {\bf f} \mbox{[}$\,$\mbox{]} are floating point number arrays {\bf x} \mbox{[}$\,$\mbox{]} is the real number sequence which we want to compute the F\+FT {\bf f} \mbox{[}$\,$\mbox{]} is the in the frequency domain {\bf f} has the same number of elements as but {\bf f} \mbox{[}$\,$\mbox{]} elements are complex numbers The routine uses some F\+FT properties to optimize memory and to reduce giving a speed gain between and The template parameter is the base logarithm of the F\+FT length The datatype is float}\hypertarget{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}{}\label{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}
+\index{F\+F\+T\+Real\+\_\+readme.\+txt@{F\+F\+T\+Real\+\_\+readme.\+txt}!h@{h}}
+\index{h@{h}!F\+F\+T\+Real\+\_\+readme.\+txt@{F\+F\+T\+Real\+\_\+readme.\+txt}}
+\subsubsection[{\texorpdfstring{h}{h}}]{\setlength{\rightskip}{0pt plus 5cm}some of them are of particular length fixed at run time ffft F\+F\+T\+Real\+Fix\+Len h}\hypertarget{FFTReal__readme_8txt_a5a475fe9e77e2d776b063abc32a10e20}{}\label{FFTReal__readme_8txt_a5a475fe9e77e2d776b063abc32a10e20}
+\index{F\+F\+T\+Real\+\_\+readme.\+txt@{F\+F\+T\+Real\+\_\+readme.\+txt}!high@{high}}
+\index{high@{high}!F\+F\+T\+Real\+\_\+readme.\+txt@{F\+F\+T\+Real\+\_\+readme.\+txt}}
+\subsubsection[{\texorpdfstring{high}{high}}]{\setlength{\rightskip}{0pt plus 5cm}Warning depending on the compiler and its optimisation options If compilation time is too high}\hypertarget{FFTReal__readme_8txt_af1a4dd6a27c987e5516ef3295e3e51f0}{}\label{FFTReal__readme_8txt_af1a4dd6a27c987e5516ef3295e3e51f0}
+\index{F\+F\+T\+Real\+\_\+readme.\+txt@{F\+F\+T\+Real\+\_\+readme.\+txt}!interest@{interest}}
+\index{interest@{interest}!F\+F\+T\+Real\+\_\+readme.\+txt@{F\+F\+T\+Real\+\_\+readme.\+txt}}
+\subsubsection[{\texorpdfstring{interest}{interest}}]{\setlength{\rightskip}{0pt plus 5cm}some of them are of particular interest}\hypertarget{FFTReal__readme_8txt_a8dd124b3ee508be769f386edc2b8ccc7}{}\label{FFTReal__readme_8txt_a8dd124b3ee508be769f386edc2b8ccc7}
+\index{F\+F\+T\+Real\+\_\+readme.\+txt@{F\+F\+T\+Real\+\_\+readme.\+txt}!N@{N}}
+\index{N@{N}!F\+F\+T\+Real\+\_\+readme.\+txt@{F\+F\+T\+Real\+\_\+readme.\+txt}}
+\subsubsection[{\texorpdfstring{N}{N}}]{\setlength{\rightskip}{0pt plus 5cm}Data organisation Mathematically D\+FT formulas {\bf below} show what does N}\hypertarget{FFTReal__readme_8txt_a049dd452c22185832440207517cffdaa}{}\label{FFTReal__readme_8txt_a049dd452c22185832440207517cffdaa}
+\index{F\+F\+T\+Real\+\_\+readme.\+txt@{F\+F\+T\+Real\+\_\+readme.\+txt}!object@{object}}
+\index{object@{object}!F\+F\+T\+Real\+\_\+readme.\+txt@{F\+F\+T\+Real\+\_\+readme.\+txt}}
+\subsubsection[{\texorpdfstring{object}{object}}]{\setlength{\rightskip}{0pt plus 5cm}it can be changed by modifying the Data\+Type typedef in F\+F\+T\+Real\+Fix\+Len\+Param {\bf h} As {\bf F\+F\+T\+Real} it supports only floating point types or equivalent Use is similar as the one of {\bf F\+F\+T\+Real} To instanciate the object}\hypertarget{FFTReal__readme_8txt_a5057f8d0a8b36ba2bdea206a5592c87a}{}\label{FFTReal__readme_8txt_a5057f8d0a8b36ba2bdea206a5592c87a}
+\index{F\+F\+T\+Real\+\_\+readme.\+txt@{F\+F\+T\+Real\+\_\+readme.\+txt}!pas@{pas}}
+\index{pas@{pas}!F\+F\+T\+Real\+\_\+readme.\+txt@{F\+F\+T\+Real\+\_\+readme.\+txt}}
+\subsubsection[{\texorpdfstring{pas}{pas}}]{\setlength{\rightskip}{0pt plus 5cm}some of them are of particular length fixed at run time ffft F\+F\+T\+Real\+Fix\+Len length fixed at compile time delphi {\bf F\+F\+T\+Real} pas}\hypertarget{FFTReal__readme_8txt_a6cf8b214cfb6bfb689594a776ceb1ea0}{}\label{FFTReal__readme_8txt_a6cf8b214cfb6bfb689594a776ceb1ea0}
+\index{F\+F\+T\+Real\+\_\+readme.\+txt@{F\+F\+T\+Real\+\_\+readme.\+txt}!result@{result}}
+\index{result@{result}!F\+F\+T\+Real\+\_\+readme.\+txt@{F\+F\+T\+Real\+\_\+readme.\+txt}}
+\subsubsection[{\texorpdfstring{result}{result}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf x} \mbox{[}$\,$\mbox{]} and {\bf f} \mbox{[}$\,$\mbox{]} are floating point number arrays {\bf x} \mbox{[}$\,$\mbox{]} is the real number sequence which we want to compute the F\+FT {\bf f} \mbox{[}$\,$\mbox{]} is the result}\hypertarget{FFTReal__readme_8txt_af64dcf51fedf6a89308c7e46c0868511}{}\label{FFTReal__readme_8txt_af64dcf51fedf6a89308c7e46c0868511}
+\index{F\+F\+T\+Real\+\_\+readme.\+txt@{F\+F\+T\+Real\+\_\+readme.\+txt}!speaking@{speaking}}
+\index{speaking@{speaking}!F\+F\+T\+Real\+\_\+readme.\+txt@{F\+F\+T\+Real\+\_\+readme.\+txt}}
+\subsubsection[{\texorpdfstring{speaking}{speaking}}]{\setlength{\rightskip}{0pt plus 5cm}Data organisation Mathematically speaking}\hypertarget{FFTReal__readme_8txt_a2c9b06685d7b48b69727762751de915d}{}\label{FFTReal__readme_8txt_a2c9b06685d7b48b69727762751de915d}
+\index{F\+F\+T\+Real\+\_\+readme.\+txt@{F\+F\+T\+Real\+\_\+readme.\+txt}!versions@{versions}}
+\index{versions@{versions}!F\+F\+T\+Real\+\_\+readme.\+txt@{F\+F\+T\+Real\+\_\+readme.\+txt}}
+\subsubsection[{\texorpdfstring{versions}{versions}}]{\setlength{\rightskip}{0pt plus 5cm}Data organisation Mathematically D\+FT formulas {\bf below} show what does {\bf x} (p) $\ast$ exp (+j$\ast$2$\ast$pi$\ast$k$\ast$p/{\bf N})) {\bf do\+\_\+ifft}() they are not needed to use {\bf F\+F\+T\+Real} in your own programs {\bf F\+F\+T\+Real} may be compiled in tw versions) }\hypertarget{FFTReal__readme_8txt_a4c3ae4ba9b2751ae5f224f21fdfbb46d}{}\label{FFTReal__readme_8txt_a4c3ae4ba9b2751ae5f224f21fdfbb46d}
+\index{F\+F\+T\+Real\+\_\+readme.\+txt@{F\+F\+T\+Real\+\_\+readme.\+txt}!x@{x}}
+\index{x@{x}!F\+F\+T\+Real\+\_\+readme.\+txt@{F\+F\+T\+Real\+\_\+readme.\+txt}}
+\subsubsection[{\texorpdfstring{x}{x}}]{\setlength{\rightskip}{0pt plus 5cm}x}\hypertarget{FFTReal__readme_8txt_a9c92ac89d1560f812393ca39a19e581e}{}\label{FFTReal__readme_8txt_a9c92ac89d1560f812393ca39a19e581e}

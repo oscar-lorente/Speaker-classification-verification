@@ -1,0 +1,394 @@
+\hypertarget{classffft_1_1FFTReal}{}\section{ffft\+:\+:F\+F\+T\+Real$<$ DT $>$ Class Template Reference}
+\label{classffft_1_1FFTReal}\index{ffft\+::\+F\+F\+T\+Real$<$ D\+T $>$@{ffft\+::\+F\+F\+T\+Real$<$ D\+T $>$}}
+
+
+{\ttfamily \#include $<$F\+F\+T\+Real.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \hyperlink{classffft_1_1FFTReal_a39f5a2ec14c15f9198268500716e5dbaabec37ae38b07b6e3e1230562f01882a2}{M\+A\+X\+\_\+\+B\+I\+T\+\_\+\+D\+E\+P\+TH} = 30
+ \}
+\item 
+typedef DT \hyperlink{classffft_1_1FFTReal_a606148f1cf8c3b7d705473932fc063d1}{Data\+Type}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classffft_1_1FFTReal_a627db4d781235302c3a229fc4d7a10ba}{F\+F\+T\+Real} (long length)
+\item 
+virtual \hyperlink{classffft_1_1FFTReal_a04f14f3576aac18af45ba22c38fbaf2a}{$\sim$\+F\+F\+T\+Real} ()
+\item 
+long \hyperlink{classffft_1_1FFTReal_abdd5b144ba5737c7ad27095d1658c29e}{get\+\_\+length} () const 
+\item 
+void \hyperlink{classffft_1_1FFTReal_a4c5b863a285c5a87f38517735cbf1352}{do\+\_\+fft} (\hyperlink{classffft_1_1FFTReal_a606148f1cf8c3b7d705473932fc063d1}{Data\+Type} \hyperlink{FFTReal__readme_8txt_abbf3cc73d1e3e4714ab1639819396eca}{f}\mbox{[}$\,$\mbox{]}, const \hyperlink{classffft_1_1FFTReal_a606148f1cf8c3b7d705473932fc063d1}{Data\+Type} \hyperlink{FFTReal__readme_8txt_a9c92ac89d1560f812393ca39a19e581e}{x}\mbox{[}$\,$\mbox{]}) const 
+\item 
+void \hyperlink{classffft_1_1FFTReal_a8ab2e0da482cea88a61f01d58c074989}{do\+\_\+ifft} (const \hyperlink{classffft_1_1FFTReal_a606148f1cf8c3b7d705473932fc063d1}{Data\+Type} \hyperlink{FFTReal__readme_8txt_abbf3cc73d1e3e4714ab1639819396eca}{f}\mbox{[}$\,$\mbox{]}, \hyperlink{classffft_1_1FFTReal_a606148f1cf8c3b7d705473932fc063d1}{Data\+Type} \hyperlink{FFTReal__readme_8txt_a9c92ac89d1560f812393ca39a19e581e}{x}\mbox{[}$\,$\mbox{]}) const 
+\item 
+void \hyperlink{classffft_1_1FFTReal_a9e30fff775905b1059aa9299004ee228}{rescale} (\hyperlink{classffft_1_1FFTReal_a606148f1cf8c3b7d705473932fc063d1}{Data\+Type} \hyperlink{FFTReal__readme_8txt_a9c92ac89d1560f812393ca39a19e581e}{x}\mbox{[}$\,$\mbox{]}) const 
+\item 
+\hyperlink{classffft_1_1FFTReal_a606148f1cf8c3b7d705473932fc063d1}{Data\+Type} $\ast$ \hyperlink{classffft_1_1FFTReal_af1fcd007f1cf0b41bd2188e0b3cd5cca}{use\+\_\+buffer} () const 
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \hyperlink{classffft_1_1FFTReal_a69a4ed5b7507683f5233ddbd34f0e1eea5b9b73ce99dfec1ae2f92dd0151fa07e}{T\+R\+I\+G\+O\+\_\+\+B\+D\+\_\+\+L\+I\+M\+IT} = 12
+ \}
+\item 
+typedef \hyperlink{classffft_1_1OscSinCos}{Osc\+Sin\+Cos}$<$ \hyperlink{classffft_1_1FFTReal_a606148f1cf8c3b7d705473932fc063d1}{Data\+Type} $>$ \hyperlink{classffft_1_1FFTReal_a3b9f6dae05435b3696c6c84155e0953a}{Osc\+Type}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classffft_1_1FFTReal_aa7315c1c287185277a8188eb4c6180c8}{init\+\_\+br\+\_\+lut} ()
+\item 
+void \hyperlink{classffft_1_1FFTReal_aac5c6c408da94a9d346e97aeded61ef2}{init\+\_\+trigo\+\_\+lut} ()
+\item 
+void \hyperlink{classffft_1_1FFTReal_adcac1258791df06ea6597c7f4fc49f63}{init\+\_\+trigo\+\_\+osc} ()
+\item 
+\hyperlink{def_8h_a31b2ada863c9efa7455efae4e13661f3}{ffft\+\_\+\+F\+O\+R\+C\+E\+I\+N\+L\+I\+NE} const long $\ast$ \hyperlink{classffft_1_1FFTReal_ae8bd596a64bbc6ff19a1b7efe0da50bc}{get\+\_\+br\+\_\+ptr} () const 
+\item 
+\hyperlink{def_8h_a31b2ada863c9efa7455efae4e13661f3}{ffft\+\_\+\+F\+O\+R\+C\+E\+I\+N\+L\+I\+NE} const \hyperlink{classffft_1_1FFTReal_a606148f1cf8c3b7d705473932fc063d1}{Data\+Type} $\ast$ \hyperlink{classffft_1_1FFTReal_a9683286954e4f26259af2c0f5c8727cb}{get\+\_\+trigo\+\_\+ptr} (int level) const 
+\item 
+\hyperlink{def_8h_a31b2ada863c9efa7455efae4e13661f3}{ffft\+\_\+\+F\+O\+R\+C\+E\+I\+N\+L\+I\+NE} long \hyperlink{classffft_1_1FFTReal_ae99a3872cc7dafca94190ee0d0e50fec}{get\+\_\+trigo\+\_\+level\+\_\+index} (int level) const 
+\item 
+void \hyperlink{classffft_1_1FFTReal_afdaf4c3d2ccb9fffcaa7d686179dd9ff}{compute\+\_\+fft\+\_\+general} (\hyperlink{classffft_1_1FFTReal_a606148f1cf8c3b7d705473932fc063d1}{Data\+Type} \hyperlink{FFTReal__readme_8txt_abbf3cc73d1e3e4714ab1639819396eca}{f}\mbox{[}$\,$\mbox{]}, const \hyperlink{classffft_1_1FFTReal_a606148f1cf8c3b7d705473932fc063d1}{Data\+Type} \hyperlink{FFTReal__readme_8txt_a9c92ac89d1560f812393ca39a19e581e}{x}\mbox{[}$\,$\mbox{]}) const 
+\item 
+void \hyperlink{classffft_1_1FFTReal_ac68be02ec38a22046a95a9b844da25db}{compute\+\_\+direct\+\_\+pass\+\_\+1\+\_\+2} (\hyperlink{classffft_1_1FFTReal_a606148f1cf8c3b7d705473932fc063d1}{Data\+Type} df\mbox{[}$\,$\mbox{]}, const \hyperlink{classffft_1_1FFTReal_a606148f1cf8c3b7d705473932fc063d1}{Data\+Type} \hyperlink{FFTReal__readme_8txt_a9c92ac89d1560f812393ca39a19e581e}{x}\mbox{[}$\,$\mbox{]}) const 
+\item 
+void \hyperlink{classffft_1_1FFTReal_a56b30d8e3cc4b343ea59cdaa54f326cd}{compute\+\_\+direct\+\_\+pass\+\_\+3} (\hyperlink{classffft_1_1FFTReal_a606148f1cf8c3b7d705473932fc063d1}{Data\+Type} df\mbox{[}$\,$\mbox{]}, const \hyperlink{classffft_1_1FFTReal_a606148f1cf8c3b7d705473932fc063d1}{Data\+Type} sf\mbox{[}$\,$\mbox{]}) const 
+\item 
+void \hyperlink{classffft_1_1FFTReal_a9ac801815332d3abd86ff1d7703f07e3}{compute\+\_\+direct\+\_\+pass\+\_\+n} (\hyperlink{classffft_1_1FFTReal_a606148f1cf8c3b7d705473932fc063d1}{Data\+Type} df\mbox{[}$\,$\mbox{]}, const \hyperlink{classffft_1_1FFTReal_a606148f1cf8c3b7d705473932fc063d1}{Data\+Type} sf\mbox{[}$\,$\mbox{]}, int pass) const 
+\item 
+void \hyperlink{classffft_1_1FFTReal_a91a4417bf6cff9a6af23f8538675a885}{compute\+\_\+direct\+\_\+pass\+\_\+n\+\_\+lut} (\hyperlink{classffft_1_1FFTReal_a606148f1cf8c3b7d705473932fc063d1}{Data\+Type} df\mbox{[}$\,$\mbox{]}, const \hyperlink{classffft_1_1FFTReal_a606148f1cf8c3b7d705473932fc063d1}{Data\+Type} sf\mbox{[}$\,$\mbox{]}, int pass) const 
+\item 
+void \hyperlink{classffft_1_1FFTReal_a388e0b14379bf9bf2c4e182713fee311}{compute\+\_\+direct\+\_\+pass\+\_\+n\+\_\+osc} (\hyperlink{classffft_1_1FFTReal_a606148f1cf8c3b7d705473932fc063d1}{Data\+Type} df\mbox{[}$\,$\mbox{]}, const \hyperlink{classffft_1_1FFTReal_a606148f1cf8c3b7d705473932fc063d1}{Data\+Type} sf\mbox{[}$\,$\mbox{]}, int pass) const 
+\item 
+void \hyperlink{classffft_1_1FFTReal_a62f005d553d75a8e3910e3c1d4401466}{compute\+\_\+ifft\+\_\+general} (const \hyperlink{classffft_1_1FFTReal_a606148f1cf8c3b7d705473932fc063d1}{Data\+Type} \hyperlink{FFTReal__readme_8txt_abbf3cc73d1e3e4714ab1639819396eca}{f}\mbox{[}$\,$\mbox{]}, \hyperlink{classffft_1_1FFTReal_a606148f1cf8c3b7d705473932fc063d1}{Data\+Type} \hyperlink{FFTReal__readme_8txt_a9c92ac89d1560f812393ca39a19e581e}{x}\mbox{[}$\,$\mbox{]}) const 
+\item 
+void \hyperlink{classffft_1_1FFTReal_ad392e218433964045a809dcfd49d0ddf}{compute\+\_\+inverse\+\_\+pass\+\_\+n} (\hyperlink{classffft_1_1FFTReal_a606148f1cf8c3b7d705473932fc063d1}{Data\+Type} df\mbox{[}$\,$\mbox{]}, const \hyperlink{classffft_1_1FFTReal_a606148f1cf8c3b7d705473932fc063d1}{Data\+Type} sf\mbox{[}$\,$\mbox{]}, int pass) const 
+\item 
+void \hyperlink{classffft_1_1FFTReal_a054d36f2f7bacf4bfa78c615d4fb491c}{compute\+\_\+inverse\+\_\+pass\+\_\+n\+\_\+osc} (\hyperlink{classffft_1_1FFTReal_a606148f1cf8c3b7d705473932fc063d1}{Data\+Type} df\mbox{[}$\,$\mbox{]}, const \hyperlink{classffft_1_1FFTReal_a606148f1cf8c3b7d705473932fc063d1}{Data\+Type} sf\mbox{[}$\,$\mbox{]}, int pass) const 
+\item 
+void \hyperlink{classffft_1_1FFTReal_a9a91e58a78284fcb3f76ec6c33ac63a4}{compute\+\_\+inverse\+\_\+pass\+\_\+n\+\_\+lut} (\hyperlink{classffft_1_1FFTReal_a606148f1cf8c3b7d705473932fc063d1}{Data\+Type} df\mbox{[}$\,$\mbox{]}, const \hyperlink{classffft_1_1FFTReal_a606148f1cf8c3b7d705473932fc063d1}{Data\+Type} sf\mbox{[}$\,$\mbox{]}, int pass) const 
+\item 
+void \hyperlink{classffft_1_1FFTReal_a509266997c0de51dc63ce9b4a50e7d3c}{compute\+\_\+inverse\+\_\+pass\+\_\+3} (\hyperlink{classffft_1_1FFTReal_a606148f1cf8c3b7d705473932fc063d1}{Data\+Type} df\mbox{[}$\,$\mbox{]}, const \hyperlink{classffft_1_1FFTReal_a606148f1cf8c3b7d705473932fc063d1}{Data\+Type} sf\mbox{[}$\,$\mbox{]}) const 
+\item 
+void \hyperlink{classffft_1_1FFTReal_a8d059fd4e6798c30ca6b9cab089cba68}{compute\+\_\+inverse\+\_\+pass\+\_\+1\+\_\+2} (\hyperlink{classffft_1_1FFTReal_a606148f1cf8c3b7d705473932fc063d1}{Data\+Type} \hyperlink{FFTReal__readme_8txt_a9c92ac89d1560f812393ca39a19e581e}{x}\mbox{[}$\,$\mbox{]}, const \hyperlink{classffft_1_1FFTReal_a606148f1cf8c3b7d705473932fc063d1}{Data\+Type} sf\mbox{[}$\,$\mbox{]}) const 
+\item 
+\hyperlink{classffft_1_1FFTReal_abb05c7093d0c905e4c3b3e1285bee8a4}{F\+F\+T\+Real} ()
+\item 
+\hyperlink{classffft_1_1FFTReal_a9ad7353cb1205c00d77f69b9d3362ba3}{F\+F\+T\+Real} (const \hyperlink{classffft_1_1FFTReal}{F\+F\+T\+Real} \&other)
+\item 
+\hyperlink{classffft_1_1FFTReal}{F\+F\+T\+Real} \& \hyperlink{classffft_1_1FFTReal_a65d44f8ea83d40a8e49ec9c90f6689d3}{operator=} (const \hyperlink{classffft_1_1FFTReal}{F\+F\+T\+Real} \&other)
+\item 
+bool \hyperlink{classffft_1_1FFTReal_a3569dbeffa58f00d8e4690a46be85292}{operator==} (const \hyperlink{classffft_1_1FFTReal}{F\+F\+T\+Real} \&other)
+\item 
+bool \hyperlink{classffft_1_1FFTReal_a0ab668257cd92ab58418bbfd4a248afe}{operator!=} (const \hyperlink{classffft_1_1FFTReal}{F\+F\+T\+Real} \&other)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const long \hyperlink{classffft_1_1FFTReal_a04c882856db18a8be9c2c0b74fa4faf5}{\+\_\+length}
+\item 
+const int \hyperlink{classffft_1_1FFTReal_a009acfbabe3450f2d9cb0bcb7eb7a366}{\+\_\+nbr\+\_\+bits}
+\item 
+\hyperlink{classffft_1_1DynArray}{Dyn\+Array}$<$ long $>$ \hyperlink{classffft_1_1FFTReal_a0030146a32be3c87c47379c4db2caf12}{\+\_\+br\+\_\+lut}
+\item 
+\hyperlink{classffft_1_1DynArray}{Dyn\+Array}$<$ \hyperlink{classffft_1_1FFTReal_a606148f1cf8c3b7d705473932fc063d1}{Data\+Type} $>$ \hyperlink{classffft_1_1FFTReal_a5c28c732a8f3a262bc6e0527c3903970}{\+\_\+trigo\+\_\+lut}
+\item 
+\hyperlink{classffft_1_1DynArray}{Dyn\+Array}$<$ \hyperlink{classffft_1_1FFTReal_a606148f1cf8c3b7d705473932fc063d1}{Data\+Type} $>$ \hyperlink{classffft_1_1FFTReal_a9e29976841e3bf469336e3ea54e918f3}{\+\_\+buffer}
+\item 
+\hyperlink{classffft_1_1DynArray}{Dyn\+Array}$<$ \hyperlink{classffft_1_1FFTReal_a3b9f6dae05435b3696c6c84155e0953a}{Osc\+Type} $>$ \hyperlink{classffft_1_1FFTReal_a555f6fccc6ae27c97c96c5a1ddfac971}{\+\_\+trigo\+\_\+osc}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Typedef Documentation}
+\index{ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}!Data\+Type@{Data\+Type}}
+\index{Data\+Type@{Data\+Type}!ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}}
+\subsubsection[{\texorpdfstring{Data\+Type}{DataType}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DT$>$ typedef DT {\bf ffft\+::\+F\+F\+T\+Real}$<$ DT $>$\+::{\bf Data\+Type}}\hypertarget{classffft_1_1FFTReal_a606148f1cf8c3b7d705473932fc063d1}{}\label{classffft_1_1FFTReal_a606148f1cf8c3b7d705473932fc063d1}
+\index{ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}!Osc\+Type@{Osc\+Type}}
+\index{Osc\+Type@{Osc\+Type}!ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}}
+\subsubsection[{\texorpdfstring{Osc\+Type}{OscType}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DT$>$ typedef {\bf Osc\+Sin\+Cos}$<${\bf Data\+Type}$>$ {\bf ffft\+::\+F\+F\+T\+Real}$<$ DT $>$\+::{\bf Osc\+Type}\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classffft_1_1FFTReal_a3b9f6dae05435b3696c6c84155e0953a}{}\label{classffft_1_1FFTReal_a3b9f6dae05435b3696c6c84155e0953a}
+
+
+\subsection{Member Enumeration Documentation}
+\subsubsection[{\texorpdfstring{anonymous enum}{anonymous enum}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DT$>$ anonymous enum}\hypertarget{classffft_1_1FFTReal_a39f5a2ec14c15f9198268500716e5dba}{}\label{classffft_1_1FFTReal_a39f5a2ec14c15f9198268500716e5dba}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{M\+A\+X\+\_\+\+B\+I\+T\+\_\+\+D\+E\+P\+TH@{M\+A\+X\+\_\+\+B\+I\+T\+\_\+\+D\+E\+P\+TH}!ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}}\index{ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}!M\+A\+X\+\_\+\+B\+I\+T\+\_\+\+D\+E\+P\+TH@{M\+A\+X\+\_\+\+B\+I\+T\+\_\+\+D\+E\+P\+TH}}\item[{\em 
+M\+A\+X\+\_\+\+B\+I\+T\+\_\+\+D\+E\+P\+TH\hypertarget{classffft_1_1FFTReal_a39f5a2ec14c15f9198268500716e5dbaabec37ae38b07b6e3e1230562f01882a2}{}\label{classffft_1_1FFTReal_a39f5a2ec14c15f9198268500716e5dbaabec37ae38b07b6e3e1230562f01882a2}
+}]\end{description}
+\end{Desc}
+\subsubsection[{\texorpdfstring{anonymous enum}{anonymous enum}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DT$>$ anonymous enum\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classffft_1_1FFTReal_a69a4ed5b7507683f5233ddbd34f0e1ee}{}\label{classffft_1_1FFTReal_a69a4ed5b7507683f5233ddbd34f0e1ee}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{T\+R\+I\+G\+O\+\_\+\+B\+D\+\_\+\+L\+I\+M\+IT@{T\+R\+I\+G\+O\+\_\+\+B\+D\+\_\+\+L\+I\+M\+IT}!ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}}\index{ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}!T\+R\+I\+G\+O\+\_\+\+B\+D\+\_\+\+L\+I\+M\+IT@{T\+R\+I\+G\+O\+\_\+\+B\+D\+\_\+\+L\+I\+M\+IT}}\item[{\em 
+T\+R\+I\+G\+O\+\_\+\+B\+D\+\_\+\+L\+I\+M\+IT\hypertarget{classffft_1_1FFTReal_a69a4ed5b7507683f5233ddbd34f0e1eea5b9b73ce99dfec1ae2f92dd0151fa07e}{}\label{classffft_1_1FFTReal_a69a4ed5b7507683f5233ddbd34f0e1eea5b9b73ce99dfec1ae2f92dd0151fa07e}
+}]\end{description}
+\end{Desc}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}!F\+F\+T\+Real@{F\+F\+T\+Real}}
+\index{F\+F\+T\+Real@{F\+F\+T\+Real}!ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}}
+\subsubsection[{\texorpdfstring{F\+F\+T\+Real(long length)}{FFTReal(long length)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DT $>$ {\bf ffft\+::\+F\+F\+T\+Real}$<$ DT $>$\+::{\bf F\+F\+T\+Real} (
+\begin{DoxyParamCaption}
+\item[{long}]{length}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}\hypertarget{classffft_1_1FFTReal_a627db4d781235302c3a229fc4d7a10ba}{}\label{classffft_1_1FFTReal_a627db4d781235302c3a229fc4d7a10ba}
+\index{ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}!````~F\+F\+T\+Real@{$\sim$\+F\+F\+T\+Real}}
+\index{````~F\+F\+T\+Real@{$\sim$\+F\+F\+T\+Real}!ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}}
+\subsubsection[{\texorpdfstring{$\sim$\+F\+F\+T\+Real()}{~FFTReal()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DT$>$ virtual {\bf ffft\+::\+F\+F\+T\+Real}$<$ DT $>$\+::$\sim${\bf F\+F\+T\+Real} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classffft_1_1FFTReal_a04f14f3576aac18af45ba22c38fbaf2a}{}\label{classffft_1_1FFTReal_a04f14f3576aac18af45ba22c38fbaf2a}
+\index{ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}!F\+F\+T\+Real@{F\+F\+T\+Real}}
+\index{F\+F\+T\+Real@{F\+F\+T\+Real}!ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}}
+\subsubsection[{\texorpdfstring{F\+F\+T\+Real()}{FFTReal()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DT$>$ {\bf ffft\+::\+F\+F\+T\+Real}$<$ DT $>$\+::{\bf F\+F\+T\+Real} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classffft_1_1FFTReal_abb05c7093d0c905e4c3b3e1285bee8a4}{}\label{classffft_1_1FFTReal_abb05c7093d0c905e4c3b3e1285bee8a4}
+\index{ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}!F\+F\+T\+Real@{F\+F\+T\+Real}}
+\index{F\+F\+T\+Real@{F\+F\+T\+Real}!ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}}
+\subsubsection[{\texorpdfstring{F\+F\+T\+Real(const F\+F\+T\+Real \&other)}{FFTReal(const FFTReal &other)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DT$>$ {\bf ffft\+::\+F\+F\+T\+Real}$<$ DT $>$\+::{\bf F\+F\+T\+Real} (
+\begin{DoxyParamCaption}
+\item[{const {\bf F\+F\+T\+Real}$<$ DT $>$ \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classffft_1_1FFTReal_a9ad7353cb1205c00d77f69b9d3362ba3}{}\label{classffft_1_1FFTReal_a9ad7353cb1205c00d77f69b9d3362ba3}
+
+
+\subsection{Member Function Documentation}
+\index{ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}!compute\+\_\+direct\+\_\+pass\+\_\+1\+\_\+2@{compute\+\_\+direct\+\_\+pass\+\_\+1\+\_\+2}}
+\index{compute\+\_\+direct\+\_\+pass\+\_\+1\+\_\+2@{compute\+\_\+direct\+\_\+pass\+\_\+1\+\_\+2}!ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}}
+\subsubsection[{\texorpdfstring{compute\+\_\+direct\+\_\+pass\+\_\+1\+\_\+2(\+Data\+Type df[], const Data\+Type x[]) const }{compute_direct_pass_1_2(DataType df[], const DataType x[]) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DT $>$ void {\bf ffft\+::\+F\+F\+T\+Real}$<$ DT $>$\+::compute\+\_\+direct\+\_\+pass\+\_\+1\+\_\+2 (
+\begin{DoxyParamCaption}
+\item[{{\bf Data\+Type}}]{df\mbox{[}$\,$\mbox{]}, }
+\item[{const {\bf Data\+Type}}]{x\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\hypertarget{classffft_1_1FFTReal_ac68be02ec38a22046a95a9b844da25db}{}\label{classffft_1_1FFTReal_ac68be02ec38a22046a95a9b844da25db}
+\index{ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}!compute\+\_\+direct\+\_\+pass\+\_\+3@{compute\+\_\+direct\+\_\+pass\+\_\+3}}
+\index{compute\+\_\+direct\+\_\+pass\+\_\+3@{compute\+\_\+direct\+\_\+pass\+\_\+3}!ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}}
+\subsubsection[{\texorpdfstring{compute\+\_\+direct\+\_\+pass\+\_\+3(\+Data\+Type df[], const Data\+Type sf[]) const }{compute_direct_pass_3(DataType df[], const DataType sf[]) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DT $>$ void {\bf ffft\+::\+F\+F\+T\+Real}$<$ DT $>$\+::compute\+\_\+direct\+\_\+pass\+\_\+3 (
+\begin{DoxyParamCaption}
+\item[{{\bf Data\+Type}}]{df\mbox{[}$\,$\mbox{]}, }
+\item[{const {\bf Data\+Type}}]{sf\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\hypertarget{classffft_1_1FFTReal_a56b30d8e3cc4b343ea59cdaa54f326cd}{}\label{classffft_1_1FFTReal_a56b30d8e3cc4b343ea59cdaa54f326cd}
+\index{ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}!compute\+\_\+direct\+\_\+pass\+\_\+n@{compute\+\_\+direct\+\_\+pass\+\_\+n}}
+\index{compute\+\_\+direct\+\_\+pass\+\_\+n@{compute\+\_\+direct\+\_\+pass\+\_\+n}!ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}}
+\subsubsection[{\texorpdfstring{compute\+\_\+direct\+\_\+pass\+\_\+n(\+Data\+Type df[], const Data\+Type sf[], int pass) const }{compute_direct_pass_n(DataType df[], const DataType sf[], int pass) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DT $>$ void {\bf ffft\+::\+F\+F\+T\+Real}$<$ DT $>$\+::compute\+\_\+direct\+\_\+pass\+\_\+n (
+\begin{DoxyParamCaption}
+\item[{{\bf Data\+Type}}]{df\mbox{[}$\,$\mbox{]}, }
+\item[{const {\bf Data\+Type}}]{sf\mbox{[}$\,$\mbox{]}, }
+\item[{int}]{pass}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\hypertarget{classffft_1_1FFTReal_a9ac801815332d3abd86ff1d7703f07e3}{}\label{classffft_1_1FFTReal_a9ac801815332d3abd86ff1d7703f07e3}
+\index{ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}!compute\+\_\+direct\+\_\+pass\+\_\+n\+\_\+lut@{compute\+\_\+direct\+\_\+pass\+\_\+n\+\_\+lut}}
+\index{compute\+\_\+direct\+\_\+pass\+\_\+n\+\_\+lut@{compute\+\_\+direct\+\_\+pass\+\_\+n\+\_\+lut}!ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}}
+\subsubsection[{\texorpdfstring{compute\+\_\+direct\+\_\+pass\+\_\+n\+\_\+lut(\+Data\+Type df[], const Data\+Type sf[], int pass) const }{compute_direct_pass_n_lut(DataType df[], const DataType sf[], int pass) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DT $>$ void {\bf ffft\+::\+F\+F\+T\+Real}$<$ DT $>$\+::compute\+\_\+direct\+\_\+pass\+\_\+n\+\_\+lut (
+\begin{DoxyParamCaption}
+\item[{{\bf Data\+Type}}]{df\mbox{[}$\,$\mbox{]}, }
+\item[{const {\bf Data\+Type}}]{sf\mbox{[}$\,$\mbox{]}, }
+\item[{int}]{pass}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\hypertarget{classffft_1_1FFTReal_a91a4417bf6cff9a6af23f8538675a885}{}\label{classffft_1_1FFTReal_a91a4417bf6cff9a6af23f8538675a885}
+\index{ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}!compute\+\_\+direct\+\_\+pass\+\_\+n\+\_\+osc@{compute\+\_\+direct\+\_\+pass\+\_\+n\+\_\+osc}}
+\index{compute\+\_\+direct\+\_\+pass\+\_\+n\+\_\+osc@{compute\+\_\+direct\+\_\+pass\+\_\+n\+\_\+osc}!ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}}
+\subsubsection[{\texorpdfstring{compute\+\_\+direct\+\_\+pass\+\_\+n\+\_\+osc(\+Data\+Type df[], const Data\+Type sf[], int pass) const }{compute_direct_pass_n_osc(DataType df[], const DataType sf[], int pass) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DT $>$ void {\bf ffft\+::\+F\+F\+T\+Real}$<$ DT $>$\+::compute\+\_\+direct\+\_\+pass\+\_\+n\+\_\+osc (
+\begin{DoxyParamCaption}
+\item[{{\bf Data\+Type}}]{df\mbox{[}$\,$\mbox{]}, }
+\item[{const {\bf Data\+Type}}]{sf\mbox{[}$\,$\mbox{]}, }
+\item[{int}]{pass}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\hypertarget{classffft_1_1FFTReal_a388e0b14379bf9bf2c4e182713fee311}{}\label{classffft_1_1FFTReal_a388e0b14379bf9bf2c4e182713fee311}
+\index{ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}!compute\+\_\+fft\+\_\+general@{compute\+\_\+fft\+\_\+general}}
+\index{compute\+\_\+fft\+\_\+general@{compute\+\_\+fft\+\_\+general}!ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}}
+\subsubsection[{\texorpdfstring{compute\+\_\+fft\+\_\+general(\+Data\+Type f[], const Data\+Type x[]) const }{compute_fft_general(DataType f[], const DataType x[]) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DT $>$ void {\bf ffft\+::\+F\+F\+T\+Real}$<$ DT $>$\+::compute\+\_\+fft\+\_\+general (
+\begin{DoxyParamCaption}
+\item[{{\bf Data\+Type}}]{f\mbox{[}$\,$\mbox{]}, }
+\item[{const {\bf Data\+Type}}]{x\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\hypertarget{classffft_1_1FFTReal_afdaf4c3d2ccb9fffcaa7d686179dd9ff}{}\label{classffft_1_1FFTReal_afdaf4c3d2ccb9fffcaa7d686179dd9ff}
+\index{ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}!compute\+\_\+ifft\+\_\+general@{compute\+\_\+ifft\+\_\+general}}
+\index{compute\+\_\+ifft\+\_\+general@{compute\+\_\+ifft\+\_\+general}!ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}}
+\subsubsection[{\texorpdfstring{compute\+\_\+ifft\+\_\+general(const Data\+Type f[], Data\+Type x[]) const }{compute_ifft_general(const DataType f[], DataType x[]) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DT $>$ void {\bf ffft\+::\+F\+F\+T\+Real}$<$ DT $>$\+::compute\+\_\+ifft\+\_\+general (
+\begin{DoxyParamCaption}
+\item[{const {\bf Data\+Type}}]{f\mbox{[}$\,$\mbox{]}, }
+\item[{{\bf Data\+Type}}]{x\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\hypertarget{classffft_1_1FFTReal_a62f005d553d75a8e3910e3c1d4401466}{}\label{classffft_1_1FFTReal_a62f005d553d75a8e3910e3c1d4401466}
+\index{ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}!compute\+\_\+inverse\+\_\+pass\+\_\+1\+\_\+2@{compute\+\_\+inverse\+\_\+pass\+\_\+1\+\_\+2}}
+\index{compute\+\_\+inverse\+\_\+pass\+\_\+1\+\_\+2@{compute\+\_\+inverse\+\_\+pass\+\_\+1\+\_\+2}!ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}}
+\subsubsection[{\texorpdfstring{compute\+\_\+inverse\+\_\+pass\+\_\+1\+\_\+2(\+Data\+Type x[], const Data\+Type sf[]) const }{compute_inverse_pass_1_2(DataType x[], const DataType sf[]) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DT $>$ void {\bf ffft\+::\+F\+F\+T\+Real}$<$ DT $>$\+::compute\+\_\+inverse\+\_\+pass\+\_\+1\+\_\+2 (
+\begin{DoxyParamCaption}
+\item[{{\bf Data\+Type}}]{x\mbox{[}$\,$\mbox{]}, }
+\item[{const {\bf Data\+Type}}]{sf\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\hypertarget{classffft_1_1FFTReal_a8d059fd4e6798c30ca6b9cab089cba68}{}\label{classffft_1_1FFTReal_a8d059fd4e6798c30ca6b9cab089cba68}
+\index{ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}!compute\+\_\+inverse\+\_\+pass\+\_\+3@{compute\+\_\+inverse\+\_\+pass\+\_\+3}}
+\index{compute\+\_\+inverse\+\_\+pass\+\_\+3@{compute\+\_\+inverse\+\_\+pass\+\_\+3}!ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}}
+\subsubsection[{\texorpdfstring{compute\+\_\+inverse\+\_\+pass\+\_\+3(\+Data\+Type df[], const Data\+Type sf[]) const }{compute_inverse_pass_3(DataType df[], const DataType sf[]) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DT $>$ void {\bf ffft\+::\+F\+F\+T\+Real}$<$ DT $>$\+::compute\+\_\+inverse\+\_\+pass\+\_\+3 (
+\begin{DoxyParamCaption}
+\item[{{\bf Data\+Type}}]{df\mbox{[}$\,$\mbox{]}, }
+\item[{const {\bf Data\+Type}}]{sf\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\hypertarget{classffft_1_1FFTReal_a509266997c0de51dc63ce9b4a50e7d3c}{}\label{classffft_1_1FFTReal_a509266997c0de51dc63ce9b4a50e7d3c}
+\index{ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}!compute\+\_\+inverse\+\_\+pass\+\_\+n@{compute\+\_\+inverse\+\_\+pass\+\_\+n}}
+\index{compute\+\_\+inverse\+\_\+pass\+\_\+n@{compute\+\_\+inverse\+\_\+pass\+\_\+n}!ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}}
+\subsubsection[{\texorpdfstring{compute\+\_\+inverse\+\_\+pass\+\_\+n(\+Data\+Type df[], const Data\+Type sf[], int pass) const }{compute_inverse_pass_n(DataType df[], const DataType sf[], int pass) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DT $>$ void {\bf ffft\+::\+F\+F\+T\+Real}$<$ DT $>$\+::compute\+\_\+inverse\+\_\+pass\+\_\+n (
+\begin{DoxyParamCaption}
+\item[{{\bf Data\+Type}}]{df\mbox{[}$\,$\mbox{]}, }
+\item[{const {\bf Data\+Type}}]{sf\mbox{[}$\,$\mbox{]}, }
+\item[{int}]{pass}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\hypertarget{classffft_1_1FFTReal_ad392e218433964045a809dcfd49d0ddf}{}\label{classffft_1_1FFTReal_ad392e218433964045a809dcfd49d0ddf}
+\index{ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}!compute\+\_\+inverse\+\_\+pass\+\_\+n\+\_\+lut@{compute\+\_\+inverse\+\_\+pass\+\_\+n\+\_\+lut}}
+\index{compute\+\_\+inverse\+\_\+pass\+\_\+n\+\_\+lut@{compute\+\_\+inverse\+\_\+pass\+\_\+n\+\_\+lut}!ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}}
+\subsubsection[{\texorpdfstring{compute\+\_\+inverse\+\_\+pass\+\_\+n\+\_\+lut(\+Data\+Type df[], const Data\+Type sf[], int pass) const }{compute_inverse_pass_n_lut(DataType df[], const DataType sf[], int pass) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DT $>$ void {\bf ffft\+::\+F\+F\+T\+Real}$<$ DT $>$\+::compute\+\_\+inverse\+\_\+pass\+\_\+n\+\_\+lut (
+\begin{DoxyParamCaption}
+\item[{{\bf Data\+Type}}]{df\mbox{[}$\,$\mbox{]}, }
+\item[{const {\bf Data\+Type}}]{sf\mbox{[}$\,$\mbox{]}, }
+\item[{int}]{pass}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\hypertarget{classffft_1_1FFTReal_a9a91e58a78284fcb3f76ec6c33ac63a4}{}\label{classffft_1_1FFTReal_a9a91e58a78284fcb3f76ec6c33ac63a4}
+\index{ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}!compute\+\_\+inverse\+\_\+pass\+\_\+n\+\_\+osc@{compute\+\_\+inverse\+\_\+pass\+\_\+n\+\_\+osc}}
+\index{compute\+\_\+inverse\+\_\+pass\+\_\+n\+\_\+osc@{compute\+\_\+inverse\+\_\+pass\+\_\+n\+\_\+osc}!ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}}
+\subsubsection[{\texorpdfstring{compute\+\_\+inverse\+\_\+pass\+\_\+n\+\_\+osc(\+Data\+Type df[], const Data\+Type sf[], int pass) const }{compute_inverse_pass_n_osc(DataType df[], const DataType sf[], int pass) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DT $>$ void {\bf ffft\+::\+F\+F\+T\+Real}$<$ DT $>$\+::compute\+\_\+inverse\+\_\+pass\+\_\+n\+\_\+osc (
+\begin{DoxyParamCaption}
+\item[{{\bf Data\+Type}}]{df\mbox{[}$\,$\mbox{]}, }
+\item[{const {\bf Data\+Type}}]{sf\mbox{[}$\,$\mbox{]}, }
+\item[{int}]{pass}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\hypertarget{classffft_1_1FFTReal_a054d36f2f7bacf4bfa78c615d4fb491c}{}\label{classffft_1_1FFTReal_a054d36f2f7bacf4bfa78c615d4fb491c}
+\index{ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}!do\+\_\+fft@{do\+\_\+fft}}
+\index{do\+\_\+fft@{do\+\_\+fft}!ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}}
+\subsubsection[{\texorpdfstring{do\+\_\+fft(\+Data\+Type f[], const Data\+Type x[]) const }{do_fft(DataType f[], const DataType x[]) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DT $>$ void {\bf ffft\+::\+F\+F\+T\+Real}$<$ DT $>$\+::do\+\_\+fft (
+\begin{DoxyParamCaption}
+\item[{{\bf Data\+Type}}]{f\mbox{[}$\,$\mbox{]}, }
+\item[{const {\bf Data\+Type}}]{x\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+) const}\hypertarget{classffft_1_1FFTReal_a4c5b863a285c5a87f38517735cbf1352}{}\label{classffft_1_1FFTReal_a4c5b863a285c5a87f38517735cbf1352}
+\index{ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}!do\+\_\+ifft@{do\+\_\+ifft}}
+\index{do\+\_\+ifft@{do\+\_\+ifft}!ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}}
+\subsubsection[{\texorpdfstring{do\+\_\+ifft(const Data\+Type f[], Data\+Type x[]) const }{do_ifft(const DataType f[], DataType x[]) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DT $>$ void {\bf ffft\+::\+F\+F\+T\+Real}$<$ DT $>$\+::do\+\_\+ifft (
+\begin{DoxyParamCaption}
+\item[{const {\bf Data\+Type}}]{f\mbox{[}$\,$\mbox{]}, }
+\item[{{\bf Data\+Type}}]{x\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+) const}\hypertarget{classffft_1_1FFTReal_a8ab2e0da482cea88a61f01d58c074989}{}\label{classffft_1_1FFTReal_a8ab2e0da482cea88a61f01d58c074989}
+\index{ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}!get\+\_\+br\+\_\+ptr@{get\+\_\+br\+\_\+ptr}}
+\index{get\+\_\+br\+\_\+ptr@{get\+\_\+br\+\_\+ptr}!ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}}
+\subsubsection[{\texorpdfstring{get\+\_\+br\+\_\+ptr() const }{get_br_ptr() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DT $>$ const long $\ast$ {\bf ffft\+::\+F\+F\+T\+Real}$<$ DT $>$\+::get\+\_\+br\+\_\+ptr (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classffft_1_1FFTReal_ae8bd596a64bbc6ff19a1b7efe0da50bc}{}\label{classffft_1_1FFTReal_ae8bd596a64bbc6ff19a1b7efe0da50bc}
+\index{ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}!get\+\_\+length@{get\+\_\+length}}
+\index{get\+\_\+length@{get\+\_\+length}!ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}}
+\subsubsection[{\texorpdfstring{get\+\_\+length() const }{get_length() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DT $>$ long {\bf ffft\+::\+F\+F\+T\+Real}$<$ DT $>$\+::get\+\_\+length (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classffft_1_1FFTReal_abdd5b144ba5737c7ad27095d1658c29e}{}\label{classffft_1_1FFTReal_abdd5b144ba5737c7ad27095d1658c29e}
+\index{ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}!get\+\_\+trigo\+\_\+level\+\_\+index@{get\+\_\+trigo\+\_\+level\+\_\+index}}
+\index{get\+\_\+trigo\+\_\+level\+\_\+index@{get\+\_\+trigo\+\_\+level\+\_\+index}!ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}}
+\subsubsection[{\texorpdfstring{get\+\_\+trigo\+\_\+level\+\_\+index(int level) const }{get_trigo_level_index(int level) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DT $>$ long {\bf ffft\+::\+F\+F\+T\+Real}$<$ DT $>$\+::get\+\_\+trigo\+\_\+level\+\_\+index (
+\begin{DoxyParamCaption}
+\item[{int}]{level}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classffft_1_1FFTReal_ae99a3872cc7dafca94190ee0d0e50fec}{}\label{classffft_1_1FFTReal_ae99a3872cc7dafca94190ee0d0e50fec}
+\index{ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}!get\+\_\+trigo\+\_\+ptr@{get\+\_\+trigo\+\_\+ptr}}
+\index{get\+\_\+trigo\+\_\+ptr@{get\+\_\+trigo\+\_\+ptr}!ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}}
+\subsubsection[{\texorpdfstring{get\+\_\+trigo\+\_\+ptr(int level) const }{get_trigo_ptr(int level) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DT $>$ const {\bf F\+F\+T\+Real}$<$ DT $>$\+::{\bf Data\+Type} $\ast$ {\bf ffft\+::\+F\+F\+T\+Real}$<$ DT $>$\+::get\+\_\+trigo\+\_\+ptr (
+\begin{DoxyParamCaption}
+\item[{int}]{level}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classffft_1_1FFTReal_a9683286954e4f26259af2c0f5c8727cb}{}\label{classffft_1_1FFTReal_a9683286954e4f26259af2c0f5c8727cb}
+\index{ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}!init\+\_\+br\+\_\+lut@{init\+\_\+br\+\_\+lut}}
+\index{init\+\_\+br\+\_\+lut@{init\+\_\+br\+\_\+lut}!ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}}
+\subsubsection[{\texorpdfstring{init\+\_\+br\+\_\+lut()}{init_br_lut()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DT $>$ void {\bf ffft\+::\+F\+F\+T\+Real}$<$ DT $>$\+::init\+\_\+br\+\_\+lut (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classffft_1_1FFTReal_aa7315c1c287185277a8188eb4c6180c8}{}\label{classffft_1_1FFTReal_aa7315c1c287185277a8188eb4c6180c8}
+\index{ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}!init\+\_\+trigo\+\_\+lut@{init\+\_\+trigo\+\_\+lut}}
+\index{init\+\_\+trigo\+\_\+lut@{init\+\_\+trigo\+\_\+lut}!ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}}
+\subsubsection[{\texorpdfstring{init\+\_\+trigo\+\_\+lut()}{init_trigo_lut()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DT $>$ void {\bf ffft\+::\+F\+F\+T\+Real}$<$ DT $>$\+::init\+\_\+trigo\+\_\+lut (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classffft_1_1FFTReal_aac5c6c408da94a9d346e97aeded61ef2}{}\label{classffft_1_1FFTReal_aac5c6c408da94a9d346e97aeded61ef2}
+\index{ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}!init\+\_\+trigo\+\_\+osc@{init\+\_\+trigo\+\_\+osc}}
+\index{init\+\_\+trigo\+\_\+osc@{init\+\_\+trigo\+\_\+osc}!ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}}
+\subsubsection[{\texorpdfstring{init\+\_\+trigo\+\_\+osc()}{init_trigo_osc()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DT $>$ void {\bf ffft\+::\+F\+F\+T\+Real}$<$ DT $>$\+::init\+\_\+trigo\+\_\+osc (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classffft_1_1FFTReal_adcac1258791df06ea6597c7f4fc49f63}{}\label{classffft_1_1FFTReal_adcac1258791df06ea6597c7f4fc49f63}
+\index{ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}}
+\subsubsection[{\texorpdfstring{operator"!=(const F\+F\+T\+Real \&other)}{operator!=(const FFTReal &other)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DT$>$ bool {\bf ffft\+::\+F\+F\+T\+Real}$<$ DT $>$\+::operator!= (
+\begin{DoxyParamCaption}
+\item[{const {\bf F\+F\+T\+Real}$<$ DT $>$ \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classffft_1_1FFTReal_a0ab668257cd92ab58418bbfd4a248afe}{}\label{classffft_1_1FFTReal_a0ab668257cd92ab58418bbfd4a248afe}
+\index{ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}!operator=@{operator=}}
+\index{operator=@{operator=}!ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}}
+\subsubsection[{\texorpdfstring{operator=(const F\+F\+T\+Real \&other)}{operator=(const FFTReal &other)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DT$>$ {\bf F\+F\+T\+Real}\& {\bf ffft\+::\+F\+F\+T\+Real}$<$ DT $>$\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf F\+F\+T\+Real}$<$ DT $>$ \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classffft_1_1FFTReal_a65d44f8ea83d40a8e49ec9c90f6689d3}{}\label{classffft_1_1FFTReal_a65d44f8ea83d40a8e49ec9c90f6689d3}
+\index{ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}!operator==@{operator==}}
+\index{operator==@{operator==}!ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}}
+\subsubsection[{\texorpdfstring{operator==(const F\+F\+T\+Real \&other)}{operator==(const FFTReal &other)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DT$>$ bool {\bf ffft\+::\+F\+F\+T\+Real}$<$ DT $>$\+::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf F\+F\+T\+Real}$<$ DT $>$ \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classffft_1_1FFTReal_a3569dbeffa58f00d8e4690a46be85292}{}\label{classffft_1_1FFTReal_a3569dbeffa58f00d8e4690a46be85292}
+\index{ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}!rescale@{rescale}}
+\index{rescale@{rescale}!ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}}
+\subsubsection[{\texorpdfstring{rescale(\+Data\+Type x[]) const }{rescale(DataType x[]) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DT $>$ void {\bf ffft\+::\+F\+F\+T\+Real}$<$ DT $>$\+::rescale (
+\begin{DoxyParamCaption}
+\item[{{\bf Data\+Type}}]{x\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+) const}\hypertarget{classffft_1_1FFTReal_a9e30fff775905b1059aa9299004ee228}{}\label{classffft_1_1FFTReal_a9e30fff775905b1059aa9299004ee228}
+\index{ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}!use\+\_\+buffer@{use\+\_\+buffer}}
+\index{use\+\_\+buffer@{use\+\_\+buffer}!ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}}
+\subsubsection[{\texorpdfstring{use\+\_\+buffer() const }{use_buffer() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DT $>$ {\bf F\+F\+T\+Real}$<$ DT $>$\+::{\bf Data\+Type} $\ast$ {\bf ffft\+::\+F\+F\+T\+Real}$<$ DT $>$\+::use\+\_\+buffer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classffft_1_1FFTReal_af1fcd007f1cf0b41bd2188e0b3cd5cca}{}\label{classffft_1_1FFTReal_af1fcd007f1cf0b41bd2188e0b3cd5cca}
+
+
+\subsection{Member Data Documentation}
+\index{ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}!\+\_\+br\+\_\+lut@{\+\_\+br\+\_\+lut}}
+\index{\+\_\+br\+\_\+lut@{\+\_\+br\+\_\+lut}!ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}}
+\subsubsection[{\texorpdfstring{\+\_\+br\+\_\+lut}{_br_lut}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DT$>$ {\bf Dyn\+Array}$<$long$>$ {\bf ffft\+::\+F\+F\+T\+Real}$<$ DT $>$\+::\+\_\+br\+\_\+lut\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classffft_1_1FFTReal_a0030146a32be3c87c47379c4db2caf12}{}\label{classffft_1_1FFTReal_a0030146a32be3c87c47379c4db2caf12}
+\index{ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}!\+\_\+buffer@{\+\_\+buffer}}
+\index{\+\_\+buffer@{\+\_\+buffer}!ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}}
+\subsubsection[{\texorpdfstring{\+\_\+buffer}{_buffer}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DT$>$ {\bf Dyn\+Array}$<${\bf Data\+Type}$>$ {\bf ffft\+::\+F\+F\+T\+Real}$<$ DT $>$\+::\+\_\+buffer\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [private]}}\hypertarget{classffft_1_1FFTReal_a9e29976841e3bf469336e3ea54e918f3}{}\label{classffft_1_1FFTReal_a9e29976841e3bf469336e3ea54e918f3}
+\index{ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}!\+\_\+length@{\+\_\+length}}
+\index{\+\_\+length@{\+\_\+length}!ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}}
+\subsubsection[{\texorpdfstring{\+\_\+length}{_length}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DT$>$ const long {\bf ffft\+::\+F\+F\+T\+Real}$<$ DT $>$\+::\+\_\+length\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classffft_1_1FFTReal_a04c882856db18a8be9c2c0b74fa4faf5}{}\label{classffft_1_1FFTReal_a04c882856db18a8be9c2c0b74fa4faf5}
+\index{ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}!\+\_\+nbr\+\_\+bits@{\+\_\+nbr\+\_\+bits}}
+\index{\+\_\+nbr\+\_\+bits@{\+\_\+nbr\+\_\+bits}!ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}}
+\subsubsection[{\texorpdfstring{\+\_\+nbr\+\_\+bits}{_nbr_bits}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DT$>$ const int {\bf ffft\+::\+F\+F\+T\+Real}$<$ DT $>$\+::\+\_\+nbr\+\_\+bits\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classffft_1_1FFTReal_a009acfbabe3450f2d9cb0bcb7eb7a366}{}\label{classffft_1_1FFTReal_a009acfbabe3450f2d9cb0bcb7eb7a366}
+\index{ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}!\+\_\+trigo\+\_\+lut@{\+\_\+trigo\+\_\+lut}}
+\index{\+\_\+trigo\+\_\+lut@{\+\_\+trigo\+\_\+lut}!ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}}
+\subsubsection[{\texorpdfstring{\+\_\+trigo\+\_\+lut}{_trigo_lut}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DT$>$ {\bf Dyn\+Array}$<${\bf Data\+Type}$>$ {\bf ffft\+::\+F\+F\+T\+Real}$<$ DT $>$\+::\+\_\+trigo\+\_\+lut\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classffft_1_1FFTReal_a5c28c732a8f3a262bc6e0527c3903970}{}\label{classffft_1_1FFTReal_a5c28c732a8f3a262bc6e0527c3903970}
+\index{ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}!\+\_\+trigo\+\_\+osc@{\+\_\+trigo\+\_\+osc}}
+\index{\+\_\+trigo\+\_\+osc@{\+\_\+trigo\+\_\+osc}!ffft\+::\+F\+F\+T\+Real@{ffft\+::\+F\+F\+T\+Real}}
+\subsubsection[{\texorpdfstring{\+\_\+trigo\+\_\+osc}{_trigo_osc}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class DT$>$ {\bf Dyn\+Array}$<${\bf Osc\+Type}$>$ {\bf ffft\+::\+F\+F\+T\+Real}$<$ DT $>$\+::\+\_\+trigo\+\_\+osc\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [private]}}\hypertarget{classffft_1_1FFTReal_a555f6fccc6ae27c97c96c5a1ddfac971}{}\label{classffft_1_1FFTReal_a555f6fccc6ae27c97c96c5a1ddfac971}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/ffft/\hyperlink{FFTReal_8h}{F\+F\+T\+Real.\+h}\item 
+include/ffft/\hyperlink{FFTReal_8hpp}{F\+F\+T\+Real.\+hpp}\end{DoxyCompactItemize}

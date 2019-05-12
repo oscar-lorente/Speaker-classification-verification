@@ -1,0 +1,201 @@
+#================================================================================
+#
+#  Copyright (C) Universitat Politècnica de Catalunya, Barcelona, Spain.
+# 
+#  Permission to copy, use, modify, sell and distribute this software
+#  is granted.
+#  This software is provided "as is" without express or implied
+#  warranty, and with no claim as to its suitability for any purpose.
+# 
+#  Antonio Bonafonte
+#  Barcelona, 2004
+#================================================================================
+
+CXX	  := g++
+CC	  := gcc
+
+#------------------------------------------------------------------------------------
+SHELL = /bin/sh
+THIS_DIR    := $(shell pwd)
+
+ROOT_OBJ    := $(ROOT_DIR)/intermediate
+ROOT_LIB    := $(ROOT_DIR)/lib
+ROOT_BIN    := $(ROOT_DIR)/bin
+ROOT_MOD    := $(ROOT_DIR)/modules
+#------------------------------------------------------------------------------------
+ARCH        := $(shell uname --all | tr ' ' '\n' | grep ^i*.86$ | head -1)
+#------------------------------------------------------------------------------------
+
+ifneq (,$(findstring $(ROOT_SOURCE),$(THIS_DIR)))
+#------------------------------------------------------------------------------------
+# We are in the source directory; change to the build one and make from there
+# Redo with the same makefile from the target directory $(BUILD_DIR)
+#------------------------------------------------------------------------------------
+
+  THIS_IS_A_SRC_DIR   := "yep!"
+
+  export SOURCE_DIR   := $(THIS_DIR)
+  MAKEFILE := $(THIS_DIR)/makefile
+
+
+.PHONY: help all debug release clean clean_debug clean_release \
+        clean_all clean_all_debug clean_all_release
+
+#------------------------------------------------------------------------------------
+# Choose your favorite default rule, the one made by make without arguments
+default_rule: help
+
+help:
+	@echo " "
+	@echo "------------------------------------------------------------------------"
+	@echo "Use:"
+	@echo '  make release       : create "bin-&-lib"  release version'
+	@echo '  make debug         : create "bin-&-lib"  debug version '
+	@echo "  make all           : make debug and release  "
+	@echo " "
+	@echo '  make clean_release : remove the "release" intermediate files'
+	@echo '  make clean_debug   : remove the "debug"   intermediate files'
+	@echo '  make clean         : make clean_debug and clean_release'
+	@echo " "
+	@echo '  make clean_all     : remove also the "bin-&-lib" for both '
+	@echo '                       debug and release'
+	@echo " "
+	@echo '  make help          : show this menu'
+	@echo "------------------------------------------------------------------------"
+	@echo " "
+
+
+all: debug release
+clean: clean_release clean_debug
+clean_all: clean_all_release clean_all_debug
+
+release clean_release clean_all_release: BUILD_DIR := \
+       $(patsubst $(ROOT_SOURCE)/%,$(ROOT_OBJ)/%/release,$(THIS_DIR))
+
+debug clean_debug clean_all_debug:   BUILD_DIR := \
+       $(patsubst $(ROOT_SOURCE)/%,$(ROOT_OBJ)/%/debug,$(THIS_DIR))
+
+
+release:
+	@-test  -d $(BUILD_DIR) || \
+	(echo "Create $(BUILD_DIR)"; mkdir -p $(BUILD_DIR) )
+	@-test  -d $(ROOT_BIN)/release || \
+	(echo "Create $(ROOT_BIN)/release)"; mkdir -p $(ROOT_BIN)/release )
+	@-test  -d $(ROOT_LIB)/release || \
+	(echo "Create $(ROOT_LIB)/release)"; mkdir -p $(ROOT_LIB)/release )
+	@echo " "
+	@echo " "
+	@echo "=============================================================="
+	@echo "Make release from $(BUILD_DIR)"
+	@echo "--------------------------------------------------------------"
+	$(MAKE)   -C $(BUILD_DIR) -f $(MAKEFILE)
+	@echo " "
+
+debug:
+	@-test  -d $(BUILD_DIR) || \
+	(echo "Create $(BUILD_DIR)"; mkdir -p $(BUILD_DIR) )
+	@-test  -d $(ROOT_BIN)/debug || \
+	(echo "Create lib/debug)"; mkdir -p $(ROOT_BIN)/debug )
+	@-test  -d $(ROOT_LIB)/debug || \
+	(echo "Create lib/debug)"; mkdir -p $(ROOT_LIB)/debug )
+	@echo " "
+	@echo " "
+	@echo "=============================================================="
+	@echo "Make debug from $(BUILD_DIR)"
+	@echo "--------------------------------------------------------------"
+	@$(MAKE)   -C $(BUILD_DIR) -f $(MAKEFILE)
+	@echo "--------------------------------------------------------------"
+	@echo " "
+
+
+clean_debug clean_release:
+	@-test  -d $(BUILD_DIR) || \
+	(echo "Create $(BUILD_DIR)"; mkdir -p $(BUILD_DIR) )
+	@echo " "
+	@echo " "
+	@echo "=============================================================="
+	@echo "Make clean in $(BUILD_DIR)"
+	@echo "--------------------------------------------------------------"
+	@$(MAKE)   -C $(BUILD_DIR) -f $(MAKEFILE) clean
+	@echo "--------------------------------------------------------------"
+	@echo " "
+
+clean_all_debug clean_all_release:
+	@-test  -d $(BUILD_DIR) || \
+	(echo "Create $(BUILD_DIR)"; mkdir -p $(BUILD_DIR) )
+	@echo " "
+	@echo " "
+	@echo "=============================================================="
+	@echo "Make clean_all from $(BUILD_DIR)"
+	@echo "--------------------------------------------------------------"
+	@$(MAKE)   -C $(BUILD_DIR) -f $(MAKEFILE) clean_all
+	@echo "--------------------------------------------------------------"
+	@echo " "
+
+
+else
+#------------------------------------------------------------------------------------
+# We are in the target directory; 
+# Define compile-related variables
+#------------------------------------------------------------------------------------
+
+
+#------------------------------------------------------------------------------------
+# Rules to generate dependencies files
+#------------------------------------------------------------------------------------
+%.d: %.cpp
+	@echo  Generating dependency file: $@
+	@set -e; $(CXX) $(CXXFLAGS) -MM $(CPPFLAGS) $< \
+	| sed 's/\($*\)\.o[ :]*/\1.o $@ : /g' > $@; \
+	[ -s $@ ] || rm -f $@          
+
+%.d: %.c
+	@echo  Generating dependency file: $@
+	@set -e; $(CC) $(CFLAGS) -MM $(CPPFLAGS) $< \
+	| sed 's/\($*\)\.o[ :]*/\1.o $@ : /g' > $@; \
+	[ -s $@ ] || rm -f $@          
+
+#------------------------------------------------------------------------------------
+
+
+
+#------------------------------------------------------------------------------------
+# C and C++ compiler and flags and BIN, LIB and OBJ dir, depending of the keyword
+# '/debug/' in the present path.
+#------------------------------------------------------------------------------------
+
+
+
+# Preprocessor flag: where to find includes, define macros, etc.
+CPPFLAGS  = -Wall -Wno-reorder -I$(SOURCE_DIR) -I$(SOURCE_DIR)/../include
+
+
+# Generic libraries (to avoid include a very generic one in all the projects)
+#LDLIBS    := -lpthread  -ldl -lpav
+LDLIBS    := -ldl -lpav -lsndfile
+
+ifneq (,$(findstring /debug,$(THIS_DIR)))
+  BIN_DIR  := $(ROOT_BIN)/debug
+  LIB_DIR  := $(ROOT_LIB)/debug
+  MOD_DIR  := $(ROOT_MOD)/debug
+  LDDFLAGS := -rdynamic -Wl,--rpath,$(LIB_DIR),--rpath,$(MOD_DIR) -L$(LIB_DIR) -L$(MOD_DIR)
+  CFLAGS   += -g -O0 -fPIC -fno-inline
+  CXXFLAGS += -g -O0 -fno-inline
+  CPPFLAGS += -Wall $(SOLUTION) -D_DEBUG -DSTDC_HEADERS -pthread -fPIC -DMOD_DIR=\"$(MOD_DIR)\"
+  VPATH        := $(SOURCE_DIR):$(LIB_DIR)
+else
+  BIN_DIR  := $(ROOT_BIN)/release
+  LIB_DIR  := $(ROOT_LIB)/release
+  MOD_DIR  := $(ROOT_MOD)/release
+  LDDFLAGS := -rdynamic -Wl,--rpath,$(LIB_DIR),--rpath,$(MOD_DIR) -L$(LIB_DIR) -L$(MOD_DIR)
+  CFLAGS   += -O3 -fPIC -finline-functions -Wno-inline
+  CXXFLAGS += -O3 -finline-functions -Wno-inline
+  CPPFLAGS += -Wall $(SOLUTION) -DNDEBUG -DSTDC_HEADERS -pthread -fPIC -DMOD_DIR=\"$(MOD_DIR)\"
+  VPATH        := $(SOURCE_DIR):$(LIB_DIR)
+endif
+
+MODULE_NAME  := $(notdir $(SOURCE_DIR))
+
+endif
+
+

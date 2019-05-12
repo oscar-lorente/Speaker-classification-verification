@@ -1,0 +1,287 @@
+\hypertarget{classupc_1_1DigitalFilter}{}\section{upc\+:\+:Digital\+Filter Class Reference}
+\label{classupc_1_1DigitalFilter}\index{upc\+::\+Digital\+Filter@{upc\+::\+Digital\+Filter}}
+
+
+Digital filter implemented using direct form.  
+
+
+
+
+{\ttfamily \#include $<$digital\+\_\+filter.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classupc_1_1DigitalFilter_a3d8e61b92170380d06b26aee1ebc1f16}{Digital\+Filter} (const std\+::vector$<$ \hyperlink{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}{float} $>$ \&\+\_\+a, const std\+::vector$<$ \hyperlink{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}{float} $>$ \&\+\_\+b, \hyperlink{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}{float} g=1.\+0\+F)
+\begin{DoxyCompactList}\small\item\em Create filter. \end{DoxyCompactList}\item 
+\hyperlink{classupc_1_1DigitalFilter_ac3c32e0d51a88354482f13528e9a7842}{Digital\+Filter} ()
+\begin{DoxyCompactList}\small\item\em create void filter H(z) = 1 \end{DoxyCompactList}\item 
+void \hyperlink{classupc_1_1DigitalFilter_ade3c3a24bbfbc1b2edbf4bcd0885a9e6}{set\+\_\+a} (std\+::vector$<$ \hyperlink{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}{float} $>$ const \&A)
+\begin{DoxyCompactList}\small\item\em Change denominator (state conditions only cleaned if order changes) \end{DoxyCompactList}\item 
+void \hyperlink{classupc_1_1DigitalFilter_a9f23a5e9db027eb0c9b70bd9b5d08e09}{set\+\_\+b} (const std\+::vector$<$ \hyperlink{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}{float} $>$ \&B)
+\begin{DoxyCompactList}\small\item\em Change denominator (state conditions only cleaned if order changes) \end{DoxyCompactList}\item 
+\hyperlink{classupc_1_1DigitalFilter_a54937beb73f0789cb9265498522da628}{Digital\+Filter} (const \hyperlink{classupc_1_1DigitalFilter}{Digital\+Filter} \&\hyperlink{FFTReal__readme_8txt_abbf3cc73d1e3e4714ab1639819396eca}{f})
+\item 
+\hyperlink{classupc_1_1DigitalFilter}{Digital\+Filter} \& \hyperlink{classupc_1_1DigitalFilter_a26527559b1b71aad240deca22f5599ec}{operator=} (const \hyperlink{classupc_1_1DigitalFilter}{Digital\+Filter} \&\hyperlink{FFTReal__readme_8txt_abbf3cc73d1e3e4714ab1639819396eca}{f})
+\begin{DoxyCompactList}\small\item\em Asign operator (copy a filter from other) \end{DoxyCompactList}\item 
+void \hyperlink{classupc_1_1DigitalFilter_a2b97aaeacac8b5a8b52e1bd8fc295970}{set\+\_\+resonator} (\hyperlink{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}{float} norm\+\_\+central\+\_\+freq, \hyperlink{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}{float} norm\+\_\+bandwidth)
+\begin{DoxyCompactList}\small\item\em Second order AR band-\/pass filter defined by central frequency and bandwidth. \end{DoxyCompactList}\item 
+void \hyperlink{classupc_1_1DigitalFilter_a506905346c44ac46c292ea1fa1212c3e}{set\+\_\+gain} (\hyperlink{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}{float} g)
+\item 
+void \hyperlink{classupc_1_1DigitalFilter_ad6c0f9584687642434081448f85d89f9}{clear} ()
+\begin{DoxyCompactList}\small\item\em clean state conditions \end{DoxyCompactList}\item 
+\hyperlink{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}{float} \hyperlink{classupc_1_1DigitalFilter_a8d8f578b514a2dd58a545a68fdf441ee}{operator()} (\hyperlink{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}{float} \hyperlink{FFTReal__readme_8txt_a9c92ac89d1560f812393ca39a19e581e}{x})
+\begin{DoxyCompactList}\small\item\em Filter one sample. \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}{float} $>$ \hyperlink{classupc_1_1DigitalFilter_aea8cdd6504cf9c4ae1a6d9a28e1bcaa4}{operator()} (const std\+::vector$<$ \hyperlink{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}{float} $>$ \&\hyperlink{FFTReal__readme_8txt_a9c92ac89d1560f812393ca39a19e581e}{x})
+\begin{DoxyCompactList}\small\item\em Filter a vector of samples. \end{DoxyCompactList}\item 
+void \hyperlink{classupc_1_1DigitalFilter_a08b53e2a3884053f4a48d6860194cccb}{operator()} (std\+::vector$<$ \hyperlink{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}{float} $>$\+::const\+\_\+iterator beg\+Src, std\+::vector$<$ \hyperlink{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}{float} $>$\+::const\+\_\+iterator end\+Src, std\+::vector$<$ \hyperlink{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}{float} $>$\+::iterator beg\+Dst)
+\begin{DoxyCompactList}\small\item\em Filter several samples, from beg\+Src to end\+Src, and save at beg\+Dst and following positions. \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}{float} $>$ \hyperlink{classupc_1_1DigitalFilter_a81e5fab2bf8cbab0e70622b7fa2cfe91}{freqz} (std\+::vector$<$ \hyperlink{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}{float} $>$ const freq, bool db=true) const 
+\item 
+std\+::vector$<$ \hyperlink{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}{float} $>$ \hyperlink{classupc_1_1DigitalFilter_a580b4f2584d0b993e1fc6f9d9256b9f8}{freqz} (unsigned int \hyperlink{FFTReal__readme_8txt_a049dd452c22185832440207517cffdaa}{N}, bool db=true) const 
+\item 
+\hyperlink{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}{float} \hyperlink{classupc_1_1DigitalFilter_a9589b9615fbd51754afb757c5431b1e0}{sfreqz} (\hyperlink{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}{float} freq, bool db=true) const 
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classupc_1_1DigitalFilter_a66ebd4fb1a26af461c4845efbc528236}{prepare\+\_\+state} ()
+\begin{DoxyCompactList}\small\item\em Allocate memory for stated conditions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \hyperlink{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}{float} $>$ \hyperlink{classupc_1_1DigitalFilter_a2452cdde3d6845b838d9ebed8099dc4e}{a}
+\begin{DoxyCompactList}\small\item\em Denominator A(z) = a0+a1 z$^\wedge$-\/1 + a2 z$^\wedge$-\/2 ... an z$^\wedge$-\/n) \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}{float} $>$ \hyperlink{classupc_1_1DigitalFilter_ad72194d793b429b0f0eea9fab017da68}{b}
+\begin{DoxyCompactList}\small\item\em Numerator B(z) = b0+b1 z$^\wedge$-\/1 + b2 z$^\wedge$-\/2 ... bm z$^\wedge$-\/m) \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}{float} $>$ \hyperlink{classupc_1_1DigitalFilter_ad8b8d1c7bde2fca050aa297b66d69179}{u}
+\begin{DoxyCompactList}\small\item\em State conditions, implemented as circular buffer; call \char`\"{}clear()\char`\"{} to reset them. \end{DoxyCompactList}\item 
+\hyperlink{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}{float} \hyperlink{classupc_1_1DigitalFilter_aaa94a0d08f87c98612d9471719bd773a}{gain}
+\item 
+\hyperlink{classupc_1_1CircularIndex}{Circular\+Index} \hyperlink{classupc_1_1DigitalFilter_ae2b58018045cfca38cad387dd4b82e83}{index}
+\begin{DoxyCompactList}\small\item\em additional gain factor \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Digital filter implemented using direct form. 
+
+This class implements digital filtering. The filter is stored as rational funcion H(z) = g B(z)/A(z) Being g\+: gain B(z) = b0 +b1 z$^\wedge$-\/1 + b2 z$^\wedge$-\/2 ... bm z$^\wedge$-\/m A(z) = a0 +a1 z$^\wedge$-\/1 + a2 z$^\wedge$-\/2 ... an z$^\wedge$-\/n
+
+The state conditions are saved after each call to the filter. The filter is implemented using the direct form. Y(z) = B(z)/A(z) X(z) =$>$ U(z) = X(z)/A(z); Y(z) = B(z) U(z) State conditions\+: u\mbox{[}n\mbox{]}
+
+The state conditions are only cleared either\+:
+\begin{DoxyItemize}
+\item explicitely calling clean()
+\item by a change in filter coeficients that imply an order filter
+\end{DoxyItemize}
+
+The filters coefficients are set using \hyperlink{classupc_1_1DigitalFilter_ade3c3a24bbfbc1b2edbf4bcd0885a9e6}{set\+\_\+a()}, \hyperlink{classupc_1_1DigitalFilter_a9f23a5e9db027eb0c9b70bd9b5d08e09}{set\+\_\+b()}, \hyperlink{classupc_1_1DigitalFilter_a506905346c44ac46c292ea1fa1212c3e}{set\+\_\+gain()}. An alternative convinient method exist for 2nd order resonators, using the central frequency and the resonator bandwidth\+: \hyperlink{classupc_1_1DigitalFilter_a2b97aaeacac8b5a8b52e1bd8fc295970}{set\+\_\+resonator()} 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{upc\+::\+Digital\+Filter@{upc\+::\+Digital\+Filter}!Digital\+Filter@{Digital\+Filter}}
+\index{Digital\+Filter@{Digital\+Filter}!upc\+::\+Digital\+Filter@{upc\+::\+Digital\+Filter}}
+\subsubsection[{\texorpdfstring{Digital\+Filter(const std\+::vector$<$ float $>$ \&\+\_\+a, const std\+::vector$<$ float $>$ \&\+\_\+b, float g=1.\+0\+F)}{DigitalFilter(const std::vector< float > &_a, const std::vector< float > &_b, float g=1.0F)}}]{\setlength{\rightskip}{0pt plus 5cm}upc\+::\+Digital\+Filter\+::\+Digital\+Filter (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ {\bf float} $>$ \&}]{\+\_\+a, }
+\item[{const std\+::vector$<$ {\bf float} $>$ \&}]{\+\_\+b, }
+\item[{{\bf float}}]{g = {\ttfamily 1.0F}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classupc_1_1DigitalFilter_a3d8e61b92170380d06b26aee1ebc1f16}{}\label{classupc_1_1DigitalFilter_a3d8e61b92170380d06b26aee1ebc1f16}
+
+
+Create filter. 
+
+\index{upc\+::\+Digital\+Filter@{upc\+::\+Digital\+Filter}!Digital\+Filter@{Digital\+Filter}}
+\index{Digital\+Filter@{Digital\+Filter}!upc\+::\+Digital\+Filter@{upc\+::\+Digital\+Filter}}
+\subsubsection[{\texorpdfstring{Digital\+Filter()}{DigitalFilter()}}]{\setlength{\rightskip}{0pt plus 5cm}upc\+::\+Digital\+Filter\+::\+Digital\+Filter (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classupc_1_1DigitalFilter_ac3c32e0d51a88354482f13528e9a7842}{}\label{classupc_1_1DigitalFilter_ac3c32e0d51a88354482f13528e9a7842}
+
+
+create void filter H(z) = 1 
+
+\index{upc\+::\+Digital\+Filter@{upc\+::\+Digital\+Filter}!Digital\+Filter@{Digital\+Filter}}
+\index{Digital\+Filter@{Digital\+Filter}!upc\+::\+Digital\+Filter@{upc\+::\+Digital\+Filter}}
+\subsubsection[{\texorpdfstring{Digital\+Filter(const Digital\+Filter \&f)}{DigitalFilter(const DigitalFilter &f)}}]{\setlength{\rightskip}{0pt plus 5cm}upc\+::\+Digital\+Filter\+::\+Digital\+Filter (
+\begin{DoxyParamCaption}
+\item[{const {\bf Digital\+Filter} \&}]{f}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classupc_1_1DigitalFilter_a54937beb73f0789cb9265498522da628}{}\label{classupc_1_1DigitalFilter_a54937beb73f0789cb9265498522da628}
+Create filter 
+
+\subsection{Member Function Documentation}
+\index{upc\+::\+Digital\+Filter@{upc\+::\+Digital\+Filter}!clear@{clear}}
+\index{clear@{clear}!upc\+::\+Digital\+Filter@{upc\+::\+Digital\+Filter}}
+\subsubsection[{\texorpdfstring{clear()}{clear()}}]{\setlength{\rightskip}{0pt plus 5cm}void upc\+::\+Digital\+Filter\+::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classupc_1_1DigitalFilter_ad6c0f9584687642434081448f85d89f9}{}\label{classupc_1_1DigitalFilter_ad6c0f9584687642434081448f85d89f9}
+
+
+clean state conditions 
+
+\index{upc\+::\+Digital\+Filter@{upc\+::\+Digital\+Filter}!freqz@{freqz}}
+\index{freqz@{freqz}!upc\+::\+Digital\+Filter@{upc\+::\+Digital\+Filter}}
+\subsubsection[{\texorpdfstring{freqz(std\+::vector$<$ float $>$ const freq, bool db=true) const }{freqz(std::vector< float > const freq, bool db=true) const }}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ {\bf float} $>$ upc\+::\+Digital\+Filter\+::freqz (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ {\bf float} $>$ const}]{freq, }
+\item[{bool}]{db = {\ttfamily true}}
+\end{DoxyParamCaption}
+) const}\hypertarget{classupc_1_1DigitalFilter_a81e5fab2bf8cbab0e70622b7fa2cfe91}{}\label{classupc_1_1DigitalFilter_a81e5fab2bf8cbab0e70622b7fa2cfe91}
+Get freq. response of filter in the given frequencies (freq). \hyperlink{classupc_1_1DigitalFilter_a9589b9615fbd51754afb757c5431b1e0}{sfreqz()} is called for each given frequency \index{upc\+::\+Digital\+Filter@{upc\+::\+Digital\+Filter}!freqz@{freqz}}
+\index{freqz@{freqz}!upc\+::\+Digital\+Filter@{upc\+::\+Digital\+Filter}}
+\subsubsection[{\texorpdfstring{freqz(unsigned int N, bool db=true) const }{freqz(unsigned int N, bool db=true) const }}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ {\bf float} $>$ upc\+::\+Digital\+Filter\+::freqz (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{N, }
+\item[{bool}]{db = {\ttfamily true}}
+\end{DoxyParamCaption}
+) const}\hypertarget{classupc_1_1DigitalFilter_a580b4f2584d0b993e1fc6f9d9256b9f8}{}\label{classupc_1_1DigitalFilter_a580b4f2584d0b993e1fc6f9d9256b9f8}
+Get freq. response of filter in N discrite frequencies, from 0 to 0.\+5. \hyperlink{classupc_1_1DigitalFilter_a9589b9615fbd51754afb757c5431b1e0}{sfreqz()} is called for each given frequency \index{upc\+::\+Digital\+Filter@{upc\+::\+Digital\+Filter}!operator()@{operator()}}
+\index{operator()@{operator()}!upc\+::\+Digital\+Filter@{upc\+::\+Digital\+Filter}}
+\subsubsection[{\texorpdfstring{operator()(float x)}{operator()(float x)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf float} upc\+::\+Digital\+Filter\+::operator() (
+\begin{DoxyParamCaption}
+\item[{{\bf float}}]{x}
+\end{DoxyParamCaption}
+)}\hypertarget{classupc_1_1DigitalFilter_a8d8f578b514a2dd58a545a68fdf441ee}{}\label{classupc_1_1DigitalFilter_a8d8f578b514a2dd58a545a68fdf441ee}
+
+
+Filter one sample. 
+
+\index{upc\+::\+Digital\+Filter@{upc\+::\+Digital\+Filter}!operator()@{operator()}}
+\index{operator()@{operator()}!upc\+::\+Digital\+Filter@{upc\+::\+Digital\+Filter}}
+\subsubsection[{\texorpdfstring{operator()(const std\+::vector$<$ float $>$ \&x)}{operator()(const std::vector< float > &x)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ {\bf float} $>$ upc\+::\+Digital\+Filter\+::operator() (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ {\bf float} $>$ \&}]{x}
+\end{DoxyParamCaption}
+)}\hypertarget{classupc_1_1DigitalFilter_aea8cdd6504cf9c4ae1a6d9a28e1bcaa4}{}\label{classupc_1_1DigitalFilter_aea8cdd6504cf9c4ae1a6d9a28e1bcaa4}
+
+
+Filter a vector of samples. 
+
+\index{upc\+::\+Digital\+Filter@{upc\+::\+Digital\+Filter}!operator()@{operator()}}
+\index{operator()@{operator()}!upc\+::\+Digital\+Filter@{upc\+::\+Digital\+Filter}}
+\subsubsection[{\texorpdfstring{operator()(std\+::vector$<$ float $>$\+::const\+\_\+iterator beg\+Src, std\+::vector$<$ float $>$\+::const\+\_\+iterator end\+Src, std\+::vector$<$ float $>$\+::iterator beg\+Dst)}{operator()(std::vector< float >::const_iterator begSrc, std::vector< float >::const_iterator endSrc, std::vector< float >::iterator begDst)}}]{\setlength{\rightskip}{0pt plus 5cm}void upc\+::\+Digital\+Filter\+::operator() (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ {\bf float} $>$\+::const\+\_\+iterator}]{beg\+Src, }
+\item[{std\+::vector$<$ {\bf float} $>$\+::const\+\_\+iterator}]{end\+Src, }
+\item[{std\+::vector$<$ {\bf float} $>$\+::iterator}]{beg\+Dst}
+\end{DoxyParamCaption}
+)}\hypertarget{classupc_1_1DigitalFilter_a08b53e2a3884053f4a48d6860194cccb}{}\label{classupc_1_1DigitalFilter_a08b53e2a3884053f4a48d6860194cccb}
+
+
+Filter several samples, from beg\+Src to end\+Src, and save at beg\+Dst and following positions. 
+
+\index{upc\+::\+Digital\+Filter@{upc\+::\+Digital\+Filter}!operator=@{operator=}}
+\index{operator=@{operator=}!upc\+::\+Digital\+Filter@{upc\+::\+Digital\+Filter}}
+\subsubsection[{\texorpdfstring{operator=(const Digital\+Filter \&f)}{operator=(const DigitalFilter &f)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Digital\+Filter}\& upc\+::\+Digital\+Filter\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Digital\+Filter} \&}]{f}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classupc_1_1DigitalFilter_a26527559b1b71aad240deca22f5599ec}{}\label{classupc_1_1DigitalFilter_a26527559b1b71aad240deca22f5599ec}
+
+
+Asign operator (copy a filter from other) 
+
+\index{upc\+::\+Digital\+Filter@{upc\+::\+Digital\+Filter}!prepare\+\_\+state@{prepare\+\_\+state}}
+\index{prepare\+\_\+state@{prepare\+\_\+state}!upc\+::\+Digital\+Filter@{upc\+::\+Digital\+Filter}}
+\subsubsection[{\texorpdfstring{prepare\+\_\+state()}{prepare_state()}}]{\setlength{\rightskip}{0pt plus 5cm}void upc\+::\+Digital\+Filter\+::prepare\+\_\+state (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classupc_1_1DigitalFilter_a66ebd4fb1a26af461c4845efbc528236}{}\label{classupc_1_1DigitalFilter_a66ebd4fb1a26af461c4845efbc528236}
+
+
+Allocate memory for stated conditions. 
+
+Allocate memory for state conditions. \index{upc\+::\+Digital\+Filter@{upc\+::\+Digital\+Filter}!set\+\_\+a@{set\+\_\+a}}
+\index{set\+\_\+a@{set\+\_\+a}!upc\+::\+Digital\+Filter@{upc\+::\+Digital\+Filter}}
+\subsubsection[{\texorpdfstring{set\+\_\+a(std\+::vector$<$ float $>$ const \&\+A)}{set_a(std::vector< float > const &A)}}]{\setlength{\rightskip}{0pt plus 5cm}void upc\+::\+Digital\+Filter\+::set\+\_\+a (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ {\bf float} $>$ const \&}]{A}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classupc_1_1DigitalFilter_ade3c3a24bbfbc1b2edbf4bcd0885a9e6}{}\label{classupc_1_1DigitalFilter_ade3c3a24bbfbc1b2edbf4bcd0885a9e6}
+
+
+Change denominator (state conditions only cleaned if order changes) 
+
+\index{upc\+::\+Digital\+Filter@{upc\+::\+Digital\+Filter}!set\+\_\+b@{set\+\_\+b}}
+\index{set\+\_\+b@{set\+\_\+b}!upc\+::\+Digital\+Filter@{upc\+::\+Digital\+Filter}}
+\subsubsection[{\texorpdfstring{set\+\_\+b(const std\+::vector$<$ float $>$ \&\+B)}{set_b(const std::vector< float > &B)}}]{\setlength{\rightskip}{0pt plus 5cm}void upc\+::\+Digital\+Filter\+::set\+\_\+b (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ {\bf float} $>$ \&}]{B}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classupc_1_1DigitalFilter_a9f23a5e9db027eb0c9b70bd9b5d08e09}{}\label{classupc_1_1DigitalFilter_a9f23a5e9db027eb0c9b70bd9b5d08e09}
+
+
+Change denominator (state conditions only cleaned if order changes) 
+
+\index{upc\+::\+Digital\+Filter@{upc\+::\+Digital\+Filter}!set\+\_\+gain@{set\+\_\+gain}}
+\index{set\+\_\+gain@{set\+\_\+gain}!upc\+::\+Digital\+Filter@{upc\+::\+Digital\+Filter}}
+\subsubsection[{\texorpdfstring{set\+\_\+gain(float g)}{set_gain(float g)}}]{\setlength{\rightskip}{0pt plus 5cm}void upc\+::\+Digital\+Filter\+::set\+\_\+gain (
+\begin{DoxyParamCaption}
+\item[{{\bf float}}]{g}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classupc_1_1DigitalFilter_a506905346c44ac46c292ea1fa1212c3e}{}\label{classupc_1_1DigitalFilter_a506905346c44ac46c292ea1fa1212c3e}
+\index{upc\+::\+Digital\+Filter@{upc\+::\+Digital\+Filter}!set\+\_\+resonator@{set\+\_\+resonator}}
+\index{set\+\_\+resonator@{set\+\_\+resonator}!upc\+::\+Digital\+Filter@{upc\+::\+Digital\+Filter}}
+\subsubsection[{\texorpdfstring{set\+\_\+resonator(float norm\+\_\+central\+\_\+freq, float norm\+\_\+bandwidth)}{set_resonator(float norm_central_freq, float norm_bandwidth)}}]{\setlength{\rightskip}{0pt plus 5cm}void upc\+::\+Digital\+Filter\+::set\+\_\+resonator (
+\begin{DoxyParamCaption}
+\item[{{\bf float}}]{norm\+\_\+central\+\_\+freq, }
+\item[{{\bf float}}]{norm\+\_\+bandwidth}
+\end{DoxyParamCaption}
+)}\hypertarget{classupc_1_1DigitalFilter_a2b97aaeacac8b5a8b52e1bd8fc295970}{}\label{classupc_1_1DigitalFilter_a2b97aaeacac8b5a8b52e1bd8fc295970}
+
+
+Second order AR band-\/pass filter defined by central frequency and bandwidth. 
+
+\index{upc\+::\+Digital\+Filter@{upc\+::\+Digital\+Filter}!sfreqz@{sfreqz}}
+\index{sfreqz@{sfreqz}!upc\+::\+Digital\+Filter@{upc\+::\+Digital\+Filter}}
+\subsubsection[{\texorpdfstring{sfreqz(float freq, bool db=true) const }{sfreqz(float freq, bool db=true) const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf float} upc\+::\+Digital\+Filter\+::sfreqz (
+\begin{DoxyParamCaption}
+\item[{{\bf float}}]{freq, }
+\item[{bool}]{db = {\ttfamily true}}
+\end{DoxyParamCaption}
+) const}\hypertarget{classupc_1_1DigitalFilter_a9589b9615fbd51754afb757c5431b1e0}{}\label{classupc_1_1DigitalFilter_a9589b9615fbd51754afb757c5431b1e0}
+Get freq. response of filter in the given frequency (freq). freq is the digital frequency, f/fsampling, with range in \mbox{[}0,0.\+5\mbox{]} If db is true, provide the result in dB\+: 20log($\vert$H(e$^\wedge$j2pif)$\vert$; Otherwise, the results is the squared module, $\vert$\+H$\vert$$^\wedge$2 
+
+\subsection{Member Data Documentation}
+\index{upc\+::\+Digital\+Filter@{upc\+::\+Digital\+Filter}!a@{a}}
+\index{a@{a}!upc\+::\+Digital\+Filter@{upc\+::\+Digital\+Filter}}
+\subsubsection[{\texorpdfstring{a}{a}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<${\bf float}$>$ upc\+::\+Digital\+Filter\+::a\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classupc_1_1DigitalFilter_a2452cdde3d6845b838d9ebed8099dc4e}{}\label{classupc_1_1DigitalFilter_a2452cdde3d6845b838d9ebed8099dc4e}
+
+
+Denominator A(z) = a0+a1 z$^\wedge$-\/1 + a2 z$^\wedge$-\/2 ... an z$^\wedge$-\/n) 
+
+\index{upc\+::\+Digital\+Filter@{upc\+::\+Digital\+Filter}!b@{b}}
+\index{b@{b}!upc\+::\+Digital\+Filter@{upc\+::\+Digital\+Filter}}
+\subsubsection[{\texorpdfstring{b}{b}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<${\bf float}$>$ upc\+::\+Digital\+Filter\+::b\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classupc_1_1DigitalFilter_ad72194d793b429b0f0eea9fab017da68}{}\label{classupc_1_1DigitalFilter_ad72194d793b429b0f0eea9fab017da68}
+
+
+Numerator B(z) = b0+b1 z$^\wedge$-\/1 + b2 z$^\wedge$-\/2 ... bm z$^\wedge$-\/m) 
+
+\index{upc\+::\+Digital\+Filter@{upc\+::\+Digital\+Filter}!gain@{gain}}
+\index{gain@{gain}!upc\+::\+Digital\+Filter@{upc\+::\+Digital\+Filter}}
+\subsubsection[{\texorpdfstring{gain}{gain}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf float} upc\+::\+Digital\+Filter\+::gain\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classupc_1_1DigitalFilter_aaa94a0d08f87c98612d9471719bd773a}{}\label{classupc_1_1DigitalFilter_aaa94a0d08f87c98612d9471719bd773a}
+\index{upc\+::\+Digital\+Filter@{upc\+::\+Digital\+Filter}!index@{index}}
+\index{index@{index}!upc\+::\+Digital\+Filter@{upc\+::\+Digital\+Filter}}
+\subsubsection[{\texorpdfstring{index}{index}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Circular\+Index} upc\+::\+Digital\+Filter\+::index\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classupc_1_1DigitalFilter_ae2b58018045cfca38cad387dd4b82e83}{}\label{classupc_1_1DigitalFilter_ae2b58018045cfca38cad387dd4b82e83}
+
+
+additional gain factor 
+
+Used to avoid simplify access to circular buffer \textquotesingle{}u\textquotesingle{} for state conditions \index{upc\+::\+Digital\+Filter@{upc\+::\+Digital\+Filter}!u@{u}}
+\index{u@{u}!upc\+::\+Digital\+Filter@{upc\+::\+Digital\+Filter}}
+\subsubsection[{\texorpdfstring{u}{u}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<${\bf float}$>$ upc\+::\+Digital\+Filter\+::u\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classupc_1_1DigitalFilter_ad8b8d1c7bde2fca050aa297b66d69179}{}\label{classupc_1_1DigitalFilter_ad8b8d1c7bde2fca050aa297b66d69179}
+
+
+State conditions, implemented as circular buffer; call \char`\"{}clear()\char`\"{} to reset them. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{digital__filter_8h}{digital\+\_\+filter.\+h}\item 
+pav/\hyperlink{digital__filter_8cpp}{digital\+\_\+filter.\+cpp}\end{DoxyCompactItemize}

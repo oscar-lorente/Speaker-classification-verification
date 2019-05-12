@@ -35,7 +35,7 @@ LDLIBS1 :=
 PROG2 := $(BIN_DIR)/gmm_classify
 
 # TO DO: Add the c++ sources (if any). Do not include the path
-CPPSRC2  := gmm_classify.cpp 
+CPPSRC2  := gmm_classify.cpp
 
 
 # TO DO: Add the c sources (if any). Do not include the path
@@ -49,7 +49,7 @@ LDLIBS2 :=
 PROG3 := $(BIN_DIR)/gmm_show
 
 # TO DO: Add the c++ sources (if any). Do not include the path
-CPPSRC3  := gmm_show.cpp 
+CPPSRC3  := gmm_show.cpp
 
 
 # TO DO: Add the c sources (if any). Do not include the path
@@ -59,11 +59,11 @@ CSRC3 :=
 LDLIBS3 :=
 #-----------------------------------------------------------------
 PROG4 := $(BIN_DIR)/gmm_verify
-CPPSRC4  := gmm_verify.cpp 
+CPPSRC4  := gmm_verify.cpp
 LDLIBS4 :=
 
 #-----------------------------------------------------------------
-all: $(PROG1) $(PROG2) $(PROG3) # $(PROG4) 
+all: $(PROG1) $(PROG2) $(PROG3) # $(PROG4)
 #-----------------------------------------------------------------
 DEP1     := $(CPPSRC1:.cpp=.d) $(CSRC1:.c=.d)
 OBJ1     := $(DEP1:.d=.o)
@@ -116,4 +116,3 @@ clean_all:
 	-rm -f $(DEP3) $(OBJ3) $(PROG3)
 #	-rm -f $(DEP4) $(OBJ4) $(PROG4)
 endif
-
