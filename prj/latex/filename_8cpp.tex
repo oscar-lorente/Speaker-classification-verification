@@ -1,0 +1,76 @@
+\hypertarget{filename_8cpp}{}\section{pav/filename.cpp File Reference}
+\label{filename_8cpp}\index{pav/filename.\+cpp@{pav/filename.\+cpp}}
+{\ttfamily \#include $<$limits.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$fstream$>$}\\*
+{\ttfamily \#include $<$sys/types.\+h$>$}\\*
+{\ttfamily \#include $<$sys/stat.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}filename.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$sys/select.\+h$>$}\\*
+{\ttfamily \#include $<$termios.\+h$>$}\\*
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespaceupc}{upc}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{filename_8cpp_a49470f43c0323a1059053a1d791df73b}{\+\_\+stati64}~stat
+\item 
+\#define \hyperlink{filename_8cpp_a57b4d1dd9c2b252c2886140b9c6099e3}{\+\_\+\+S\+\_\+\+I\+F\+D\+IR}~S\+\_\+\+I\+F\+D\+IR
+\item 
+\#define \hyperlink{filename_8cpp_a865dced746336a2d6ae9141287c4ebf4}{\+\_\+\+M\+A\+X\+\_\+\+P\+A\+TH}~P\+A\+T\+H\+\_\+\+M\+AX
+\item 
+\#define \hyperlink{filename_8cpp_a390bd49d566d1ac38c66b638e80127d7}{M\+K\+D\+IR}(A)~mkdir((A), 0777)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{filename_8cpp_a8babaa154c3f235837f50519b87650ac}{\+\_\+kbhit} ()
+\item 
+bool \hyperlink{filename_8cpp_af16f8ea0a6a8d027ab8baeba46206b91}{key\+Board\+Hit} ()
+\item 
+int \hyperlink{namespaceupc_a97b8e57e112ba7b34bf233ad20b82751}{upc\+::get\+Cols} (istream \&is, vstring \&cols)
+\item 
+bool \hyperlink{namespaceupc_a3caf6fbcaba76b586577cab2d8b8bea0}{upc\+::key\+Stroke} (char key=0)
+\item 
+File\+Info \hyperlink{namespaceupc_a4c5e814ef76fc815a67f0de482283ff5}{upc\+::file\+Info} (const Path \&fname)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{filename.\+cpp@{filename.\+cpp}!\+\_\+\+M\+A\+X\+\_\+\+P\+A\+TH@{\+\_\+\+M\+A\+X\+\_\+\+P\+A\+TH}}
+\index{\+\_\+\+M\+A\+X\+\_\+\+P\+A\+TH@{\+\_\+\+M\+A\+X\+\_\+\+P\+A\+TH}!filename.\+cpp@{filename.\+cpp}}
+\subsubsection[{\texorpdfstring{\+\_\+\+M\+A\+X\+\_\+\+P\+A\+TH}{_MAX_PATH}}]{\setlength{\rightskip}{0pt plus 5cm}\#define \+\_\+\+M\+A\+X\+\_\+\+P\+A\+TH~P\+A\+T\+H\+\_\+\+M\+AX}\hypertarget{filename_8cpp_a865dced746336a2d6ae9141287c4ebf4}{}\label{filename_8cpp_a865dced746336a2d6ae9141287c4ebf4}
+\index{filename.\+cpp@{filename.\+cpp}!\+\_\+\+S\+\_\+\+I\+F\+D\+IR@{\+\_\+\+S\+\_\+\+I\+F\+D\+IR}}
+\index{\+\_\+\+S\+\_\+\+I\+F\+D\+IR@{\+\_\+\+S\+\_\+\+I\+F\+D\+IR}!filename.\+cpp@{filename.\+cpp}}
+\subsubsection[{\texorpdfstring{\+\_\+\+S\+\_\+\+I\+F\+D\+IR}{_S_IFDIR}}]{\setlength{\rightskip}{0pt plus 5cm}\#define \+\_\+\+S\+\_\+\+I\+F\+D\+IR~S\+\_\+\+I\+F\+D\+IR}\hypertarget{filename_8cpp_a57b4d1dd9c2b252c2886140b9c6099e3}{}\label{filename_8cpp_a57b4d1dd9c2b252c2886140b9c6099e3}
+\index{filename.\+cpp@{filename.\+cpp}!\+\_\+stati64@{\+\_\+stati64}}
+\index{\+\_\+stati64@{\+\_\+stati64}!filename.\+cpp@{filename.\+cpp}}
+\subsubsection[{\texorpdfstring{\+\_\+stati64}{_stati64}}]{\setlength{\rightskip}{0pt plus 5cm}\#define \+\_\+stati64~stat}\hypertarget{filename_8cpp_a49470f43c0323a1059053a1d791df73b}{}\label{filename_8cpp_a49470f43c0323a1059053a1d791df73b}
+\index{filename.\+cpp@{filename.\+cpp}!M\+K\+D\+IR@{M\+K\+D\+IR}}
+\index{M\+K\+D\+IR@{M\+K\+D\+IR}!filename.\+cpp@{filename.\+cpp}}
+\subsubsection[{\texorpdfstring{M\+K\+D\+IR}{MKDIR}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+K\+D\+IR(
+\begin{DoxyParamCaption}
+\item[{}]{A}
+\end{DoxyParamCaption}
+)~mkdir((A), 0777)}\hypertarget{filename_8cpp_a390bd49d566d1ac38c66b638e80127d7}{}\label{filename_8cpp_a390bd49d566d1ac38c66b638e80127d7}
+
+
+\subsection{Function Documentation}
+\index{filename.\+cpp@{filename.\+cpp}!\+\_\+kbhit@{\+\_\+kbhit}}
+\index{\+\_\+kbhit@{\+\_\+kbhit}!filename.\+cpp@{filename.\+cpp}}
+\subsubsection[{\texorpdfstring{\+\_\+kbhit()}{_kbhit()}}]{\setlength{\rightskip}{0pt plus 5cm}int \+\_\+kbhit (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{filename_8cpp_a8babaa154c3f235837f50519b87650ac}{}\label{filename_8cpp_a8babaa154c3f235837f50519b87650ac}
+\index{filename.\+cpp@{filename.\+cpp}!key\+Board\+Hit@{key\+Board\+Hit}}
+\index{key\+Board\+Hit@{key\+Board\+Hit}!filename.\+cpp@{filename.\+cpp}}
+\subsubsection[{\texorpdfstring{key\+Board\+Hit()}{keyBoardHit()}}]{\setlength{\rightskip}{0pt plus 5cm}bool key\+Board\+Hit (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{filename_8cpp_af16f8ea0a6a8d027ab8baeba46206b91}{}\label{filename_8cpp_af16f8ea0a6a8d027ab8baeba46206b91}

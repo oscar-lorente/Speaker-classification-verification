@@ -1,0 +1,199 @@
+\hypertarget{classupc_1_1CircularIndex}{}\section{upc\+:\+:Circular\+Index Class Reference}
+\label{classupc_1_1CircularIndex}\index{upc\+::\+Circular\+Index@{upc\+::\+Circular\+Index}}
+
+
+Circular Index used to go through state circular buffer (u)  
+
+
+
+
+{\ttfamily \#include $<$digital\+\_\+filter.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classupc_1_1CircularIndex_a80c03ec94380d80132ca01b39ef9b0e7}{Circular\+Index} (int s=1)
+\begin{DoxyCompactList}\small\item\em buffer size; index goes from 0 ... size-\/1 \end{DoxyCompactList}\item 
+\hyperlink{classupc_1_1CircularIndex_abca2976e157594a74d4aa1c06b0c4c2e}{Circular\+Index} (\hyperlink{classupc_1_1CircularIndex}{Circular\+Index} \&ci)
+\begin{DoxyCompactList}\small\item\em constructor defining size based on other \hyperlink{classupc_1_1CircularIndex}{Circular\+Index} \end{DoxyCompactList}\item 
+void \hyperlink{classupc_1_1CircularIndex_aa8bfc28723ab87c1ab66262843aac2a5}{resize} (int s)
+\begin{DoxyCompactList}\small\item\em Set size of circular index. \end{DoxyCompactList}\item 
+\hyperlink{classupc_1_1CircularIndex}{Circular\+Index} \& \hyperlink{classupc_1_1CircularIndex_a8c02bb1020495ad418f1c0770a03a9f6}{operator++} ()
+\begin{DoxyCompactList}\small\item\em Increment. \end{DoxyCompactList}\item 
+\hyperlink{classupc_1_1CircularIndex}{Circular\+Index} \& \hyperlink{classupc_1_1CircularIndex_a687ae675e4a3f8a95fc69eb0b961c0a5}{operator+=} (int i)
+\begin{DoxyCompactList}\small\item\em Increment \textquotesingle{}i\textquotesingle{} positions. \end{DoxyCompactList}\item 
+\hyperlink{classupc_1_1CircularIndex}{Circular\+Index} \& \hyperlink{classupc_1_1CircularIndex_a1e03db5aad51600b2804b7866af81b01}{operator+} (int i)
+\begin{DoxyCompactList}\small\item\em Increment \textquotesingle{}i\textquotesingle{} positions. \end{DoxyCompactList}\item 
+\hyperlink{classupc_1_1CircularIndex}{Circular\+Index} \& \hyperlink{classupc_1_1CircularIndex_a4527e57789e25c6157111ab491cc38a9}{operator-\/-\/} ()
+\begin{DoxyCompactList}\small\item\em Decrement. \end{DoxyCompactList}\item 
+\hyperlink{classupc_1_1CircularIndex}{Circular\+Index} \& \hyperlink{classupc_1_1CircularIndex_a4b2892d8a0b891b90bcb34ee55c3d613}{operator-\/=} (int i)
+\begin{DoxyCompactList}\small\item\em Decrement \textquotesingle{}i\textquotesingle{} positions. \end{DoxyCompactList}\item 
+\hyperlink{classupc_1_1CircularIndex}{Circular\+Index} \& \hyperlink{classupc_1_1CircularIndex_a7745755030622a01389f2133632d7f76}{operator-\/} (int i)
+\begin{DoxyCompactList}\small\item\em Decrement \textquotesingle{}i\textquotesingle{} positions. \end{DoxyCompactList}\item 
+\hyperlink{classupc_1_1CircularIndex_ab0961d598cc0a51a2990e8823f71a332}{operator int} ()
+\item 
+\hyperlink{classupc_1_1CircularIndex}{Circular\+Index} \& \hyperlink{classupc_1_1CircularIndex_ab23f2d6ba2b5781153bcf6383cce8afc}{operator=} (const \hyperlink{classupc_1_1CircularIndex}{Circular\+Index} \&ci)
+\begin{DoxyCompactList}\small\item\em !\+Casting from \hyperlink{classupc_1_1CircularIndex}{Circular\+Index} to int, returning int. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classupc_1_1CircularIndex_a0d0973d1fc7fa4200ac39dc2880e0081}{index}
+\item 
+int \hyperlink{classupc_1_1CircularIndex_ab53d382eeb825c3583964729c477ffae}{size}
+\begin{DoxyCompactList}\small\item\em the index (value) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Circular Index used to go through state circular buffer (u) 
+
+The circular index is a simple class to address a circular buffer. Once the buffer size is defined, you can add or substract and the index remains inside the buffer. A casting operator to int is provided.
+
+Example\+: 
+\begin{DoxyCode}
+\textcolor{keywordtype}{float} \hyperlink{FFTReal__readme_8txt_a9c92ac89d1560f812393ca39a19e581e}{x}[8]=\{0,1,2,4,5,6,7\};
+\hyperlink{classupc_1_1CircularIndex_a80c03ec94380d80132ca01b39ef9b0e7}{CircularIndex} ci(8);
+\textcolor{keywordtype}{int} n=10; \textcolor{keywordtype}{float} z=0.0F;
+\textcolor{keywordflow}{for} (n=0; n< 10; ++n, ++ci)
+    z += x[ci+1] - x[ci-1];
+\end{DoxyCode}
+ Operations +, +=, ++, -\/, -\/=, -- are defined 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{upc\+::\+Circular\+Index@{upc\+::\+Circular\+Index}!Circular\+Index@{Circular\+Index}}
+\index{Circular\+Index@{Circular\+Index}!upc\+::\+Circular\+Index@{upc\+::\+Circular\+Index}}
+\subsubsection[{\texorpdfstring{Circular\+Index(int s=1)}{CircularIndex(int s=1)}}]{\setlength{\rightskip}{0pt plus 5cm}upc\+::\+Circular\+Index\+::\+Circular\+Index (
+\begin{DoxyParamCaption}
+\item[{int}]{s = {\ttfamily 1}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classupc_1_1CircularIndex_a80c03ec94380d80132ca01b39ef9b0e7}{}\label{classupc_1_1CircularIndex_a80c03ec94380d80132ca01b39ef9b0e7}
+
+
+buffer size; index goes from 0 ... size-\/1 
+
+default\+: size=1; not very useful (index can only be 0) \index{upc\+::\+Circular\+Index@{upc\+::\+Circular\+Index}!Circular\+Index@{Circular\+Index}}
+\index{Circular\+Index@{Circular\+Index}!upc\+::\+Circular\+Index@{upc\+::\+Circular\+Index}}
+\subsubsection[{\texorpdfstring{Circular\+Index(\+Circular\+Index \&ci)}{CircularIndex(CircularIndex &ci)}}]{\setlength{\rightskip}{0pt plus 5cm}upc\+::\+Circular\+Index\+::\+Circular\+Index (
+\begin{DoxyParamCaption}
+\item[{{\bf Circular\+Index} \&}]{ci}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classupc_1_1CircularIndex_abca2976e157594a74d4aa1c06b0c4c2e}{}\label{classupc_1_1CircularIndex_abca2976e157594a74d4aa1c06b0c4c2e}
+
+
+constructor defining size based on other \hyperlink{classupc_1_1CircularIndex}{Circular\+Index} 
+
+
+
+\subsection{Member Function Documentation}
+\index{upc\+::\+Circular\+Index@{upc\+::\+Circular\+Index}!operator int@{operator int}}
+\index{operator int@{operator int}!upc\+::\+Circular\+Index@{upc\+::\+Circular\+Index}}
+\subsubsection[{\texorpdfstring{operator int()}{operator int()}}]{\setlength{\rightskip}{0pt plus 5cm}upc\+::\+Circular\+Index\+::operator int (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classupc_1_1CircularIndex_ab0961d598cc0a51a2990e8823f71a332}{}\label{classupc_1_1CircularIndex_ab0961d598cc0a51a2990e8823f71a332}
+\index{upc\+::\+Circular\+Index@{upc\+::\+Circular\+Index}!operator+@{operator+}}
+\index{operator+@{operator+}!upc\+::\+Circular\+Index@{upc\+::\+Circular\+Index}}
+\subsubsection[{\texorpdfstring{operator+(int i)}{operator+(int i)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Circular\+Index}\& upc\+::\+Circular\+Index\+::operator+ (
+\begin{DoxyParamCaption}
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classupc_1_1CircularIndex_a1e03db5aad51600b2804b7866af81b01}{}\label{classupc_1_1CircularIndex_a1e03db5aad51600b2804b7866af81b01}
+
+
+Increment \textquotesingle{}i\textquotesingle{} positions. 
+
+\index{upc\+::\+Circular\+Index@{upc\+::\+Circular\+Index}!operator++@{operator++}}
+\index{operator++@{operator++}!upc\+::\+Circular\+Index@{upc\+::\+Circular\+Index}}
+\subsubsection[{\texorpdfstring{operator++()}{operator++()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Circular\+Index}\& upc\+::\+Circular\+Index\+::operator++ (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classupc_1_1CircularIndex_a8c02bb1020495ad418f1c0770a03a9f6}{}\label{classupc_1_1CircularIndex_a8c02bb1020495ad418f1c0770a03a9f6}
+
+
+Increment. 
+
+\index{upc\+::\+Circular\+Index@{upc\+::\+Circular\+Index}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!upc\+::\+Circular\+Index@{upc\+::\+Circular\+Index}}
+\subsubsection[{\texorpdfstring{operator+=(int i)}{operator+=(int i)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Circular\+Index}\& upc\+::\+Circular\+Index\+::operator+= (
+\begin{DoxyParamCaption}
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classupc_1_1CircularIndex_a687ae675e4a3f8a95fc69eb0b961c0a5}{}\label{classupc_1_1CircularIndex_a687ae675e4a3f8a95fc69eb0b961c0a5}
+
+
+Increment \textquotesingle{}i\textquotesingle{} positions. 
+
+\index{upc\+::\+Circular\+Index@{upc\+::\+Circular\+Index}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!upc\+::\+Circular\+Index@{upc\+::\+Circular\+Index}}
+\subsubsection[{\texorpdfstring{operator-\/(int i)}{operator-(int i)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Circular\+Index}\& upc\+::\+Circular\+Index\+::operator-\/ (
+\begin{DoxyParamCaption}
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classupc_1_1CircularIndex_a7745755030622a01389f2133632d7f76}{}\label{classupc_1_1CircularIndex_a7745755030622a01389f2133632d7f76}
+
+
+Decrement \textquotesingle{}i\textquotesingle{} positions. 
+
+\index{upc\+::\+Circular\+Index@{upc\+::\+Circular\+Index}!operator-\/-\/@{operator-\/-\/}}
+\index{operator-\/-\/@{operator-\/-\/}!upc\+::\+Circular\+Index@{upc\+::\+Circular\+Index}}
+\subsubsection[{\texorpdfstring{operator-\/-\/()}{operator--()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Circular\+Index}\& upc\+::\+Circular\+Index\+::operator-\/-\/ (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classupc_1_1CircularIndex_a4527e57789e25c6157111ab491cc38a9}{}\label{classupc_1_1CircularIndex_a4527e57789e25c6157111ab491cc38a9}
+
+
+Decrement. 
+
+\index{upc\+::\+Circular\+Index@{upc\+::\+Circular\+Index}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!upc\+::\+Circular\+Index@{upc\+::\+Circular\+Index}}
+\subsubsection[{\texorpdfstring{operator-\/=(int i)}{operator-=(int i)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Circular\+Index}\& upc\+::\+Circular\+Index\+::operator-\/= (
+\begin{DoxyParamCaption}
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classupc_1_1CircularIndex_a4b2892d8a0b891b90bcb34ee55c3d613}{}\label{classupc_1_1CircularIndex_a4b2892d8a0b891b90bcb34ee55c3d613}
+
+
+Decrement \textquotesingle{}i\textquotesingle{} positions. 
+
+\index{upc\+::\+Circular\+Index@{upc\+::\+Circular\+Index}!operator=@{operator=}}
+\index{operator=@{operator=}!upc\+::\+Circular\+Index@{upc\+::\+Circular\+Index}}
+\subsubsection[{\texorpdfstring{operator=(const Circular\+Index \&ci)}{operator=(const CircularIndex &ci)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Circular\+Index}\& upc\+::\+Circular\+Index\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Circular\+Index} \&}]{ci}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classupc_1_1CircularIndex_ab23f2d6ba2b5781153bcf6383cce8afc}{}\label{classupc_1_1CircularIndex_ab23f2d6ba2b5781153bcf6383cce8afc}
+
+
+!\+Casting from \hyperlink{classupc_1_1CircularIndex}{Circular\+Index} to int, returning int. 
+
+\index{upc\+::\+Circular\+Index@{upc\+::\+Circular\+Index}!resize@{resize}}
+\index{resize@{resize}!upc\+::\+Circular\+Index@{upc\+::\+Circular\+Index}}
+\subsubsection[{\texorpdfstring{resize(int s)}{resize(int s)}}]{\setlength{\rightskip}{0pt plus 5cm}void upc\+::\+Circular\+Index\+::resize (
+\begin{DoxyParamCaption}
+\item[{int}]{s}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classupc_1_1CircularIndex_aa8bfc28723ab87c1ab66262843aac2a5}{}\label{classupc_1_1CircularIndex_aa8bfc28723ab87c1ab66262843aac2a5}
+
+
+Set size of circular index. 
+
+
+
+\subsection{Member Data Documentation}
+\index{upc\+::\+Circular\+Index@{upc\+::\+Circular\+Index}!index@{index}}
+\index{index@{index}!upc\+::\+Circular\+Index@{upc\+::\+Circular\+Index}}
+\subsubsection[{\texorpdfstring{index}{index}}]{\setlength{\rightskip}{0pt plus 5cm}int upc\+::\+Circular\+Index\+::index\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classupc_1_1CircularIndex_a0d0973d1fc7fa4200ac39dc2880e0081}{}\label{classupc_1_1CircularIndex_a0d0973d1fc7fa4200ac39dc2880e0081}
+\index{upc\+::\+Circular\+Index@{upc\+::\+Circular\+Index}!size@{size}}
+\index{size@{size}!upc\+::\+Circular\+Index@{upc\+::\+Circular\+Index}}
+\subsubsection[{\texorpdfstring{size}{size}}]{\setlength{\rightskip}{0pt plus 5cm}int upc\+::\+Circular\+Index\+::size\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classupc_1_1CircularIndex_ab53d382eeb825c3583964729c477ffae}{}\label{classupc_1_1CircularIndex_ab53d382eeb825c3583964729c477ffae}
+
+
+the index (value) 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{digital__filter_8h}{digital\+\_\+filter.\+h}\end{DoxyCompactItemize}

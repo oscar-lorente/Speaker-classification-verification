@@ -1,0 +1,78 @@
+\hypertarget{pitch__evaluate_8cpp}{}\section{get\+\_\+pitch/pitch\+\_\+evaluate.cpp File Reference}
+\label{pitch__evaluate_8cpp}\index{get\+\_\+pitch/pitch\+\_\+evaluate.\+cpp@{get\+\_\+pitch/pitch\+\_\+evaluate.\+cpp}}
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$fstream$>$}\\*
+{\ttfamily \#include $<$iomanip$>$}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include $<$math.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{pitch__evaluate_8cpp_acc47b8492bcbc1ad3fab7d6ac74d2d8d}{read\+\_\+vector} (const string \&filename, vector$<$ \hyperlink{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}{float} $>$ \&\hyperlink{FFTReal__readme_8txt_a9c92ac89d1560f812393ca39a19e581e}{x})
+\item 
+void \hyperlink{pitch__evaluate_8cpp_a77944b5af41e256ec0ba1f00442cf9ba}{compare} (const vector$<$ \hyperlink{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}{float} $>$ \&vref, const vector$<$ \hyperlink{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}{float} $>$ \&vtest, int \&num\+\_\+voiced, int \&num\+\_\+unvoiced, int \&num\+\_\+voiced\+\_\+unvoiced, int \&num\+\_\+unvoiced\+\_\+voiced, int \&num\+\_\+voiced\+\_\+voiced, int \&num\+\_\+gross\+\_\+errors, \hyperlink{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}{float} \&fine\+\_\+error)
+\item 
+void \hyperlink{pitch__evaluate_8cpp_a87c47e482c3ef68d841885d5f81166a6}{print\+\_\+results} (int nframes, int num\+\_\+voiced, int num\+\_\+unvoiced, int num\+\_\+voiced\+\_\+unvoiced, int num\+\_\+unvoiced\+\_\+voiced, int num\+\_\+voiced\+\_\+voiced, int num\+\_\+gross\+\_\+errors, \hyperlink{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}{float} fine\+\_\+error)
+\item 
+int \hyperlink{pitch__evaluate_8cpp_ac0f2228420376f4db7e1274f2b41667c}{main} (int argc, const char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}{float} \hyperlink{pitch__evaluate_8cpp_ac3e1e3eb989b9766a74a68f946c1b20d}{gross\+\_\+threshold} = 0.\+2F
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{pitch\+\_\+evaluate.\+cpp@{pitch\+\_\+evaluate.\+cpp}!compare@{compare}}
+\index{compare@{compare}!pitch\+\_\+evaluate.\+cpp@{pitch\+\_\+evaluate.\+cpp}}
+\subsubsection[{\texorpdfstring{compare(const vector$<$ float $>$ \&vref, const vector$<$ float $>$ \&vtest, int \&num\+\_\+voiced, int \&num\+\_\+unvoiced, int \&num\+\_\+voiced\+\_\+unvoiced, int \&num\+\_\+unvoiced\+\_\+voiced, int \&num\+\_\+voiced\+\_\+voiced, int \&num\+\_\+gross\+\_\+errors, float \&fine\+\_\+error)}{compare(const vector< float > &vref, const vector< float > &vtest, int &num_voiced, int &num_unvoiced, int &num_voiced_unvoiced, int &num_unvoiced_voiced, int &num_voiced_voiced, int &num_gross_errors, float &fine_error)}}]{\setlength{\rightskip}{0pt plus 5cm}void compare (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ {\bf float} $>$ \&}]{vref, }
+\item[{const vector$<$ {\bf float} $>$ \&}]{vtest, }
+\item[{int \&}]{num\+\_\+voiced, }
+\item[{int \&}]{num\+\_\+unvoiced, }
+\item[{int \&}]{num\+\_\+voiced\+\_\+unvoiced, }
+\item[{int \&}]{num\+\_\+unvoiced\+\_\+voiced, }
+\item[{int \&}]{num\+\_\+voiced\+\_\+voiced, }
+\item[{int \&}]{num\+\_\+gross\+\_\+errors, }
+\item[{{\bf float} \&}]{fine\+\_\+error}
+\end{DoxyParamCaption}
+)}\hypertarget{pitch__evaluate_8cpp_a77944b5af41e256ec0ba1f00442cf9ba}{}\label{pitch__evaluate_8cpp_a77944b5af41e256ec0ba1f00442cf9ba}
+\index{pitch\+\_\+evaluate.\+cpp@{pitch\+\_\+evaluate.\+cpp}!main@{main}}
+\index{main@{main}!pitch\+\_\+evaluate.\+cpp@{pitch\+\_\+evaluate.\+cpp}}
+\subsubsection[{\texorpdfstring{main(int argc, const char $\ast$argv[])}{main(int argc, const char *argv[])}}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{const char $\ast$}]{argv\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}\hypertarget{pitch__evaluate_8cpp_ac0f2228420376f4db7e1274f2b41667c}{}\label{pitch__evaluate_8cpp_ac0f2228420376f4db7e1274f2b41667c}
+\index{pitch\+\_\+evaluate.\+cpp@{pitch\+\_\+evaluate.\+cpp}!print\+\_\+results@{print\+\_\+results}}
+\index{print\+\_\+results@{print\+\_\+results}!pitch\+\_\+evaluate.\+cpp@{pitch\+\_\+evaluate.\+cpp}}
+\subsubsection[{\texorpdfstring{print\+\_\+results(int nframes, int num\+\_\+voiced, int num\+\_\+unvoiced, int num\+\_\+voiced\+\_\+unvoiced, int num\+\_\+unvoiced\+\_\+voiced, int num\+\_\+voiced\+\_\+voiced, int num\+\_\+gross\+\_\+errors, float fine\+\_\+error)}{print_results(int nframes, int num_voiced, int num_unvoiced, int num_voiced_unvoiced, int num_unvoiced_voiced, int num_voiced_voiced, int num_gross_errors, float fine_error)}}]{\setlength{\rightskip}{0pt plus 5cm}void print\+\_\+results (
+\begin{DoxyParamCaption}
+\item[{int}]{nframes, }
+\item[{int}]{num\+\_\+voiced, }
+\item[{int}]{num\+\_\+unvoiced, }
+\item[{int}]{num\+\_\+voiced\+\_\+unvoiced, }
+\item[{int}]{num\+\_\+unvoiced\+\_\+voiced, }
+\item[{int}]{num\+\_\+voiced\+\_\+voiced, }
+\item[{int}]{num\+\_\+gross\+\_\+errors, }
+\item[{{\bf float}}]{fine\+\_\+error}
+\end{DoxyParamCaption}
+)}\hypertarget{pitch__evaluate_8cpp_a87c47e482c3ef68d841885d5f81166a6}{}\label{pitch__evaluate_8cpp_a87c47e482c3ef68d841885d5f81166a6}
+\index{pitch\+\_\+evaluate.\+cpp@{pitch\+\_\+evaluate.\+cpp}!read\+\_\+vector@{read\+\_\+vector}}
+\index{read\+\_\+vector@{read\+\_\+vector}!pitch\+\_\+evaluate.\+cpp@{pitch\+\_\+evaluate.\+cpp}}
+\subsubsection[{\texorpdfstring{read\+\_\+vector(const string \&filename, vector$<$ float $>$ \&x)}{read_vector(const string &filename, vector< float > &x)}}]{\setlength{\rightskip}{0pt plus 5cm}int read\+\_\+vector (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{filename, }
+\item[{vector$<$ {\bf float} $>$ \&}]{x}
+\end{DoxyParamCaption}
+)}\hypertarget{pitch__evaluate_8cpp_acc47b8492bcbc1ad3fab7d6ac74d2d8d}{}\label{pitch__evaluate_8cpp_acc47b8492bcbc1ad3fab7d6ac74d2d8d}
+
+
+\subsection{Variable Documentation}
+\index{pitch\+\_\+evaluate.\+cpp@{pitch\+\_\+evaluate.\+cpp}!gross\+\_\+threshold@{gross\+\_\+threshold}}
+\index{gross\+\_\+threshold@{gross\+\_\+threshold}!pitch\+\_\+evaluate.\+cpp@{pitch\+\_\+evaluate.\+cpp}}
+\subsubsection[{\texorpdfstring{gross\+\_\+threshold}{gross_threshold}}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf float} gross\+\_\+threshold = 0.\+2F}\hypertarget{pitch__evaluate_8cpp_ac3e1e3eb989b9766a74a68f946c1b20d}{}\label{pitch__evaluate_8cpp_ac3e1e3eb989b9766a74a68f946c1b20d}

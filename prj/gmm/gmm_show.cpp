@@ -14,7 +14,7 @@ int main(int argc, const char *argv[]) {
 
   int i;
   for (i=1; i<argc; ++i) {
- 
+
     ifstream is(argv[i], ios::binary);
 
     if (!is.good()) {

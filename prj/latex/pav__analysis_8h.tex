@@ -1,0 +1,59 @@
+\hypertarget{pav__analysis_8h}{}\section{include/pav\+\_\+analysis.h File Reference}
+\label{pav__analysis_8h}\index{include/pav\+\_\+analysis.\+h@{include/pav\+\_\+analysis.\+h}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}{float} \hyperlink{pav__analysis_8h_adc36300aeb76d96160c7e5cba08a976c}{compute\+\_\+power} (const \hyperlink{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}{float} $\ast$\hyperlink{FFTReal__readme_8txt_a9c92ac89d1560f812393ca39a19e581e}{x}, unsigned int \hyperlink{FFTReal__readme_8txt_a049dd452c22185832440207517cffdaa}{N})
+\item 
+\hyperlink{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}{float} \hyperlink{pav__analysis_8h_ab866edd0ec1064024b2738186de12226}{compute\+\_\+am} (const \hyperlink{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}{float} $\ast$\hyperlink{FFTReal__readme_8txt_a9c92ac89d1560f812393ca39a19e581e}{x}, unsigned int \hyperlink{FFTReal__readme_8txt_a049dd452c22185832440207517cffdaa}{N})
+\item 
+\hyperlink{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}{float} \hyperlink{pav__analysis_8h_ab51d267300bcac15e5e5e08c2f738e9c}{compute\+\_\+zcr} (const \hyperlink{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}{float} $\ast$\hyperlink{FFTReal__readme_8txt_a9c92ac89d1560f812393ca39a19e581e}{x}, unsigned int \hyperlink{FFTReal__readme_8txt_a049dd452c22185832440207517cffdaa}{N})
+\item 
+\hyperlink{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}{float} \hyperlink{pav__analysis_8h_a9bbca2062295d3aa20d28cd1af2d58ef}{define\+\_\+window} (\hyperlink{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}{float} $\ast$w, unsigned int \hyperlink{FFTReal__readme_8txt_a049dd452c22185832440207517cffdaa}{N})
+\item 
+\hyperlink{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}{float} \hyperlink{pav__analysis_8h_ab154571050d19db24c7251b10edbf092}{apply\+\_\+window} (const \hyperlink{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}{float} $\ast$\hyperlink{FFTReal__readme_8txt_a9c92ac89d1560f812393ca39a19e581e}{x}, const \hyperlink{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}{float} $\ast$w, unsigned int \hyperlink{FFTReal__readme_8txt_a049dd452c22185832440207517cffdaa}{N})
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{pav\+\_\+analysis.\+h@{pav\+\_\+analysis.\+h}!apply\+\_\+window@{apply\+\_\+window}}
+\index{apply\+\_\+window@{apply\+\_\+window}!pav\+\_\+analysis.\+h@{pav\+\_\+analysis.\+h}}
+\subsubsection[{\texorpdfstring{apply\+\_\+window(const float $\ast$x, const float $\ast$w, unsigned int N)}{apply_window(const float *x, const float *w, unsigned int N)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf float} apply\+\_\+window (
+\begin{DoxyParamCaption}
+\item[{const {\bf float} $\ast$}]{x, }
+\item[{const {\bf float} $\ast$}]{w, }
+\item[{unsigned int}]{N}
+\end{DoxyParamCaption}
+)}\hypertarget{pav__analysis_8h_ab154571050d19db24c7251b10edbf092}{}\label{pav__analysis_8h_ab154571050d19db24c7251b10edbf092}
+\index{pav\+\_\+analysis.\+h@{pav\+\_\+analysis.\+h}!compute\+\_\+am@{compute\+\_\+am}}
+\index{compute\+\_\+am@{compute\+\_\+am}!pav\+\_\+analysis.\+h@{pav\+\_\+analysis.\+h}}
+\subsubsection[{\texorpdfstring{compute\+\_\+am(const float $\ast$x, unsigned int N)}{compute_am(const float *x, unsigned int N)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf float} compute\+\_\+am (
+\begin{DoxyParamCaption}
+\item[{const {\bf float} $\ast$}]{x, }
+\item[{unsigned int}]{N}
+\end{DoxyParamCaption}
+)}\hypertarget{pav__analysis_8h_ab866edd0ec1064024b2738186de12226}{}\label{pav__analysis_8h_ab866edd0ec1064024b2738186de12226}
+\index{pav\+\_\+analysis.\+h@{pav\+\_\+analysis.\+h}!compute\+\_\+power@{compute\+\_\+power}}
+\index{compute\+\_\+power@{compute\+\_\+power}!pav\+\_\+analysis.\+h@{pav\+\_\+analysis.\+h}}
+\subsubsection[{\texorpdfstring{compute\+\_\+power(const float $\ast$x, unsigned int N)}{compute_power(const float *x, unsigned int N)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf float} compute\+\_\+power (
+\begin{DoxyParamCaption}
+\item[{const {\bf float} $\ast$}]{x, }
+\item[{unsigned int}]{N}
+\end{DoxyParamCaption}
+)}\hypertarget{pav__analysis_8h_adc36300aeb76d96160c7e5cba08a976c}{}\label{pav__analysis_8h_adc36300aeb76d96160c7e5cba08a976c}
+\index{pav\+\_\+analysis.\+h@{pav\+\_\+analysis.\+h}!compute\+\_\+zcr@{compute\+\_\+zcr}}
+\index{compute\+\_\+zcr@{compute\+\_\+zcr}!pav\+\_\+analysis.\+h@{pav\+\_\+analysis.\+h}}
+\subsubsection[{\texorpdfstring{compute\+\_\+zcr(const float $\ast$x, unsigned int N)}{compute_zcr(const float *x, unsigned int N)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf float} compute\+\_\+zcr (
+\begin{DoxyParamCaption}
+\item[{const {\bf float} $\ast$}]{x, }
+\item[{unsigned int}]{N}
+\end{DoxyParamCaption}
+)}\hypertarget{pav__analysis_8h_ab51d267300bcac15e5e5e08c2f738e9c}{}\label{pav__analysis_8h_ab51d267300bcac15e5e5e08c2f738e9c}
+\index{pav\+\_\+analysis.\+h@{pav\+\_\+analysis.\+h}!define\+\_\+window@{define\+\_\+window}}
+\index{define\+\_\+window@{define\+\_\+window}!pav\+\_\+analysis.\+h@{pav\+\_\+analysis.\+h}}
+\subsubsection[{\texorpdfstring{define\+\_\+window(float $\ast$w, unsigned int N)}{define_window(float *w, unsigned int N)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf float} define\+\_\+window (
+\begin{DoxyParamCaption}
+\item[{{\bf float} $\ast$}]{w, }
+\item[{unsigned int}]{N}
+\end{DoxyParamCaption}
+)}\hypertarget{pav__analysis_8h_a9bbca2062295d3aa20d28cd1af2d58ef}{}\label{pav__analysis_8h_a9bbca2062295d3aa20d28cd1af2d58ef}
