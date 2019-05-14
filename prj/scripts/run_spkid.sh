@@ -88,6 +88,14 @@ create_lists() {
 
 # command mcp: create feature from wave files
 # TODO: select (or change) different features, options. 
+compute_mcp() {
+ for line in $(cat $w/lists/all.train) $(cat $w/lists/all.test); do
+         mkdir -p `dirname $w/mcp/$line.mcp`
+         echo "wav2mfcc 24 16 $db/$line.wav" "$w/mcp/$line.mcp"
+         #wav2lpcc 4 8 "$db/$line.wav" "$w/mcp/$line.mcp" || wav2mfcc 24 "$db/$line.wav" "$w/mcp/$line.mcp" || 
+ exit 1 
+done
+} 
 # Make you best choice or try several options
 
 compute_mcp() {
@@ -224,6 +232,9 @@ for cmd in $*; do
        echo "Implement the trainworld option ..."
    elif [[ $cmd == verify ]]; then
        # TODO gmm_verify --> put std output in $w/spk_verify.log, ej gmm_verify .... > $w/spk_verify.log   or gmm_verify ... | tee $w/spk_verify.log
+	gmm_verify  -d $w/mcp -e mcp -D $w/gmm/mcp -E gmm $w/lists/gmm.list
+	$w/lists_verify/all.test $w/lists_verify/all.test.candidates | tee $w 
+
        echo "Implement the verify option ..."
    elif [[ $cmd == verif_err ]]; then
        if [[ ! -s $w/spk_verify.log ]] ; then
