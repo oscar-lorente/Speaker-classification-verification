@@ -1,0 +1,32 @@
+\hypertarget{wavfile__mono_8h}{}\section{include/wavfile\+\_\+mono.h File Reference}
+\label{wavfile__mono_8h}\index{include/wavfile\+\_\+mono.\+h@{include/wavfile\+\_\+mono.\+h}}
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{wavfile__mono_8h_aedcb767fa59813d39dc5cd862faa793b}{readwav\+\_\+mono} (const std\+::string \&filename, unsigned int \&sampling\+\_\+rate, std\+::vector$<$ \hyperlink{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}{float} $>$ \&\hyperlink{FFTReal__readme_8txt_a9c92ac89d1560f812393ca39a19e581e}{x})
+\item 
+int \hyperlink{wavfile__mono_8h_a43d41231f7fb07149e00c477727a8254}{writewav\+\_\+mono} (const std\+::string \&filename, unsigned int sampling\+\_\+freq, const std\+::vector$<$ \hyperlink{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}{float} $>$ \&\hyperlink{FFTReal__readme_8txt_a9c92ac89d1560f812393ca39a19e581e}{x})
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{wavfile\+\_\+mono.\+h@{wavfile\+\_\+mono.\+h}!readwav\+\_\+mono@{readwav\+\_\+mono}}
+\index{readwav\+\_\+mono@{readwav\+\_\+mono}!wavfile\+\_\+mono.\+h@{wavfile\+\_\+mono.\+h}}
+\subsubsection[{\texorpdfstring{readwav\+\_\+mono(const std\+::string \&filename, unsigned int \&sampling\+\_\+rate, std\+::vector$<$ float $>$ \&x)}{readwav_mono(const std::string &filename, unsigned int &sampling_rate, std::vector< float > &x)}}]{\setlength{\rightskip}{0pt plus 5cm}int readwav\+\_\+mono (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{filename, }
+\item[{unsigned int \&}]{sampling\+\_\+rate, }
+\item[{std\+::vector$<$ {\bf float} $>$ \&}]{x}
+\end{DoxyParamCaption}
+)}\hypertarget{wavfile__mono_8h_aedcb767fa59813d39dc5cd862faa793b}{}\label{wavfile__mono_8h_aedcb767fa59813d39dc5cd862faa793b}
+Read input sound filename and set the value of sampling\+\_\+freq and samples This is just a wrapper of the sndfile lib, for the particular case that the input is mono. Return\+: 0 =$>$ OK; $<$ 0 =$>$ Error. \index{wavfile\+\_\+mono.\+h@{wavfile\+\_\+mono.\+h}!writewav\+\_\+mono@{writewav\+\_\+mono}}
+\index{writewav\+\_\+mono@{writewav\+\_\+mono}!wavfile\+\_\+mono.\+h@{wavfile\+\_\+mono.\+h}}
+\subsubsection[{\texorpdfstring{writewav\+\_\+mono(const std\+::string \&filename, unsigned int sampling\+\_\+freq, const std\+::vector$<$ float $>$ \&x)}{writewav_mono(const std::string &filename, unsigned int sampling_freq, const std::vector< float > &x)}}]{\setlength{\rightskip}{0pt plus 5cm}int writewav\+\_\+mono (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{filename, }
+\item[{unsigned int}]{sampling\+\_\+freq, }
+\item[{const std\+::vector$<$ {\bf float} $>$ \&}]{x}
+\end{DoxyParamCaption}
+)}\hypertarget{wavfile__mono_8h_a43d41231f7fb07149e00c477727a8254}{}\label{wavfile__mono_8h_a43d41231f7fb07149e00c477727a8254}

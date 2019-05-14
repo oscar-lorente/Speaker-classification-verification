@@ -1,0 +1,186 @@
+\hypertarget{classupc_1_1matrix}{}\section{upc\+:\+:matrix$<$ \+\_\+\+Ty $>$ Class Template Reference}
+\label{classupc_1_1matrix}\index{upc\+::matrix$<$ \+\_\+\+Ty $>$@{upc\+::matrix$<$ \+\_\+\+Ty $>$}}
+
+
+{\ttfamily \#include $<$matrix.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{classupc_1_1array_a85501f086a20ed6686ef78a242b2f302}{Tvector\+::size\+\_\+type} \hyperlink{classupc_1_1matrix_a0f2b47f0fc08216f8e0ef1cc1c022663}{size\+\_\+type}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classupc_1_1matrix_a908e2ae559167d0376d2b095116029ab}{matrix} (\hyperlink{classupc_1_1matrix_a0f2b47f0fc08216f8e0ef1cc1c022663}{size\+\_\+type} \hyperlink{classupc_1_1matrix_a7b922be25c0cf0d255252a4fe7350ea2}{nrow}=0, \hyperlink{classupc_1_1matrix_a0f2b47f0fc08216f8e0ef1cc1c022663}{size\+\_\+type} \hyperlink{classupc_1_1matrix_a0e8f41d88948610215db9cc8eafa02a6}{ncol}=0)
+\item 
+\hyperlink{classupc_1_1matrix_aedb3ba241346dfac0655cf4b63715e7f}{matrix} (const \hyperlink{classupc_1_1matrix_a9e671131fc3af250bb4bad539474da9c}{\+\_\+\+Myt} \&o)
+\item 
+\hyperlink{classupc_1_1matrix_a0f2b47f0fc08216f8e0ef1cc1c022663}{size\+\_\+type} \hyperlink{classupc_1_1matrix_a7b922be25c0cf0d255252a4fe7350ea2}{nrow} () const 
+\item 
+\hyperlink{classupc_1_1matrix_a0f2b47f0fc08216f8e0ef1cc1c022663}{size\+\_\+type} \hyperlink{classupc_1_1matrix_a0e8f41d88948610215db9cc8eafa02a6}{ncol} () const 
+\item 
+\hyperlink{classupc_1_1matrix_af4880980335adaf4abe61988558472f5}{\+\_\+\+Ctptr} \hyperlink{classupc_1_1matrix_a773213642b2ba0beda6e19618e2b949a}{operator\mbox{[}$\,$\mbox{]}} (int i) const 
+\item 
+\hyperlink{classupc_1_1matrix_a75a85786a5de55cdfcdf1f205df1f3e8}{\+\_\+\+Tptr} \hyperlink{classupc_1_1matrix_a1016950fd091e3798fa475b5f2e90719}{operator\mbox{[}$\,$\mbox{]}} (int i)
+\item 
+const \hyperlink{classupc_1_1matrix_af4880980335adaf4abe61988558472f5}{\+\_\+\+Ctptr} $\ast$ \hyperlink{classupc_1_1matrix_add034dcb2c5abd3d6a728da60f5590e9}{m} () const 
+\item 
+\hyperlink{classupc_1_1matrix_a75a85786a5de55cdfcdf1f205df1f3e8}{\+\_\+\+Tptr} $\ast$ \hyperlink{classupc_1_1matrix_a6b505e71e56088332a4203f6b6032dcf}{m} ()
+\item 
+void \hyperlink{classupc_1_1matrix_aec394dcccbfaad5c75a013874814c475}{reset} ()
+\item 
+void \hyperlink{classupc_1_1matrix_ad9c957658ec403494af0d92fa2c499fb}{resize} (\hyperlink{classupc_1_1matrix_a0f2b47f0fc08216f8e0ef1cc1c022663}{size\+\_\+type} \hyperlink{classupc_1_1matrix_a7b922be25c0cf0d255252a4fe7350ea2}{nrow}, \hyperlink{classupc_1_1matrix_a0f2b47f0fc08216f8e0ef1cc1c022663}{size\+\_\+type} \hyperlink{classupc_1_1matrix_a0e8f41d88948610215db9cc8eafa02a6}{ncol})
+\item 
+\hyperlink{classupc_1_1matrix_a9e671131fc3af250bb4bad539474da9c}{\+\_\+\+Myt} \& \hyperlink{classupc_1_1matrix_a9a0d300fcfe6652fde1347c139291919}{operator=} (const \hyperlink{classupc_1_1matrix_a9e671131fc3af250bb4bad539474da9c}{\+\_\+\+Myt} \&other)
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{classupc_1_1matrix}{matrix}$<$ \+\_\+\+Ty $>$ \hyperlink{classupc_1_1matrix_a9e671131fc3af250bb4bad539474da9c}{\+\_\+\+Myt}
+\item 
+typedef \hyperlink{classupc_1_1array}{array}$<$ \+\_\+\+Ty $>$ \hyperlink{classupc_1_1matrix_acebf527a1d5f301a17e38e08d5cea335}{Tvector}
+\item 
+typedef \hyperlink{classupc_1_1array_a420718228a4d845721303a19755f0d42}{Tvector\+::\+\_\+\+Ctptr} \hyperlink{classupc_1_1matrix_af4880980335adaf4abe61988558472f5}{\+\_\+\+Ctptr}
+\item 
+typedef \hyperlink{classupc_1_1array_a4ef66945898a2c393cff5be41de077d2}{Tvector\+::\+\_\+\+Tptr} \hyperlink{classupc_1_1matrix_a75a85786a5de55cdfcdf1f205df1f3e8}{\+\_\+\+Tptr}
+\item 
+typedef \hyperlink{classupc_1_1array}{array}$<$ \hyperlink{classupc_1_1matrix_a75a85786a5de55cdfcdf1f205df1f3e8}{\+\_\+\+Tptr} $>$ \hyperlink{classupc_1_1matrix_a1f8337796d73b88280f6a517d2d1f20d}{Pvector}
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classupc_1_1matrix_acebf527a1d5f301a17e38e08d5cea335}{Tvector} \hyperlink{classupc_1_1matrix_a1fd23b090b8e985c526d913792ad0f96}{m\+\_\+v}
+\item 
+\hyperlink{classupc_1_1matrix_a1f8337796d73b88280f6a517d2d1f20d}{Pvector} \hyperlink{classupc_1_1matrix_a01c5df069e0cddf9efcb5632a7e9c220}{m\+\_\+p}
+\item 
+\hyperlink{classupc_1_1matrix_a0f2b47f0fc08216f8e0ef1cc1c022663}{size\+\_\+type} \hyperlink{classupc_1_1matrix_a2a32ddd89dd5b9c85d95498f9fb77c70}{m\+\_\+nrow}
+\item 
+\hyperlink{classupc_1_1matrix_a0f2b47f0fc08216f8e0ef1cc1c022663}{size\+\_\+type} \hyperlink{classupc_1_1matrix_a053950016358b76da92c0a25c01987e9}{m\+\_\+ncol}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Typedef Documentation}
+\index{upc\+::matrix@{upc\+::matrix}!\+\_\+\+Ctptr@{\+\_\+\+Ctptr}}
+\index{\+\_\+\+Ctptr@{\+\_\+\+Ctptr}!upc\+::matrix@{upc\+::matrix}}
+\subsubsection[{\texorpdfstring{\+\_\+\+Ctptr}{_Ctptr}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \+\_\+\+Ty$>$ typedef {\bf Tvector\+::\+\_\+\+Ctptr} {\bf upc\+::matrix}$<$ \+\_\+\+Ty $>$\+::{\bf \+\_\+\+Ctptr}\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classupc_1_1matrix_af4880980335adaf4abe61988558472f5}{}\label{classupc_1_1matrix_af4880980335adaf4abe61988558472f5}
+\index{upc\+::matrix@{upc\+::matrix}!\+\_\+\+Myt@{\+\_\+\+Myt}}
+\index{\+\_\+\+Myt@{\+\_\+\+Myt}!upc\+::matrix@{upc\+::matrix}}
+\subsubsection[{\texorpdfstring{\+\_\+\+Myt}{_Myt}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \+\_\+\+Ty$>$ typedef {\bf matrix}$<$\+\_\+\+Ty$>$ {\bf upc\+::matrix}$<$ \+\_\+\+Ty $>$\+::{\bf \+\_\+\+Myt}\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classupc_1_1matrix_a9e671131fc3af250bb4bad539474da9c}{}\label{classupc_1_1matrix_a9e671131fc3af250bb4bad539474da9c}
+\index{upc\+::matrix@{upc\+::matrix}!\+\_\+\+Tptr@{\+\_\+\+Tptr}}
+\index{\+\_\+\+Tptr@{\+\_\+\+Tptr}!upc\+::matrix@{upc\+::matrix}}
+\subsubsection[{\texorpdfstring{\+\_\+\+Tptr}{_Tptr}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \+\_\+\+Ty$>$ typedef {\bf Tvector\+::\+\_\+\+Tptr} {\bf upc\+::matrix}$<$ \+\_\+\+Ty $>$\+::{\bf \+\_\+\+Tptr}\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classupc_1_1matrix_a75a85786a5de55cdfcdf1f205df1f3e8}{}\label{classupc_1_1matrix_a75a85786a5de55cdfcdf1f205df1f3e8}
+\index{upc\+::matrix@{upc\+::matrix}!Pvector@{Pvector}}
+\index{Pvector@{Pvector}!upc\+::matrix@{upc\+::matrix}}
+\subsubsection[{\texorpdfstring{Pvector}{Pvector}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \+\_\+\+Ty$>$ typedef {\bf array}$<${\bf \+\_\+\+Tptr}$>$ {\bf upc\+::matrix}$<$ \+\_\+\+Ty $>$\+::{\bf Pvector}\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classupc_1_1matrix_a1f8337796d73b88280f6a517d2d1f20d}{}\label{classupc_1_1matrix_a1f8337796d73b88280f6a517d2d1f20d}
+\index{upc\+::matrix@{upc\+::matrix}!size\+\_\+type@{size\+\_\+type}}
+\index{size\+\_\+type@{size\+\_\+type}!upc\+::matrix@{upc\+::matrix}}
+\subsubsection[{\texorpdfstring{size\+\_\+type}{size_type}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \+\_\+\+Ty$>$ typedef {\bf Tvector\+::size\+\_\+type} {\bf upc\+::matrix}$<$ \+\_\+\+Ty $>$\+::{\bf size\+\_\+type}}\hypertarget{classupc_1_1matrix_a0f2b47f0fc08216f8e0ef1cc1c022663}{}\label{classupc_1_1matrix_a0f2b47f0fc08216f8e0ef1cc1c022663}
+\index{upc\+::matrix@{upc\+::matrix}!Tvector@{Tvector}}
+\index{Tvector@{Tvector}!upc\+::matrix@{upc\+::matrix}}
+\subsubsection[{\texorpdfstring{Tvector}{Tvector}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \+\_\+\+Ty$>$ typedef {\bf array}$<$\+\_\+\+Ty$>$ {\bf upc\+::matrix}$<$ \+\_\+\+Ty $>$\+::{\bf Tvector}\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classupc_1_1matrix_acebf527a1d5f301a17e38e08d5cea335}{}\label{classupc_1_1matrix_acebf527a1d5f301a17e38e08d5cea335}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{upc\+::matrix@{upc\+::matrix}!matrix@{matrix}}
+\index{matrix@{matrix}!upc\+::matrix@{upc\+::matrix}}
+\subsubsection[{\texorpdfstring{matrix(size\+\_\+type nrow=0, size\+\_\+type ncol=0)}{matrix(size_type nrow=0, size_type ncol=0)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \+\_\+\+Ty$>$ {\bf upc\+::matrix}$<$ \+\_\+\+Ty $>$\+::{\bf matrix} (
+\begin{DoxyParamCaption}
+\item[{{\bf size\+\_\+type}}]{nrow = {\ttfamily 0}, }
+\item[{{\bf size\+\_\+type}}]{ncol = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}\hypertarget{classupc_1_1matrix_a908e2ae559167d0376d2b095116029ab}{}\label{classupc_1_1matrix_a908e2ae559167d0376d2b095116029ab}
+\index{upc\+::matrix@{upc\+::matrix}!matrix@{matrix}}
+\index{matrix@{matrix}!upc\+::matrix@{upc\+::matrix}}
+\subsubsection[{\texorpdfstring{matrix(const \+\_\+\+Myt \&o)}{matrix(const _Myt &o)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \+\_\+\+Ty$>$ {\bf upc\+::matrix}$<$ \+\_\+\+Ty $>$\+::{\bf matrix} (
+\begin{DoxyParamCaption}
+\item[{const {\bf \+\_\+\+Myt} \&}]{o}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classupc_1_1matrix_aedb3ba241346dfac0655cf4b63715e7f}{}\label{classupc_1_1matrix_aedb3ba241346dfac0655cf4b63715e7f}
+
+
+\subsection{Member Function Documentation}
+\index{upc\+::matrix@{upc\+::matrix}!m@{m}}
+\index{m@{m}!upc\+::matrix@{upc\+::matrix}}
+\subsubsection[{\texorpdfstring{m() const }{m() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \+\_\+\+Ty$>$ const {\bf \+\_\+\+Ctptr}$\ast$ {\bf upc\+::matrix}$<$ \+\_\+\+Ty $>$\+::m (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classupc_1_1matrix_add034dcb2c5abd3d6a728da60f5590e9}{}\label{classupc_1_1matrix_add034dcb2c5abd3d6a728da60f5590e9}
+\index{upc\+::matrix@{upc\+::matrix}!m@{m}}
+\index{m@{m}!upc\+::matrix@{upc\+::matrix}}
+\subsubsection[{\texorpdfstring{m()}{m()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \+\_\+\+Ty$>$ {\bf \+\_\+\+Tptr}$\ast$ {\bf upc\+::matrix}$<$ \+\_\+\+Ty $>$\+::m (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classupc_1_1matrix_a6b505e71e56088332a4203f6b6032dcf}{}\label{classupc_1_1matrix_a6b505e71e56088332a4203f6b6032dcf}
+\index{upc\+::matrix@{upc\+::matrix}!ncol@{ncol}}
+\index{ncol@{ncol}!upc\+::matrix@{upc\+::matrix}}
+\subsubsection[{\texorpdfstring{ncol() const }{ncol() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \+\_\+\+Ty$>$ {\bf size\+\_\+type} {\bf upc\+::matrix}$<$ \+\_\+\+Ty $>$\+::ncol (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classupc_1_1matrix_a0e8f41d88948610215db9cc8eafa02a6}{}\label{classupc_1_1matrix_a0e8f41d88948610215db9cc8eafa02a6}
+\index{upc\+::matrix@{upc\+::matrix}!nrow@{nrow}}
+\index{nrow@{nrow}!upc\+::matrix@{upc\+::matrix}}
+\subsubsection[{\texorpdfstring{nrow() const }{nrow() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \+\_\+\+Ty$>$ {\bf size\+\_\+type} {\bf upc\+::matrix}$<$ \+\_\+\+Ty $>$\+::nrow (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classupc_1_1matrix_a7b922be25c0cf0d255252a4fe7350ea2}{}\label{classupc_1_1matrix_a7b922be25c0cf0d255252a4fe7350ea2}
+\index{upc\+::matrix@{upc\+::matrix}!operator=@{operator=}}
+\index{operator=@{operator=}!upc\+::matrix@{upc\+::matrix}}
+\subsubsection[{\texorpdfstring{operator=(const \+\_\+\+Myt \&other)}{operator=(const _Myt &other)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \+\_\+\+Ty$>$ {\bf \+\_\+\+Myt}\& {\bf upc\+::matrix}$<$ \+\_\+\+Ty $>$\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf \+\_\+\+Myt} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classupc_1_1matrix_a9a0d300fcfe6652fde1347c139291919}{}\label{classupc_1_1matrix_a9a0d300fcfe6652fde1347c139291919}
+\index{upc\+::matrix@{upc\+::matrix}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
+\index{operator\mbox{[}$\,$\mbox{]}@{operator[]}!upc\+::matrix@{upc\+::matrix}}
+\subsubsection[{\texorpdfstring{operator[](int i) const }{operator[](int i) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \+\_\+\+Ty$>$ {\bf \+\_\+\+Ctptr} {\bf upc\+::matrix}$<$ \+\_\+\+Ty $>$\+::operator\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{int}]{i}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classupc_1_1matrix_a773213642b2ba0beda6e19618e2b949a}{}\label{classupc_1_1matrix_a773213642b2ba0beda6e19618e2b949a}
+\index{upc\+::matrix@{upc\+::matrix}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
+\index{operator\mbox{[}$\,$\mbox{]}@{operator[]}!upc\+::matrix@{upc\+::matrix}}
+\subsubsection[{\texorpdfstring{operator[](int i)}{operator[](int i)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \+\_\+\+Ty$>$ {\bf \+\_\+\+Tptr} {\bf upc\+::matrix}$<$ \+\_\+\+Ty $>$\+::operator\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classupc_1_1matrix_a1016950fd091e3798fa475b5f2e90719}{}\label{classupc_1_1matrix_a1016950fd091e3798fa475b5f2e90719}
+\index{upc\+::matrix@{upc\+::matrix}!reset@{reset}}
+\index{reset@{reset}!upc\+::matrix@{upc\+::matrix}}
+\subsubsection[{\texorpdfstring{reset()}{reset()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \+\_\+\+Ty$>$ void {\bf upc\+::matrix}$<$ \+\_\+\+Ty $>$\+::reset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classupc_1_1matrix_aec394dcccbfaad5c75a013874814c475}{}\label{classupc_1_1matrix_aec394dcccbfaad5c75a013874814c475}
+\index{upc\+::matrix@{upc\+::matrix}!resize@{resize}}
+\index{resize@{resize}!upc\+::matrix@{upc\+::matrix}}
+\subsubsection[{\texorpdfstring{resize(size\+\_\+type nrow, size\+\_\+type ncol)}{resize(size_type nrow, size_type ncol)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \+\_\+\+Ty$>$ void {\bf upc\+::matrix}$<$ \+\_\+\+Ty $>$\+::resize (
+\begin{DoxyParamCaption}
+\item[{{\bf size\+\_\+type}}]{nrow, }
+\item[{{\bf size\+\_\+type}}]{ncol}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classupc_1_1matrix_ad9c957658ec403494af0d92fa2c499fb}{}\label{classupc_1_1matrix_ad9c957658ec403494af0d92fa2c499fb}
+
+
+\subsection{Member Data Documentation}
+\index{upc\+::matrix@{upc\+::matrix}!m\+\_\+ncol@{m\+\_\+ncol}}
+\index{m\+\_\+ncol@{m\+\_\+ncol}!upc\+::matrix@{upc\+::matrix}}
+\subsubsection[{\texorpdfstring{m\+\_\+ncol}{m_ncol}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \+\_\+\+Ty$>$ {\bf size\+\_\+type} {\bf upc\+::matrix}$<$ \+\_\+\+Ty $>$\+::m\+\_\+ncol\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classupc_1_1matrix_a053950016358b76da92c0a25c01987e9}{}\label{classupc_1_1matrix_a053950016358b76da92c0a25c01987e9}
+\index{upc\+::matrix@{upc\+::matrix}!m\+\_\+nrow@{m\+\_\+nrow}}
+\index{m\+\_\+nrow@{m\+\_\+nrow}!upc\+::matrix@{upc\+::matrix}}
+\subsubsection[{\texorpdfstring{m\+\_\+nrow}{m_nrow}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \+\_\+\+Ty$>$ {\bf size\+\_\+type} {\bf upc\+::matrix}$<$ \+\_\+\+Ty $>$\+::m\+\_\+nrow\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classupc_1_1matrix_a2a32ddd89dd5b9c85d95498f9fb77c70}{}\label{classupc_1_1matrix_a2a32ddd89dd5b9c85d95498f9fb77c70}
+\index{upc\+::matrix@{upc\+::matrix}!m\+\_\+p@{m\+\_\+p}}
+\index{m\+\_\+p@{m\+\_\+p}!upc\+::matrix@{upc\+::matrix}}
+\subsubsection[{\texorpdfstring{m\+\_\+p}{m_p}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \+\_\+\+Ty$>$ {\bf Pvector} {\bf upc\+::matrix}$<$ \+\_\+\+Ty $>$\+::m\+\_\+p\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classupc_1_1matrix_a01c5df069e0cddf9efcb5632a7e9c220}{}\label{classupc_1_1matrix_a01c5df069e0cddf9efcb5632a7e9c220}
+\index{upc\+::matrix@{upc\+::matrix}!m\+\_\+v@{m\+\_\+v}}
+\index{m\+\_\+v@{m\+\_\+v}!upc\+::matrix@{upc\+::matrix}}
+\subsubsection[{\texorpdfstring{m\+\_\+v}{m_v}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \+\_\+\+Ty$>$ {\bf Tvector} {\bf upc\+::matrix}$<$ \+\_\+\+Ty $>$\+::m\+\_\+v\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classupc_1_1matrix_a1fd23b090b8e985c526d913792ad0f96}{}\label{classupc_1_1matrix_a1fd23b090b8e985c526d913792ad0f96}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{matrix_8h}{matrix.\+h}\end{DoxyCompactItemize}

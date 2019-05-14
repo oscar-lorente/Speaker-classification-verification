@@ -1,0 +1,150 @@
+\hypertarget{classffft_1_1DynArray}{}\section{ffft\+:\+:Dyn\+Array$<$ T $>$ Class Template Reference}
+\label{classffft_1_1DynArray}\index{ffft\+::\+Dyn\+Array$<$ T $>$@{ffft\+::\+Dyn\+Array$<$ T $>$}}
+
+
+{\ttfamily \#include $<$Dyn\+Array.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef T \hyperlink{classffft_1_1DynArray_aa21fa88c73e511acb18a7e778190ab02}{Data\+Type}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classffft_1_1DynArray_a3a1bc9474a3891360464c4ad97d846ff}{Dyn\+Array} ()
+\item 
+\hyperlink{classffft_1_1DynArray_a26919351a30b4be36c3e3ee500a7c6a7}{Dyn\+Array} (long \hyperlink{classffft_1_1DynArray_aab5a878741b62b079c94db354357127d}{size})
+\item 
+\hyperlink{classffft_1_1DynArray_a0467340a0c0b5cbb47683c665e21ffd6}{$\sim$\+Dyn\+Array} ()
+\item 
+long \hyperlink{classffft_1_1DynArray_aab5a878741b62b079c94db354357127d}{size} () const 
+\item 
+void \hyperlink{classffft_1_1DynArray_a3879167bca7e35ee75596318f67e2930}{resize} (long \hyperlink{classffft_1_1DynArray_aab5a878741b62b079c94db354357127d}{size})
+\item 
+const \hyperlink{classffft_1_1DynArray_aa21fa88c73e511acb18a7e778190ab02}{Data\+Type} \& \hyperlink{classffft_1_1DynArray_a502aab733f04c8fed33348bce9f49e92}{operator\mbox{[}$\,$\mbox{]}} (long pos) const 
+\item 
+\hyperlink{classffft_1_1DynArray_aa21fa88c73e511acb18a7e778190ab02}{Data\+Type} \& \hyperlink{classffft_1_1DynArray_a79c769ea7c52d0fbbe67831380b9a89c}{operator\mbox{[}$\,$\mbox{]}} (long pos)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classffft_1_1DynArray_a7d28eb73cf75f2c669a32dde120eb2cb}{Dyn\+Array} (const \hyperlink{classffft_1_1DynArray}{Dyn\+Array} \&other)
+\item 
+\hyperlink{classffft_1_1DynArray}{Dyn\+Array} \& \hyperlink{classffft_1_1DynArray_ab16be271312566a8ba4d2867ae2a1e5e}{operator=} (const \hyperlink{classffft_1_1DynArray}{Dyn\+Array} \&other)
+\item 
+bool \hyperlink{classffft_1_1DynArray_a7418a4e9990dc57b076ed5b21b1483a0}{operator==} (const \hyperlink{classffft_1_1DynArray}{Dyn\+Array} \&other)
+\item 
+bool \hyperlink{classffft_1_1DynArray_afe1e0c664bde31b145b3782817e355fd}{operator!=} (const \hyperlink{classffft_1_1DynArray}{Dyn\+Array} \&other)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classffft_1_1DynArray_aa21fa88c73e511acb18a7e778190ab02}{Data\+Type} $\ast$ \hyperlink{classffft_1_1DynArray_acfb894fb97f7a2aed0e5c242bb82073a}{\+\_\+data\+\_\+ptr}
+\item 
+long \hyperlink{classffft_1_1DynArray_ab598085ccf8352effe43635aec134cb6}{\+\_\+len}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Typedef Documentation}
+\index{ffft\+::\+Dyn\+Array@{ffft\+::\+Dyn\+Array}!Data\+Type@{Data\+Type}}
+\index{Data\+Type@{Data\+Type}!ffft\+::\+Dyn\+Array@{ffft\+::\+Dyn\+Array}}
+\subsubsection[{\texorpdfstring{Data\+Type}{DataType}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ typedef T {\bf ffft\+::\+Dyn\+Array}$<$ T $>$\+::{\bf Data\+Type}}\hypertarget{classffft_1_1DynArray_aa21fa88c73e511acb18a7e778190ab02}{}\label{classffft_1_1DynArray_aa21fa88c73e511acb18a7e778190ab02}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{ffft\+::\+Dyn\+Array@{ffft\+::\+Dyn\+Array}!Dyn\+Array@{Dyn\+Array}}
+\index{Dyn\+Array@{Dyn\+Array}!ffft\+::\+Dyn\+Array@{ffft\+::\+Dyn\+Array}}
+\subsubsection[{\texorpdfstring{Dyn\+Array()}{DynArray()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf ffft\+::\+Dyn\+Array}$<$ T $>$\+::{\bf Dyn\+Array} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classffft_1_1DynArray_a3a1bc9474a3891360464c4ad97d846ff}{}\label{classffft_1_1DynArray_a3a1bc9474a3891360464c4ad97d846ff}
+\index{ffft\+::\+Dyn\+Array@{ffft\+::\+Dyn\+Array}!Dyn\+Array@{Dyn\+Array}}
+\index{Dyn\+Array@{Dyn\+Array}!ffft\+::\+Dyn\+Array@{ffft\+::\+Dyn\+Array}}
+\subsubsection[{\texorpdfstring{Dyn\+Array(long size)}{DynArray(long size)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf ffft\+::\+Dyn\+Array}$<$ T $>$\+::{\bf Dyn\+Array} (
+\begin{DoxyParamCaption}
+\item[{long}]{size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}\hypertarget{classffft_1_1DynArray_a26919351a30b4be36c3e3ee500a7c6a7}{}\label{classffft_1_1DynArray_a26919351a30b4be36c3e3ee500a7c6a7}
+\index{ffft\+::\+Dyn\+Array@{ffft\+::\+Dyn\+Array}!````~Dyn\+Array@{$\sim$\+Dyn\+Array}}
+\index{````~Dyn\+Array@{$\sim$\+Dyn\+Array}!ffft\+::\+Dyn\+Array@{ffft\+::\+Dyn\+Array}}
+\subsubsection[{\texorpdfstring{$\sim$\+Dyn\+Array()}{~DynArray()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf ffft\+::\+Dyn\+Array}$<$ T $>$\+::$\sim${\bf Dyn\+Array} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classffft_1_1DynArray_a0467340a0c0b5cbb47683c665e21ffd6}{}\label{classffft_1_1DynArray_a0467340a0c0b5cbb47683c665e21ffd6}
+\index{ffft\+::\+Dyn\+Array@{ffft\+::\+Dyn\+Array}!Dyn\+Array@{Dyn\+Array}}
+\index{Dyn\+Array@{Dyn\+Array}!ffft\+::\+Dyn\+Array@{ffft\+::\+Dyn\+Array}}
+\subsubsection[{\texorpdfstring{Dyn\+Array(const Dyn\+Array \&other)}{DynArray(const DynArray &other)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf ffft\+::\+Dyn\+Array}$<$ T $>$\+::{\bf Dyn\+Array} (
+\begin{DoxyParamCaption}
+\item[{const {\bf Dyn\+Array}$<$ T $>$ \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classffft_1_1DynArray_a7d28eb73cf75f2c669a32dde120eb2cb}{}\label{classffft_1_1DynArray_a7d28eb73cf75f2c669a32dde120eb2cb}
+
+
+\subsection{Member Function Documentation}
+\index{ffft\+::\+Dyn\+Array@{ffft\+::\+Dyn\+Array}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!ffft\+::\+Dyn\+Array@{ffft\+::\+Dyn\+Array}}
+\subsubsection[{\texorpdfstring{operator"!=(const Dyn\+Array \&other)}{operator!=(const DynArray &other)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ bool {\bf ffft\+::\+Dyn\+Array}$<$ T $>$\+::operator!= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Dyn\+Array}$<$ T $>$ \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classffft_1_1DynArray_afe1e0c664bde31b145b3782817e355fd}{}\label{classffft_1_1DynArray_afe1e0c664bde31b145b3782817e355fd}
+\index{ffft\+::\+Dyn\+Array@{ffft\+::\+Dyn\+Array}!operator=@{operator=}}
+\index{operator=@{operator=}!ffft\+::\+Dyn\+Array@{ffft\+::\+Dyn\+Array}}
+\subsubsection[{\texorpdfstring{operator=(const Dyn\+Array \&other)}{operator=(const DynArray &other)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf Dyn\+Array}\& {\bf ffft\+::\+Dyn\+Array}$<$ T $>$\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Dyn\+Array}$<$ T $>$ \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classffft_1_1DynArray_ab16be271312566a8ba4d2867ae2a1e5e}{}\label{classffft_1_1DynArray_ab16be271312566a8ba4d2867ae2a1e5e}
+\index{ffft\+::\+Dyn\+Array@{ffft\+::\+Dyn\+Array}!operator==@{operator==}}
+\index{operator==@{operator==}!ffft\+::\+Dyn\+Array@{ffft\+::\+Dyn\+Array}}
+\subsubsection[{\texorpdfstring{operator==(const Dyn\+Array \&other)}{operator==(const DynArray &other)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ bool {\bf ffft\+::\+Dyn\+Array}$<$ T $>$\+::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Dyn\+Array}$<$ T $>$ \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classffft_1_1DynArray_a7418a4e9990dc57b076ed5b21b1483a0}{}\label{classffft_1_1DynArray_a7418a4e9990dc57b076ed5b21b1483a0}
+\index{ffft\+::\+Dyn\+Array@{ffft\+::\+Dyn\+Array}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
+\index{operator\mbox{[}$\,$\mbox{]}@{operator[]}!ffft\+::\+Dyn\+Array@{ffft\+::\+Dyn\+Array}}
+\subsubsection[{\texorpdfstring{operator[](long pos) const }{operator[](long pos) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ const {\bf Dyn\+Array}$<$ T $>$\+::{\bf Data\+Type} \& {\bf ffft\+::\+Dyn\+Array}$<$ T $>$\+::operator\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{long}]{pos}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classffft_1_1DynArray_a502aab733f04c8fed33348bce9f49e92}{}\label{classffft_1_1DynArray_a502aab733f04c8fed33348bce9f49e92}
+\index{ffft\+::\+Dyn\+Array@{ffft\+::\+Dyn\+Array}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
+\index{operator\mbox{[}$\,$\mbox{]}@{operator[]}!ffft\+::\+Dyn\+Array@{ffft\+::\+Dyn\+Array}}
+\subsubsection[{\texorpdfstring{operator[](long pos)}{operator[](long pos)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf Dyn\+Array}$<$ T $>$\+::{\bf Data\+Type} \& {\bf ffft\+::\+Dyn\+Array}$<$ T $>$\+::operator\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{long}]{pos}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classffft_1_1DynArray_a79c769ea7c52d0fbbe67831380b9a89c}{}\label{classffft_1_1DynArray_a79c769ea7c52d0fbbe67831380b9a89c}
+\index{ffft\+::\+Dyn\+Array@{ffft\+::\+Dyn\+Array}!resize@{resize}}
+\index{resize@{resize}!ffft\+::\+Dyn\+Array@{ffft\+::\+Dyn\+Array}}
+\subsubsection[{\texorpdfstring{resize(long size)}{resize(long size)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf ffft\+::\+Dyn\+Array}$<$ T $>$\+::resize (
+\begin{DoxyParamCaption}
+\item[{long}]{size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classffft_1_1DynArray_a3879167bca7e35ee75596318f67e2930}{}\label{classffft_1_1DynArray_a3879167bca7e35ee75596318f67e2930}
+\index{ffft\+::\+Dyn\+Array@{ffft\+::\+Dyn\+Array}!size@{size}}
+\index{size@{size}!ffft\+::\+Dyn\+Array@{ffft\+::\+Dyn\+Array}}
+\subsubsection[{\texorpdfstring{size() const }{size() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ long {\bf ffft\+::\+Dyn\+Array}$<$ T $>$\+::size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classffft_1_1DynArray_aab5a878741b62b079c94db354357127d}{}\label{classffft_1_1DynArray_aab5a878741b62b079c94db354357127d}
+
+
+\subsection{Member Data Documentation}
+\index{ffft\+::\+Dyn\+Array@{ffft\+::\+Dyn\+Array}!\+\_\+data\+\_\+ptr@{\+\_\+data\+\_\+ptr}}
+\index{\+\_\+data\+\_\+ptr@{\+\_\+data\+\_\+ptr}!ffft\+::\+Dyn\+Array@{ffft\+::\+Dyn\+Array}}
+\subsubsection[{\texorpdfstring{\+\_\+data\+\_\+ptr}{_data_ptr}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf Data\+Type}$\ast$ {\bf ffft\+::\+Dyn\+Array}$<$ T $>$\+::\+\_\+data\+\_\+ptr\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classffft_1_1DynArray_acfb894fb97f7a2aed0e5c242bb82073a}{}\label{classffft_1_1DynArray_acfb894fb97f7a2aed0e5c242bb82073a}
+\index{ffft\+::\+Dyn\+Array@{ffft\+::\+Dyn\+Array}!\+\_\+len@{\+\_\+len}}
+\index{\+\_\+len@{\+\_\+len}!ffft\+::\+Dyn\+Array@{ffft\+::\+Dyn\+Array}}
+\subsubsection[{\texorpdfstring{\+\_\+len}{_len}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ long {\bf ffft\+::\+Dyn\+Array}$<$ T $>$\+::\+\_\+len\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classffft_1_1DynArray_ab598085ccf8352effe43635aec134cb6}{}\label{classffft_1_1DynArray_ab598085ccf8352effe43635aec134cb6}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/ffft/\hyperlink{DynArray_8h}{Dyn\+Array.\+h}\item 
+include/ffft/\hyperlink{DynArray_8hpp}{Dyn\+Array.\+hpp}\end{DoxyCompactItemize}

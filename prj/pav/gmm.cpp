@@ -1,4 +1,4 @@
-/* Copyright (C) Universitat Politècnica de Catalunya, Barcelona, Spain.
+/* Copyright (C) Universitat Politï¿½cnica de Catalunya, Barcelona, Spain.
  *
  * Permission to copy, use, modify, sell and distribute this software
  * is granted provided this copyright notice appears in all copies.
@@ -16,9 +16,9 @@ using namespace upc;
 
 
 namespace upc {
-  void GMM::resize(size_t _nmix, size_t dim) {    
+  void GMM::resize(size_t _nmix, size_t dim) {
 
-    unsigned int n = (nmix < _nmix ? nmix : _nmix); 
+    unsigned int n = (nmix < _nmix ? nmix : _nmix);
 
     vector_size=dim; nmix=_nmix;
 
@@ -43,7 +43,7 @@ namespace upc {
 
    Solution:
    => if logx is larger,
-   log(e^logx + e^logy)=log(e^logx * (1+e^logy/e^logx)) = logx +log(1+e^(logy-logx)) 
+   log(e^logx + e^logy)=log(e^logx * (1+e^logy/e^logx)) = logx +log(1+e^(logy-logx))
 
    (same idea if logy is larger)
   */
@@ -60,7 +60,7 @@ namespace upc {
     unsigned int j;
     for (j=0; j<vector_size; ++j) {
       float f = (x[j]-mu[j]) * inv_sigma[j];
-      e += (f*f);      
+      e += (f*f);
       c += log(inv_sigma[j]);
     }
     e /= 2;
@@ -74,8 +74,8 @@ namespace upc {
 
     unsigned int last = nmix-1;
 
-    if (k != last) {    
-      //save last mixture in position k 
+    if (k != last) {
+      //save last mixture in position k
       w[k] = w[last];
       unsigned int i;
       for (i=0; i<vector_size; ++i) {
@@ -83,15 +83,15 @@ namespace upc {
 	inv_sigma[k][i] = inv_sigma[last][i];
       }
     }
-    resize(nmix-1, vector_size);     
+    resize(nmix-1, vector_size);
   }
-  
+
 
   ///Compute logprob of the input data
   float GMM::gmm_logprob(const float *x) const {
     float log_prob_x,f;
     unsigned int k;
-    log_prob_x = log(w[0]) + gaussian_logprob(vector_size, mu[0], inv_sigma[0], x); 
+    log_prob_x = log(w[0]) + gaussian_logprob(vector_size, mu[0], inv_sigma[0], x);
 
     for (k=1; k<nmix; ++k) {
       f = log(w[k]) +  gaussian_logprob(vector_size, mu[k], inv_sigma[k], x);
@@ -101,17 +101,18 @@ namespace upc {
   }
 
   ///TODO: Compute logprob a sequence of input data
-  float GMM::logprob(const fmatrix &data) const {    
+  float GMM::logprob(const fmatrix &data) const {
 
     if (nmix == 0 or vector_size == 0 or vector_size != data.ncol())
       return -1e38F;
-    
+
     float lprob = 0.0;
     unsigned int n;
 
     for (n=0; n<data.nrow(); ++n) {
       //TODO
-    }    
+      lprob += gmm_logprob(data[n]);
+    }
     return lprob/n;
   }
 
@@ -131,7 +132,7 @@ namespace upc {
     return 0;
   }
 
-  
+
   ///Compute the best mixtures (weights, means, variances) given
   /// -the input data
   /// -the weights that the input data is generated for each gaussian
@@ -199,15 +200,24 @@ namespace upc {
   int GMM::em(const fmatrix &data, unsigned int max_it, float inc_threshold, int verbose) {
     unsigned int iteration;
     float old_prob=-1e34, new_prob, inc_prob;
-    
+
     fmatrix weights(data.nrow(), nmix);
     for (iteration=0; iteration<max_it; ++iteration) {
 
       ///TODO: loop, em_expectation + em_maximization
       ///Stop if the prob. does not increases more than inc_threshold
       ///Update old_prob, new_prob, inc_prob
+
+      new_prob = em_expectation(data, weights);
+      em_maximization(data, weights);
+
+      inc_prob = new_prob - old_prob;
+
       if (verbose & 01)
-	cout << "GMM nmix=" << nmix << "\tite=" << iteration << "\tlog(prob)=" << new_prob << "\tinc=" << inc_prob << endl;
+	     cout << "GMM nmix=" << nmix << "\tite=" << iteration << "\tlog(prob)=" << new_prob << "\tinc=" << inc_prob << endl;
+
+      if(inc_prob <= inc_threshold) break;
+      old_prob = new_prob;
     }
     return 0;
   }
@@ -224,16 +234,16 @@ namespace upc {
   void GMM::split_mixture(unsigned int src, unsigned int dest) {
     unsigned int j;
     int sign;
-    float r;    
+    float r;
     for (j=0; j<vector_size; ++j) {
       r = (float) 2.0F *rand()/(float) RAND_MAX - 1.0F; /* r: (-1,1) */
       sign = (r > 0 ? 1 : -1);
-      
+
       mu[dest][j] = mu[src][j] + sign * 0.5/inv_sigma[src][j];
       mu[src][j] = mu[src][j] - sign * 0.5/inv_sigma[src][j];
-      
+
       inv_sigma[src][j] *= sqrt(2);
-      inv_sigma[dest][j] = inv_sigma[src][j];      
+      inv_sigma[dest][j] = inv_sigma[src][j];
     }
     w[src] /= 2.0F;
     w[dest] = w[src];
@@ -244,7 +254,7 @@ namespace upc {
 
     if (nmix >= target_size)
       return nmix;
-    
+
     if (2*nmix <= target_size) {
       target_size = 2*nmix;
       old_size = nmix;
@@ -272,7 +282,7 @@ namespace upc {
     for (n=0; n < data.nrow(); ++n) {
       float r = (float) rand()/(float) RAND_MAX; /* r: [0,1] */
       k = (int) (nmix * r);
-      if (k == nmix) k = nmix-1;    
+      if (k == nmix) k = nmix-1;
       weights[n][k] = 1.0F;
     }
     em_maximization(data, weights);
@@ -306,17 +316,16 @@ namespace upc {
       os << "w[" << k << "]=\t" << w[k] << '\n';
 
       os << "mu[" << k << "]=" << mu[k][0];
-      for (i=1; i<vector_size; ++i) 
-	os << "\t" << mu[k][i]; 
+      for (i=1; i<vector_size; ++i)
+	os << "\t" << mu[k][i];
       os << '\n';
 
       os << "sig[" << k << "]=" << 1/inv_sigma[k][0];
-      for (i=1; i<vector_size; ++i) 
+      for (i=1; i<vector_size; ++i)
 	os << "\t" << 1/inv_sigma[k][i];
       os << '\n' << endl;
-      
+
     }
     return os;
   }
 }
-

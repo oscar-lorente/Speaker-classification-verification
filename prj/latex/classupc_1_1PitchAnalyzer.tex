@@ -1,0 +1,211 @@
+\hypertarget{classupc_1_1PitchAnalyzer}{}\section{upc\+:\+:Pitch\+Analyzer Class Reference}
+\label{classupc_1_1PitchAnalyzer}\index{upc\+::\+Pitch\+Analyzer@{upc\+::\+Pitch\+Analyzer}}
+
+
+{\ttfamily \#include $<$pitch\+\_\+analyzer.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classupc_1_1PitchAnalyzer_ab82b7694d6bc72839e5be6e526be81b6}{Window} \{ \hyperlink{classupc_1_1PitchAnalyzer_ab82b7694d6bc72839e5be6e526be81b6ae89513dddf240af8bbef3358597f244c}{R\+E\+CT}, 
+\hyperlink{classupc_1_1PitchAnalyzer_ab82b7694d6bc72839e5be6e526be81b6a20e793e736a503aacbed0294970a9b33}{H\+A\+M\+M\+I\+NG}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classupc_1_1PitchAnalyzer_a96cc042a650825b25ca39c41beebd0db}{set\+\_\+window} (\hyperlink{classupc_1_1PitchAnalyzer_ab82b7694d6bc72839e5be6e526be81b6}{Window} type)
+\begin{DoxyCompactList}\small\item\em Window type. \end{DoxyCompactList}\item 
+\hyperlink{classupc_1_1PitchAnalyzer_ae7cfb918feadd7d56f5736e4ef600c06}{Pitch\+Analyzer} (unsigned int f\+Len, unsigned int s\+Freq, \hyperlink{classupc_1_1PitchAnalyzer_ab82b7694d6bc72839e5be6e526be81b6}{Window} w=\hyperlink{classupc_1_1PitchAnalyzer_ab82b7694d6bc72839e5be6e526be81b6a20e793e736a503aacbed0294970a9b33}{Pitch\+Analyzer\+::\+H\+A\+M\+M\+I\+NG}, \hyperlink{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}{float} min\+\_\+\+F0=\hyperlink{namespaceupc_ae8ed4ce6dc2c05dfc1aa6432db41e1ae}{M\+I\+N\+\_\+\+F0}, \hyperlink{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}{float} max\+\_\+\+F0=\hyperlink{namespaceupc_ab69be42753266b6e1a0deaa8eba56a19}{M\+A\+X\+\_\+\+F0})
+\begin{DoxyCompactList}\small\item\em true if the frame is unvoiced \end{DoxyCompactList}\item 
+\hyperlink{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}{float} \hyperlink{classupc_1_1PitchAnalyzer_a2cd33d0cbfc699c43f570442190ca9e6}{operator()} (const std\+::vector$<$ \hyperlink{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}{float} $>$ \&\+\_\+x) const 
+\item 
+\hyperlink{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}{float} \hyperlink{classupc_1_1PitchAnalyzer_a00aef276755224ed20668f3b1b3f16d1}{operator()} (const \hyperlink{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}{float} $\ast$pt, unsigned int \hyperlink{FFTReal__readme_8txt_a049dd452c22185832440207517cffdaa}{N}) const 
+\item 
+\hyperlink{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}{float} \hyperlink{classupc_1_1PitchAnalyzer_a2f924f9f45df090463be1498518934ab}{operator()} (std\+::vector$<$ \hyperlink{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}{float} $>$\+::const\+\_\+iterator begin, std\+::vector$<$ \hyperlink{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}{float} $>$\+::const\+\_\+iterator end) const 
+\item 
+void \hyperlink{classupc_1_1PitchAnalyzer_ac33887654b62b3f90c3de231ec187d94}{set\+\_\+f0\+\_\+range} (\hyperlink{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}{float} min\+\_\+\+F0, \hyperlink{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}{float} max\+\_\+\+F0)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classupc_1_1PitchAnalyzer_a45da4fa8b3d7bd67d87468a3153a839e}{autocorrelation} (const std\+::vector$<$ \hyperlink{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}{float} $>$ \&\hyperlink{FFTReal__readme_8txt_a9c92ac89d1560f812393ca39a19e581e}{x}, std\+::vector$<$ \hyperlink{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}{float} $>$ \&r) const 
+\begin{DoxyCompactList}\small\item\em max. value of pitch period, in samples \end{DoxyCompactList}\item 
+\hyperlink{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}{float} \hyperlink{classupc_1_1PitchAnalyzer_abb8bc34c74953c8d43127fe4acb6b4eb}{compute\+\_\+pitch} (std\+::vector$<$ \hyperlink{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}{float} $>$ \&\hyperlink{FFTReal__readme_8txt_a9c92ac89d1560f812393ca39a19e581e}{x}) const 
+\begin{DoxyCompactList}\small\item\em compute correlation from lag=0 to r.\+size() \end{DoxyCompactList}\item 
+bool \hyperlink{classupc_1_1PitchAnalyzer_a0b32960107336078d87118cb10d6c83f}{unvoiced} (\hyperlink{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}{float} pot, \hyperlink{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}{float} r1norm, \hyperlink{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}{float} rmaxnorm) const 
+\begin{DoxyCompactList}\small\item\em Returns the pitch (in Hz) of input frame x. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \hyperlink{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}{float} $>$ \hyperlink{classupc_1_1PitchAnalyzer_aa9531a6af11904dca47a18cc22c4bcdd}{window}
+\begin{DoxyCompactList}\small\item\em pre-\/compute window \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classupc_1_1PitchAnalyzer_a6ef737140140ec94f7be345804f28c73}{frame\+Len}
+\begin{DoxyCompactList}\small\item\em precomputed window \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classupc_1_1PitchAnalyzer_a92578165c78c763749ef5c8aa23b1ca2}{sampling\+Freq}
+\begin{DoxyCompactList}\small\item\em length of frame (ins samples). Has to be set in the constructor call \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classupc_1_1PitchAnalyzer_a3bb67370dbd69fade6be12fdae510eed}{npitch\+\_\+min}
+\begin{DoxyCompactList}\small\item\em sampling rate (ins samples). Has to be set in the constructor call \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classupc_1_1PitchAnalyzer_a63d4cf285fa5f7a4e579ac2e02d36dd2}{npitch\+\_\+max}
+\begin{DoxyCompactList}\small\item\em min. value of pitch period, in samples \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classupc_1_1PitchAnalyzer}{Pitch\+Analyzer}\+: class that computes the pitch (in Hz) from a signal frame. No pre-\/processing or post-\/processing has been included 
+
+\subsection{Member Enumeration Documentation}
+\index{upc\+::\+Pitch\+Analyzer@{upc\+::\+Pitch\+Analyzer}!Window@{Window}}
+\index{Window@{Window}!upc\+::\+Pitch\+Analyzer@{upc\+::\+Pitch\+Analyzer}}
+\subsubsection[{\texorpdfstring{Window}{Window}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf upc\+::\+Pitch\+Analyzer\+::\+Window}}\hypertarget{classupc_1_1PitchAnalyzer_ab82b7694d6bc72839e5be6e526be81b6}{}\label{classupc_1_1PitchAnalyzer_ab82b7694d6bc72839e5be6e526be81b6}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{R\+E\+CT@{R\+E\+CT}!upc\+::\+Pitch\+Analyzer@{upc\+::\+Pitch\+Analyzer}}\index{upc\+::\+Pitch\+Analyzer@{upc\+::\+Pitch\+Analyzer}!R\+E\+CT@{R\+E\+CT}}\item[{\em 
+R\+E\+CT\hypertarget{classupc_1_1PitchAnalyzer_ab82b7694d6bc72839e5be6e526be81b6ae89513dddf240af8bbef3358597f244c}{}\label{classupc_1_1PitchAnalyzer_ab82b7694d6bc72839e5be6e526be81b6ae89513dddf240af8bbef3358597f244c}
+}]\index{H\+A\+M\+M\+I\+NG@{H\+A\+M\+M\+I\+NG}!upc\+::\+Pitch\+Analyzer@{upc\+::\+Pitch\+Analyzer}}\index{upc\+::\+Pitch\+Analyzer@{upc\+::\+Pitch\+Analyzer}!H\+A\+M\+M\+I\+NG@{H\+A\+M\+M\+I\+NG}}\item[{\em 
+H\+A\+M\+M\+I\+NG\hypertarget{classupc_1_1PitchAnalyzer_ab82b7694d6bc72839e5be6e526be81b6a20e793e736a503aacbed0294970a9b33}{}\label{classupc_1_1PitchAnalyzer_ab82b7694d6bc72839e5be6e526be81b6a20e793e736a503aacbed0294970a9b33}
+}]\end{description}
+\end{Desc}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{upc\+::\+Pitch\+Analyzer@{upc\+::\+Pitch\+Analyzer}!Pitch\+Analyzer@{Pitch\+Analyzer}}
+\index{Pitch\+Analyzer@{Pitch\+Analyzer}!upc\+::\+Pitch\+Analyzer@{upc\+::\+Pitch\+Analyzer}}
+\subsubsection[{\texorpdfstring{Pitch\+Analyzer(unsigned int f\+Len, unsigned int s\+Freq, Window w=\+Pitch\+Analyzer\+::\+H\+A\+M\+M\+I\+N\+G, float min\+\_\+\+F0=\+M\+I\+N\+\_\+\+F0, float max\+\_\+\+F0=\+M\+A\+X\+\_\+\+F0)}{PitchAnalyzer(unsigned int fLen, unsigned int sFreq, Window w=PitchAnalyzer::HAMMING, float min_F0=MIN_F0, float max_F0=MAX_F0)}}]{\setlength{\rightskip}{0pt plus 5cm}upc\+::\+Pitch\+Analyzer\+::\+Pitch\+Analyzer (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{f\+Len, }
+\item[{unsigned int}]{s\+Freq, }
+\item[{{\bf Window}}]{w = {\ttfamily {\bf Pitch\+Analyzer\+::\+H\+A\+M\+M\+I\+NG}}, }
+\item[{{\bf float}}]{min\+\_\+\+F0 = {\ttfamily {\bf M\+I\+N\+\_\+\+F0}}, }
+\item[{{\bf float}}]{max\+\_\+\+F0 = {\ttfamily {\bf M\+A\+X\+\_\+\+F0}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classupc_1_1PitchAnalyzer_ae7cfb918feadd7d56f5736e4ef600c06}{}\label{classupc_1_1PitchAnalyzer_ae7cfb918feadd7d56f5736e4ef600c06}
+
+
+true if the frame is unvoiced 
+
+Declaration of the \hyperlink{classupc_1_1PitchAnalyzer}{Pitch\+Analyzer}\+: f\+Len\+: frame length, in samples s\+Freq\+: sampling rate (samples/second) w\+: window type min\+\_\+\+F0, max\+\_\+\+F0\+: the pitch range can be restricted to this range 
+
+\subsection{Member Function Documentation}
+\index{upc\+::\+Pitch\+Analyzer@{upc\+::\+Pitch\+Analyzer}!autocorrelation@{autocorrelation}}
+\index{autocorrelation@{autocorrelation}!upc\+::\+Pitch\+Analyzer@{upc\+::\+Pitch\+Analyzer}}
+\subsubsection[{\texorpdfstring{autocorrelation(const std\+::vector$<$ float $>$ \&x, std\+::vector$<$ float $>$ \&r) const }{autocorrelation(const std::vector< float > &x, std::vector< float > &r) const }}]{\setlength{\rightskip}{0pt plus 5cm}void upc\+::\+Pitch\+Analyzer\+::autocorrelation (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ {\bf float} $>$ \&}]{x, }
+\item[{std\+::vector$<$ {\bf float} $>$ \&}]{r}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classupc_1_1PitchAnalyzer_a45da4fa8b3d7bd67d87468a3153a839e}{}\label{classupc_1_1PitchAnalyzer_a45da4fa8b3d7bd67d87468a3153a839e}
+
+
+max. value of pitch period, in samples 
+
+\index{upc\+::\+Pitch\+Analyzer@{upc\+::\+Pitch\+Analyzer}!compute\+\_\+pitch@{compute\+\_\+pitch}}
+\index{compute\+\_\+pitch@{compute\+\_\+pitch}!upc\+::\+Pitch\+Analyzer@{upc\+::\+Pitch\+Analyzer}}
+\subsubsection[{\texorpdfstring{compute\+\_\+pitch(std\+::vector$<$ float $>$ \&x) const }{compute_pitch(std::vector< float > &x) const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf float} upc\+::\+Pitch\+Analyzer\+::compute\+\_\+pitch (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ {\bf float} $>$ \&}]{x}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classupc_1_1PitchAnalyzer_abb8bc34c74953c8d43127fe4acb6b4eb}{}\label{classupc_1_1PitchAnalyzer_abb8bc34c74953c8d43127fe4acb6b4eb}
+
+
+compute correlation from lag=0 to r.\+size() 
+
+\index{upc\+::\+Pitch\+Analyzer@{upc\+::\+Pitch\+Analyzer}!operator()@{operator()}}
+\index{operator()@{operator()}!upc\+::\+Pitch\+Analyzer@{upc\+::\+Pitch\+Analyzer}}
+\subsubsection[{\texorpdfstring{operator()(const std\+::vector$<$ float $>$ \&\+\_\+x) const }{operator()(const std::vector< float > &_x) const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf float} upc\+::\+Pitch\+Analyzer\+::operator() (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ {\bf float} $>$ \&}]{\+\_\+x}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classupc_1_1PitchAnalyzer_a2cd33d0cbfc699c43f570442190ca9e6}{}\label{classupc_1_1PitchAnalyzer_a2cd33d0cbfc699c43f570442190ca9e6}
+Operator () \+: compute the pitch for the given vector x \index{upc\+::\+Pitch\+Analyzer@{upc\+::\+Pitch\+Analyzer}!operator()@{operator()}}
+\index{operator()@{operator()}!upc\+::\+Pitch\+Analyzer@{upc\+::\+Pitch\+Analyzer}}
+\subsubsection[{\texorpdfstring{operator()(const float $\ast$pt, unsigned int N) const }{operator()(const float *pt, unsigned int N) const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf float} upc\+::\+Pitch\+Analyzer\+::operator() (
+\begin{DoxyParamCaption}
+\item[{const {\bf float} $\ast$}]{pt, }
+\item[{unsigned int}]{N}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classupc_1_1PitchAnalyzer_a00aef276755224ed20668f3b1b3f16d1}{}\label{classupc_1_1PitchAnalyzer_a00aef276755224ed20668f3b1b3f16d1}
+Operator () \+: compute the pitch for the given \char`\"{}\+C\char`\"{} vector (float $\ast$). N is the size of the vector pointer by pt. copy input values into local vector x \index{upc\+::\+Pitch\+Analyzer@{upc\+::\+Pitch\+Analyzer}!operator()@{operator()}}
+\index{operator()@{operator()}!upc\+::\+Pitch\+Analyzer@{upc\+::\+Pitch\+Analyzer}}
+\subsubsection[{\texorpdfstring{operator()(std\+::vector$<$ float $>$\+::const\+\_\+iterator begin, std\+::vector$<$ float $>$\+::const\+\_\+iterator end) const }{operator()(std::vector< float >::const_iterator begin, std::vector< float >::const_iterator end) const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf float} upc\+::\+Pitch\+Analyzer\+::operator() (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ {\bf float} $>$\+::const\+\_\+iterator}]{begin, }
+\item[{std\+::vector$<$ {\bf float} $>$\+::const\+\_\+iterator}]{end}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classupc_1_1PitchAnalyzer_a2f924f9f45df090463be1498518934ab}{}\label{classupc_1_1PitchAnalyzer_a2f924f9f45df090463be1498518934ab}
+Operator () \+: compute the pitch for the given vector, expressed by the begin and end iterators copy input values into local vector x \index{upc\+::\+Pitch\+Analyzer@{upc\+::\+Pitch\+Analyzer}!set\+\_\+f0\+\_\+range@{set\+\_\+f0\+\_\+range}}
+\index{set\+\_\+f0\+\_\+range@{set\+\_\+f0\+\_\+range}!upc\+::\+Pitch\+Analyzer@{upc\+::\+Pitch\+Analyzer}}
+\subsubsection[{\texorpdfstring{set\+\_\+f0\+\_\+range(float min\+\_\+\+F0, float max\+\_\+\+F0)}{set_f0_range(float min_F0, float max_F0)}}]{\setlength{\rightskip}{0pt plus 5cm}void upc\+::\+Pitch\+Analyzer\+::set\+\_\+f0\+\_\+range (
+\begin{DoxyParamCaption}
+\item[{{\bf float}}]{min\+\_\+\+F0, }
+\item[{{\bf float}}]{max\+\_\+\+F0}
+\end{DoxyParamCaption}
+)}\hypertarget{classupc_1_1PitchAnalyzer_ac33887654b62b3f90c3de231ec187d94}{}\label{classupc_1_1PitchAnalyzer_ac33887654b62b3f90c3de231ec187d94}
+Set pitch range; (input in Hz, npitch\+\_\+min and npitch\+\_\+max, in samples \index{upc\+::\+Pitch\+Analyzer@{upc\+::\+Pitch\+Analyzer}!set\+\_\+window@{set\+\_\+window}}
+\index{set\+\_\+window@{set\+\_\+window}!upc\+::\+Pitch\+Analyzer@{upc\+::\+Pitch\+Analyzer}}
+\subsubsection[{\texorpdfstring{set\+\_\+window(\+Window type)}{set_window(Window type)}}]{\setlength{\rightskip}{0pt plus 5cm}void upc\+::\+Pitch\+Analyzer\+::set\+\_\+window (
+\begin{DoxyParamCaption}
+\item[{{\bf Window}}]{type}
+\end{DoxyParamCaption}
+)}\hypertarget{classupc_1_1PitchAnalyzer_a96cc042a650825b25ca39c41beebd0db}{}\label{classupc_1_1PitchAnalyzer_a96cc042a650825b25ca39c41beebd0db}
+
+
+Window type. 
+
+\index{upc\+::\+Pitch\+Analyzer@{upc\+::\+Pitch\+Analyzer}!unvoiced@{unvoiced}}
+\index{unvoiced@{unvoiced}!upc\+::\+Pitch\+Analyzer@{upc\+::\+Pitch\+Analyzer}}
+\subsubsection[{\texorpdfstring{unvoiced(float pot, float r1norm, float rmaxnorm) const }{unvoiced(float pot, float r1norm, float rmaxnorm) const }}]{\setlength{\rightskip}{0pt plus 5cm}bool upc\+::\+Pitch\+Analyzer\+::unvoiced (
+\begin{DoxyParamCaption}
+\item[{{\bf float}}]{pot, }
+\item[{{\bf float}}]{r1norm, }
+\item[{{\bf float}}]{rmaxnorm}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classupc_1_1PitchAnalyzer_a0b32960107336078d87118cb10d6c83f}{}\label{classupc_1_1PitchAnalyzer_a0b32960107336078d87118cb10d6c83f}
+
+
+Returns the pitch (in Hz) of input frame x. 
+
+
+
+\subsection{Member Data Documentation}
+\index{upc\+::\+Pitch\+Analyzer@{upc\+::\+Pitch\+Analyzer}!frame\+Len@{frame\+Len}}
+\index{frame\+Len@{frame\+Len}!upc\+::\+Pitch\+Analyzer@{upc\+::\+Pitch\+Analyzer}}
+\subsubsection[{\texorpdfstring{frame\+Len}{frameLen}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int upc\+::\+Pitch\+Analyzer\+::frame\+Len\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classupc_1_1PitchAnalyzer_a6ef737140140ec94f7be345804f28c73}{}\label{classupc_1_1PitchAnalyzer_a6ef737140140ec94f7be345804f28c73}
+
+
+precomputed window 
+
+\index{upc\+::\+Pitch\+Analyzer@{upc\+::\+Pitch\+Analyzer}!npitch\+\_\+max@{npitch\+\_\+max}}
+\index{npitch\+\_\+max@{npitch\+\_\+max}!upc\+::\+Pitch\+Analyzer@{upc\+::\+Pitch\+Analyzer}}
+\subsubsection[{\texorpdfstring{npitch\+\_\+max}{npitch_max}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int upc\+::\+Pitch\+Analyzer\+::npitch\+\_\+max\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classupc_1_1PitchAnalyzer_a63d4cf285fa5f7a4e579ac2e02d36dd2}{}\label{classupc_1_1PitchAnalyzer_a63d4cf285fa5f7a4e579ac2e02d36dd2}
+
+
+min. value of pitch period, in samples 
+
+\index{upc\+::\+Pitch\+Analyzer@{upc\+::\+Pitch\+Analyzer}!npitch\+\_\+min@{npitch\+\_\+min}}
+\index{npitch\+\_\+min@{npitch\+\_\+min}!upc\+::\+Pitch\+Analyzer@{upc\+::\+Pitch\+Analyzer}}
+\subsubsection[{\texorpdfstring{npitch\+\_\+min}{npitch_min}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int upc\+::\+Pitch\+Analyzer\+::npitch\+\_\+min\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classupc_1_1PitchAnalyzer_a3bb67370dbd69fade6be12fdae510eed}{}\label{classupc_1_1PitchAnalyzer_a3bb67370dbd69fade6be12fdae510eed}
+
+
+sampling rate (ins samples). Has to be set in the constructor call 
+
+\index{upc\+::\+Pitch\+Analyzer@{upc\+::\+Pitch\+Analyzer}!sampling\+Freq@{sampling\+Freq}}
+\index{sampling\+Freq@{sampling\+Freq}!upc\+::\+Pitch\+Analyzer@{upc\+::\+Pitch\+Analyzer}}
+\subsubsection[{\texorpdfstring{sampling\+Freq}{samplingFreq}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int upc\+::\+Pitch\+Analyzer\+::sampling\+Freq\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classupc_1_1PitchAnalyzer_a92578165c78c763749ef5c8aa23b1ca2}{}\label{classupc_1_1PitchAnalyzer_a92578165c78c763749ef5c8aa23b1ca2}
+
+
+length of frame (ins samples). Has to be set in the constructor call 
+
+\index{upc\+::\+Pitch\+Analyzer@{upc\+::\+Pitch\+Analyzer}!window@{window}}
+\index{window@{window}!upc\+::\+Pitch\+Analyzer@{upc\+::\+Pitch\+Analyzer}}
+\subsubsection[{\texorpdfstring{window}{window}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<${\bf float}$>$ upc\+::\+Pitch\+Analyzer\+::window\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classupc_1_1PitchAnalyzer_aa9531a6af11904dca47a18cc22c4bcdd}{}\label{classupc_1_1PitchAnalyzer_aa9531a6af11904dca47a18cc22c4bcdd}
+
+
+pre-\/compute window 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+get\+\_\+pitch/\hyperlink{pitch__analyzer_8h}{pitch\+\_\+analyzer.\+h}\item 
+get\+\_\+pitch/\hyperlink{pitch__analyzer_8cpp}{pitch\+\_\+analyzer.\+cpp}\end{DoxyCompactItemize}

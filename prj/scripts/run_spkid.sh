@@ -9,9 +9,9 @@
 # TODO
 # Set the proper value to variables: w, db
 # w:  a working directory for temporary files
-# db: directory of the speecon database 
-w=/home/labtv/Desktop/Lab4/p4-sr/Work;
-db=/home/labtv/Desktop/Lab4/p4-sr/speecon;
+# db: directory of the speecon database
+w=/home/oscar/Escritorio/3B/PAV/P4/Work;
+db=/home/oscar/Escritorio/3B/PAV/P4/speecon;
 
 
 # ------------------------
@@ -48,7 +48,7 @@ if [[ ! -d "$db" ]]; then
    echo "Edit this script and set variable 'db' to speecon db"
    exit 1
 fi
-	
+
 
 # ------------------------
 # Check if gmm_train is in path
@@ -58,8 +58,8 @@ if [[ $? != 0 ]] ; then
    echo "Set PATH to include PAV executable programs ... "
    echo "Maybe ... source pavrc ? or modify bashrc ..."
    exit 1
-fi 
-# Now, we assume that all the path for programs are already in the path 
+fi
+# Now, we assume that all the path for programs are already in the path
 
 CMDS="lists mcp trainmcp testmcp classerr finaltest listverif trainworld verify verifyerr roc"
 
@@ -87,22 +87,14 @@ create_lists() {
 
 
 # command mcp: create feature from wave files
-# TODO: select (or change) different features, options. 
-compute_mcp() {
- for line in $(cat $w/lists/all.train) $(cat $w/lists/all.test); do
-         mkdir -p `dirname $w/mcp/$line.mcp`
-         echo "wav2mfcc 24 16 $db/$line.wav" "$w/mcp/$line.mcp"
-         #wav2lpcc 4 8 "$db/$line.wav" "$w/mcp/$line.mcp" || wav2mfcc 24 "$db/$line.wav" "$w/mcp/$line.mcp" || 
- exit 1 
-done
-} 
+# TODO: select (or change) different features, options.
 # Make you best choice or try several options
 
 compute_mcp() {
     for line in $(cat $w/lists/all.train) $(cat $w/lists/all.test); do
         mkdir -p `dirname $w/mcp/$line.mcp`
         echo "wav2mfcc 24 16 $db/$line.wav" "$w/mcp/$line.mcp"
-        wav2lpcc.sh 4 8 "$db/$line.wav" "$w/mcp/$line.mcp" || exit 1
+        wav2lpcc.sh 15 17 "$db/$line.wav" "$w/mcp/$line.mcp" || exit 1 # || wav2mfcc 24 "$db/$line.wav" "$w/mcp/$line.mcp" || exit 1 ???
     done
 }
 
@@ -112,13 +104,13 @@ compute_mcp() {
 
 create_lists_verif() {
     dirlv=$w/lists_verif
-    mkdir -p $dirlv 
+    mkdir -p $dirlv
 
     # find all the speakers names
     find  -L $db -type d -name 'SES*' -printf '%P\n'|\
            perl -pe 's|BLOCK../||' | sort > $dirlv/all.txt
 
-    unsort.sh $dirlv/all.txt > all_spk 
+    unsort.sh $dirlv/all.txt > all_spk
 
     # split speakers into: users (50), impostors (50) and the others
     (head -50 all_spk | sort > $dirlv/users.txt) || exit 1
@@ -162,7 +154,7 @@ create_lists_verif() {
     # From impostors: (claim a random legitime user)
     perl -ne '{
        BEGIN {
-          open("USERS", "$ARGV[0]") or die "Error opening user file: $ARGV[0]\n"; 
+          open("USERS", "$ARGV[0]") or die "Error opening user file: $ARGV[0]\n";
           @users = <USERS>;
           $nusers = int(@users);
           die "Error: nUsers == 0 in file $ARGV[0]\n" if $nusers == 0;
@@ -175,8 +167,8 @@ create_lists_verif() {
 
 
     # Join all the test
-    cat $dirlv/users.test $dirlv/impostors4.test  > $dirlv/all.test 
-    cat $dirlv/users.test.candidates $dirlv/impostors4.test.candidates  > $dirlv/all.test.candidates 
+    cat $dirlv/users.test $dirlv/impostors4.test  > $dirlv/all.test
+    cat $dirlv/users.test.candidates $dirlv/impostors4.test.candidates  > $dirlv/all.test.candidates
 
      echo "Train lists:"
      wc -l $dirlv/*.train | grep -v total; echo
@@ -188,7 +180,7 @@ create_lists_verif() {
 }
 
 # ---------------------------------
-# Main program: 
+# Main program:
 # For each cmd in command line ...
 # ---------------------------------
 
@@ -199,13 +191,15 @@ for cmd in $*; do
    if [[ $cmd == lists ]]; then
       create_lists
    elif [[ $cmd == mcp ]]; then
-       compute_mcp       
+       compute_mcp
    elif [[ $cmd == trainmcp ]]; then
        # TODO: select (or change) good parameters of gmm_train
        for dir in $db/BLOCK*/SES* ; do
 	   name=${dir/*\/}
 	   echo $name ----
-	   gmm_train  -v 1 -T 0.01 -N5 -m 1 -d $w/mcp -e mcp -g $w/gmm/mcp/$name.gmm $w/lists/$name.train || exit 1
+	  # gmm_train  -v 1 -T 0.01 -N5 -m 1 -d $w/mcp -e mcp -g $w/gmm/mcp/$name.gmm $w/lists/$name.train || exit 1
+     gmm_train -d $w/mcp -e mcp -m 8 -g $w/gmm/mcp/$name.gmm -N 20 $w/lists/$name.train || exit 1
+
            echo
        done
    elif [[ $cmd == testmcp ]]; then
@@ -219,7 +213,7 @@ for cmd in $*; do
        fi
        # Count errors
        perl -ne 'BEGIN {$ok=0; $err=0}
-                 next unless /^.*SA(...).*SES(...).*$/; 
+                 next unless /^.*SA(...).*SES(...).*$/;
                  if ($1 == $2) {$ok++}
                  else {$err++}
                  END {printf "nerr=%d\tntot=%d\terror_rate=%.2f%%\n", ($err, $ok+$err, 100*$err/($ok+$err))}' $w/spk_classification.log
@@ -233,7 +227,7 @@ for cmd in $*; do
    elif [[ $cmd == verify ]]; then
        # TODO gmm_verify --> put std output in $w/spk_verify.log, ej gmm_verify .... > $w/spk_verify.log   or gmm_verify ... | tee $w/spk_verify.log
 	gmm_verify  -d $w/mcp -e mcp -D $w/gmm/mcp -E gmm $w/lists/gmm.list
-	$w/lists_verify/all.test $w/lists_verify/all.test.candidates | tee $w 
+	$w/lists_verify/all.test $w/lists_verify/all.test.candidates | tee $w
 
        echo "Implement the verify option ..."
    elif [[ $cmd == verif_err ]]; then
@@ -245,15 +239,15 @@ for cmd in $*; do
        # best one for these particular results.
        spk_verif_score.pl $w/spk_verify.log | tee $w/spk_verify.res
    elif [[ $cmd == roc ]]; then
-       # Change threshold and compute table prob false alarm vs. prob. detection 
+       # Change threshold and compute table prob false alarm vs. prob. detection
        spk_verif_score.pl $w/spk_verify.log | tee $w/spk_verify.res
        perl -ne '
-         next if ! /^THR\t/; 
+         next if ! /^THR\t/;
          chomp;
          @F=split/\t/;
-         ($prob_miss = $F[3]) =~ s/\(.*//;  
+         ($prob_miss = $F[3]) =~ s/\(.*//;
          $prob_detect = 1 - $prob_miss;
-         ($prob_fa = $F[4]) =~ s/\(.*//; 
+         ($prob_fa = $F[4]) =~ s/\(.*//;
          print "$prob_fa\t$prob_detect\n"'  $w/spk_verify.res > $w/spk_verify.roc
 
    else

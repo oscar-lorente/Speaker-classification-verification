@@ -1,0 +1,163 @@
+\hypertarget{namespaceupc}{}\section{upc Namespace Reference}
+\label{namespaceupc}\index{upc@{upc}}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespaceupc_1_1ascii}{ascii}
+\end{DoxyCompactItemize}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classupc_1_1array}{array}
+\item 
+class \hyperlink{classupc_1_1CircularIndex}{Circular\+Index}
+\begin{DoxyCompactList}\small\item\em Circular Index used to go through state circular buffer (u) \end{DoxyCompactList}\item 
+class \hyperlink{classupc_1_1DigitalFilter}{Digital\+Filter}
+\begin{DoxyCompactList}\small\item\em Digital filter implemented using direct form. \end{DoxyCompactList}\item 
+class \hyperlink{classupc_1_1Directory}{Directory}
+\item 
+class \hyperlink{classupc_1_1Ext}{Ext}
+\item 
+class \hyperlink{classupc_1_1FileInfo}{File\+Info}
+\item 
+class \hyperlink{classupc_1_1Filename}{Filename}
+\item 
+class \hyperlink{classupc_1_1KeyValue}{Key\+Value}
+\item 
+class \hyperlink{classupc_1_1matrix}{matrix}
+\item 
+class \hyperlink{classupc_1_1Path}{Path}
+\item 
+class \hyperlink{classupc_1_1PitchAnalyzer}{Pitch\+Analyzer}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef vector$<$ string $>$ \hyperlink{namespaceupc_ab61343ef80507c505066d99a281645ee}{vstring}
+\item 
+typedef \hyperlink{classupc_1_1array}{array}$<$ int $>$ \hyperlink{namespaceupc_a31ef55c6b4d2d73fd78e70710297c8f4}{ivector}
+\item 
+typedef \hyperlink{classupc_1_1matrix}{matrix}$<$ int $>$ \hyperlink{namespaceupc_a6bb820f56fc4cc2c976ac0ceeaa8e611}{imatrix}
+\item 
+typedef \hyperlink{classupc_1_1array}{array}$<$ \hyperlink{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}{float} $>$ \hyperlink{namespaceupc_a12a5d4885a36892c03181736f8b3089c}{fvector}
+\item 
+typedef \hyperlink{classupc_1_1matrix}{matrix}$<$ \hyperlink{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}{float} $>$ \hyperlink{namespaceupc_a9f26dfcf21c4c5cee20f5733be78ba11}{fmatrix}
+\item 
+typedef \hyperlink{classupc_1_1array}{array}$<$ double $>$ \hyperlink{namespaceupc_a226c72b20137fbf8cc10b0c0ca887b5d}{dvector}
+\item 
+typedef \hyperlink{classupc_1_1matrix}{matrix}$<$ double $>$ \hyperlink{namespaceupc_a53f2db863d6ef79ba43159171dce9612}{dmatrix}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{namespaceupc_a97b8e57e112ba7b34bf233ad20b82751}{get\+Cols} (istream \&is, \hyperlink{namespaceupc_ab61343ef80507c505066d99a281645ee}{vstring} \&cols)
+\item 
+bool \hyperlink{namespaceupc_a3caf6fbcaba76b586577cab2d8b8bea0}{key\+Stroke} (char key=0)
+\item 
+{\footnotesize template$<$class \+\_\+\+Ty $>$ }\\std\+::ostream \& \hyperlink{namespaceupc_ab2fd910b16bf8e101ab813f01ca242e9}{operator$<$$<$} (std\+::ostream \&os, const \hyperlink{classupc_1_1array}{array}$<$ \+\_\+\+Ty $>$ \&\hyperlink{FFTReal__readme_8txt_abbf3cc73d1e3e4714ab1639819396eca}{f})
+\item 
+{\footnotesize template$<$class \+\_\+\+Ty $>$ }\\std\+::istream \& \hyperlink{namespaceupc_ac501f17fd16a4120101674beee8802b5}{operator$>$$>$} (std\+::istream \&is, \hyperlink{classupc_1_1array}{array}$<$ \+\_\+\+Ty $>$ \&\hyperlink{FFTReal__readme_8txt_abbf3cc73d1e3e4714ab1639819396eca}{f})
+\item 
+{\footnotesize template$<$class \+\_\+\+Ty $>$ }\\std\+::ostream \& \hyperlink{namespaceupc_ac42418ad9ea80d45b868329d67c315c5}{operator$<$$<$} (std\+::ostream \&os, const \hyperlink{classupc_1_1matrix}{matrix}$<$ \+\_\+\+Ty $>$ \&\hyperlink{FFTReal__readme_8txt_abbf3cc73d1e3e4714ab1639819396eca}{f})
+\item 
+{\footnotesize template$<$class \+\_\+\+Ty $>$ }\\std\+::istream \& \hyperlink{namespaceupc_a9d33040c9285f9e546a2cdccb017e246}{operator$>$$>$} (std\+::istream \&is, \hyperlink{classupc_1_1matrix}{matrix}$<$ \+\_\+\+Ty $>$ \&\hyperlink{FFTReal__readme_8txt_abbf3cc73d1e3e4714ab1639819396eca}{f})
+\item 
+\hyperlink{classupc_1_1FileInfo}{File\+Info} \hyperlink{namespaceupc_a4c5e814ef76fc815a67f0de482283ff5}{file\+Info} (const \hyperlink{classupc_1_1Path}{Path} \&fname)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}{float} \hyperlink{namespaceupc_ae8ed4ce6dc2c05dfc1aa6432db41e1ae}{M\+I\+N\+\_\+\+F0} =20.\+0F
+\item 
+const \hyperlink{FFTReal__readme_8txt_a0ea2fae2a8106200bf378b90eae003cf}{float} \hyperlink{namespaceupc_ab69be42753266b6e1a0deaa8eba56a19}{M\+A\+X\+\_\+\+F0} =10000.\+0F
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\index{upc@{upc}!dmatrix@{dmatrix}}
+\index{dmatrix@{dmatrix}!upc@{upc}}
+\subsubsection[{\texorpdfstring{dmatrix}{dmatrix}}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf matrix}$<$double$>$ {\bf upc\+::dmatrix}}\hypertarget{namespaceupc_a53f2db863d6ef79ba43159171dce9612}{}\label{namespaceupc_a53f2db863d6ef79ba43159171dce9612}
+\index{upc@{upc}!dvector@{dvector}}
+\index{dvector@{dvector}!upc@{upc}}
+\subsubsection[{\texorpdfstring{dvector}{dvector}}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf array}$<$double$>$ {\bf upc\+::dvector}}\hypertarget{namespaceupc_a226c72b20137fbf8cc10b0c0ca887b5d}{}\label{namespaceupc_a226c72b20137fbf8cc10b0c0ca887b5d}
+\index{upc@{upc}!fmatrix@{fmatrix}}
+\index{fmatrix@{fmatrix}!upc@{upc}}
+\subsubsection[{\texorpdfstring{fmatrix}{fmatrix}}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf matrix}$<${\bf float}$>$ {\bf upc\+::fmatrix}}\hypertarget{namespaceupc_a9f26dfcf21c4c5cee20f5733be78ba11}{}\label{namespaceupc_a9f26dfcf21c4c5cee20f5733be78ba11}
+\index{upc@{upc}!fvector@{fvector}}
+\index{fvector@{fvector}!upc@{upc}}
+\subsubsection[{\texorpdfstring{fvector}{fvector}}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf array}$<${\bf float}$>$ {\bf upc\+::fvector}}\hypertarget{namespaceupc_a12a5d4885a36892c03181736f8b3089c}{}\label{namespaceupc_a12a5d4885a36892c03181736f8b3089c}
+\index{upc@{upc}!imatrix@{imatrix}}
+\index{imatrix@{imatrix}!upc@{upc}}
+\subsubsection[{\texorpdfstring{imatrix}{imatrix}}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf matrix}$<$int$>$ {\bf upc\+::imatrix}}\hypertarget{namespaceupc_a6bb820f56fc4cc2c976ac0ceeaa8e611}{}\label{namespaceupc_a6bb820f56fc4cc2c976ac0ceeaa8e611}
+\index{upc@{upc}!ivector@{ivector}}
+\index{ivector@{ivector}!upc@{upc}}
+\subsubsection[{\texorpdfstring{ivector}{ivector}}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf array}$<$int$>$ {\bf upc\+::ivector}}\hypertarget{namespaceupc_a31ef55c6b4d2d73fd78e70710297c8f4}{}\label{namespaceupc_a31ef55c6b4d2d73fd78e70710297c8f4}
+\index{upc@{upc}!vstring@{vstring}}
+\index{vstring@{vstring}!upc@{upc}}
+\subsubsection[{\texorpdfstring{vstring}{vstring}}]{\setlength{\rightskip}{0pt plus 5cm}typedef vector$<$string$>$ {\bf upc\+::vstring}}\hypertarget{namespaceupc_ab61343ef80507c505066d99a281645ee}{}\label{namespaceupc_ab61343ef80507c505066d99a281645ee}
+
+
+\subsection{Function Documentation}
+\index{upc@{upc}!file\+Info@{file\+Info}}
+\index{file\+Info@{file\+Info}!upc@{upc}}
+\subsubsection[{\texorpdfstring{file\+Info(const Path \&fname)}{fileInfo(const Path &fname)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf File\+Info} upc\+::file\+Info (
+\begin{DoxyParamCaption}
+\item[{const {\bf Path} \&}]{fname}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceupc_a4c5e814ef76fc815a67f0de482283ff5}{}\label{namespaceupc_a4c5e814ef76fc815a67f0de482283ff5}
+\index{upc@{upc}!get\+Cols@{get\+Cols}}
+\index{get\+Cols@{get\+Cols}!upc@{upc}}
+\subsubsection[{\texorpdfstring{get\+Cols(istream \&is, vstring \&cols)}{getCols(istream &is, vstring &cols)}}]{\setlength{\rightskip}{0pt plus 5cm}int upc\+::get\+Cols (
+\begin{DoxyParamCaption}
+\item[{istream \&}]{is, }
+\item[{{\bf vstring} \&}]{cols}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceupc_a97b8e57e112ba7b34bf233ad20b82751}{}\label{namespaceupc_a97b8e57e112ba7b34bf233ad20b82751}
+\index{upc@{upc}!key\+Stroke@{key\+Stroke}}
+\index{key\+Stroke@{key\+Stroke}!upc@{upc}}
+\subsubsection[{\texorpdfstring{key\+Stroke(char key=0)}{keyStroke(char key=0)}}]{\setlength{\rightskip}{0pt plus 5cm}bool upc\+::key\+Stroke (
+\begin{DoxyParamCaption}
+\item[{char}]{key = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceupc_a3caf6fbcaba76b586577cab2d8b8bea0}{}\label{namespaceupc_a3caf6fbcaba76b586577cab2d8b8bea0}
+\index{upc@{upc}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!upc@{upc}}
+\subsubsection[{\texorpdfstring{operator$<$$<$(std\+::ostream \&os, const array$<$ \+\_\+\+Ty $>$ \&f)}{operator<<(std::ostream &os, const array< _Ty > &f)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \+\_\+\+Ty $>$ std\+::ostream\& upc\+::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\+::ostream \&}]{os, }
+\item[{const {\bf array}$<$ \+\_\+\+Ty $>$ \&}]{f}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{namespaceupc_ab2fd910b16bf8e101ab813f01ca242e9}{}\label{namespaceupc_ab2fd910b16bf8e101ab813f01ca242e9}
+\index{upc@{upc}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!upc@{upc}}
+\subsubsection[{\texorpdfstring{operator$<$$<$(std\+::ostream \&os, const matrix$<$ \+\_\+\+Ty $>$ \&f)}{operator<<(std::ostream &os, const matrix< _Ty > &f)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \+\_\+\+Ty $>$ std\+::ostream\& upc\+::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\+::ostream \&}]{os, }
+\item[{const {\bf matrix}$<$ \+\_\+\+Ty $>$ \&}]{f}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{namespaceupc_ac42418ad9ea80d45b868329d67c315c5}{}\label{namespaceupc_ac42418ad9ea80d45b868329d67c315c5}
+\index{upc@{upc}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!upc@{upc}}
+\subsubsection[{\texorpdfstring{operator$>$$>$(std\+::istream \&is, array$<$ \+\_\+\+Ty $>$ \&f)}{operator>>(std::istream &is, array< _Ty > &f)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \+\_\+\+Ty $>$ std\+::istream\& upc\+::operator$>$$>$ (
+\begin{DoxyParamCaption}
+\item[{std\+::istream \&}]{is, }
+\item[{{\bf array}$<$ \+\_\+\+Ty $>$ \&}]{f}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{namespaceupc_ac501f17fd16a4120101674beee8802b5}{}\label{namespaceupc_ac501f17fd16a4120101674beee8802b5}
+\index{upc@{upc}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!upc@{upc}}
+\subsubsection[{\texorpdfstring{operator$>$$>$(std\+::istream \&is, matrix$<$ \+\_\+\+Ty $>$ \&f)}{operator>>(std::istream &is, matrix< _Ty > &f)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \+\_\+\+Ty $>$ std\+::istream\& upc\+::operator$>$$>$ (
+\begin{DoxyParamCaption}
+\item[{std\+::istream \&}]{is, }
+\item[{{\bf matrix}$<$ \+\_\+\+Ty $>$ \&}]{f}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{namespaceupc_a9d33040c9285f9e546a2cdccb017e246}{}\label{namespaceupc_a9d33040c9285f9e546a2cdccb017e246}
+
+
+\subsection{Variable Documentation}
+\index{upc@{upc}!M\+A\+X\+\_\+\+F0@{M\+A\+X\+\_\+\+F0}}
+\index{M\+A\+X\+\_\+\+F0@{M\+A\+X\+\_\+\+F0}!upc@{upc}}
+\subsubsection[{\texorpdfstring{M\+A\+X\+\_\+\+F0}{MAX_F0}}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf float} upc\+::\+M\+A\+X\+\_\+\+F0 =10000.\+0F}\hypertarget{namespaceupc_ab69be42753266b6e1a0deaa8eba56a19}{}\label{namespaceupc_ab69be42753266b6e1a0deaa8eba56a19}
+\index{upc@{upc}!M\+I\+N\+\_\+\+F0@{M\+I\+N\+\_\+\+F0}}
+\index{M\+I\+N\+\_\+\+F0@{M\+I\+N\+\_\+\+F0}!upc@{upc}}
+\subsubsection[{\texorpdfstring{M\+I\+N\+\_\+\+F0}{MIN_F0}}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf float} upc\+::\+M\+I\+N\+\_\+\+F0 =20.\+0F}\hypertarget{namespaceupc_ae8ed4ce6dc2c05dfc1aa6432db41e1ae}{}\label{namespaceupc_ae8ed4ce6dc2c05dfc1aa6432db41e1ae}

@@ -12,10 +12,10 @@ const string DEF_GMM_EXT  = "gmc";
 
 int usage(const char *progname, int err);
 
-int read_options(int ArgC, const char *ArgV[], vector<Directory> &input_dirs, vector<Ext> &input_exts, 
-		 vector<Directory> &gmm_dirs, vector<Ext> &gmm_exts, 
-		 vector<string> &input_filenames, 
-		 vector<string> &gmm_filenames); 
+int read_options(int ArgC, const char *ArgV[], vector<Directory> &input_dirs, vector<Ext> &input_exts,
+		 vector<Directory> &gmm_dirs, vector<Ext> &gmm_exts,
+		 vector<string> &input_filenames,
+		 vector<string> &gmm_filenames);
 
 int read_gmms(const Directory &dir, const Ext &ext, const vector<string> &gmm_filenames, vector<GMM> &vgmm);
 
@@ -28,17 +28,23 @@ int classify(const vector<GMM> &vgmm, const fmatrix &dat, float &maxlprob) {
   //TODO .. assign maxind to the best index of vgmm
   //for each gmm, call logprob. Implement this function in gmm.cpp
   maxind = 0;
-
+	for(int i = 0; i < vgmm.size(); i++){
+		lprob = vgmm[i].logprob(dat);
+		if(lprob > maxlprob){
+			maxlprob = lprob;
+			maxind = i;
+		}
+	}
   return maxind;
 }
 
 int main(int argc, const char *argv[]) {
 
   vector<Directory> input_dirs, gmm_dirs;
-  vector<Ext> input_exts, gmm_exts; 
+  vector<Ext> input_exts, gmm_exts;
   vector<string> input_filenames, gmm_filenames;
 
-  int retv = read_options(argc, argv, input_dirs, input_exts, 
+  int retv = read_options(argc, argv, input_dirs, input_exts,
 			  gmm_dirs, gmm_exts, input_filenames, gmm_filenames);
 
   if (retv != 0)
@@ -57,11 +63,11 @@ int main(int argc, const char *argv[]) {
   /*
     Toni: I have implemented the reading of arguments for multiple GMM/Features. Read GMMs
     But here I will only use the first set of GMM/vectors.
-    
+
     You can use data like this ...
-    <vector<vector<GMM> > mgmm; mgmm.resize(3); mgmm[0] = vgmm; 
-    <vector<fmatrix> vfmat; 
- 
+    <vector<vector<GMM> > mgmm; mgmm.resize(3); mgmm[0] = vgmm;
+    <vector<fmatrix> vfmat;
+
   */
 
   vector<GMM> vgmm;
@@ -85,8 +91,8 @@ int main(int argc, const char *argv[]) {
     int nclass;
     float lprob;
     nclass = classify(vgmm, dat, lprob);
-    cout << input_filenames[i] << '\t' << gmm_filenames[nclass] 
-	 << '\t' << lprob << endl; 
+    cout << input_filenames[i] << '\t' << gmm_filenames[nclass]
+	 << '\t' << lprob << endl;
   }
 
   return 0;
@@ -95,7 +101,7 @@ int main(int argc, const char *argv[]) {
 int read_gmms(const Directory &dir, const Ext &ext, const vector<string> &filenames, vector<GMM> &vgmm) {
   vgmm.clear();
   GMM gmm;
-  
+
   for (unsigned int i=0; i<filenames.size(); ++i) {
     string path = dir + filenames[i] + ext;
     ifstream ifs(path.c_str(), ios::binary);
@@ -114,7 +120,7 @@ int read_gmms(const Directory &dir, const Ext &ext, const vector<string> &filena
 
 int usage(const char *progname, int err)  {
   cerr << "Usage: " << progname << " [options] list_gmm list_of_test_files\n\n";
-  
+
   cerr << "Options can be: \n"
        << "  -d dir\tDirectory of the feature files (def. \".\")\n"
        << "  -e ext\tExtension of the feature files (def. \"" << DEF_FEAT_EXT << "\")\n"
@@ -127,10 +133,10 @@ int usage(const char *progname, int err)  {
   return err;
 }
 
-int read_options(int ArgC, const char *ArgV[], vector<Directory> &input_dirs, vector<Ext> &input_exts, 
-		 vector<Directory> &gmm_dirs, vector<Ext> &gmm_exts, 
-		 vector<string> &input_filenames, 
-		 vector<string> &gmm_filenames) { 
+int read_options(int ArgC, const char *ArgV[], vector<Directory> &input_dirs, vector<Ext> &input_exts,
+		 vector<Directory> &gmm_dirs, vector<Ext> &gmm_exts,
+		 vector<string> &input_filenames,
+		 vector<string> &gmm_filenames) {
   char option;
   //optarg and optind are global variables declared and set by the getopt() function
 
@@ -153,7 +159,7 @@ int read_options(int ArgC, const char *ArgV[], vector<Directory> &input_dirs, ve
       input_dirs.size() != gmm_dirs.size() or
       input_dirs.size() != gmm_exts.size()) {
     cerr << ArgV[0] << ": ERROR - Same number of feature/gmm directories/extensions need to be provided." << endl;
-    return -2;    
+    return -2;
   }
 
   //Add ending '/' to directories, and leading '.' to extensions
@@ -167,7 +173,7 @@ int read_options(int ArgC, const char *ArgV[], vector<Directory> &input_dirs, ve
   //advance argc and argv to skip read options
   ArgC -= optind;
   ArgV += optind;
-  
+
   if (ArgC != 2)
     return -3;
 
@@ -191,6 +197,6 @@ int read_options(int ArgC, const char *ArgV[], vector<Directory> &input_dirs, ve
   while (is >> s)
     input_filenames.push_back(s);
   is.close();
-  
-  return 0;      
+
+  return 0;
 }

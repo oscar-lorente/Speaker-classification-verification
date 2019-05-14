@@ -14,18 +14,18 @@ const float DEF_THR = 1e-3;
 const unsigned int DEF_NMIXTURES = 5;
 const string DEF_GMMFILE = "output.gmc";
 
-int read_data(const string & input_directory, const string & input_extension, 
+int read_data(const string & input_directory, const string & input_extension,
 	      const vector<string> &filenames, fmatrix &dat);
 
 int usage(const char *progname, int err);
 
-int read_options(int ArgC, const char *ArgV[], Directory &input_dir, Ext &input_ext, vector<string> &filenames, 
-		 unsigned int &nmix, string &gmm_filename, 
-		 unsigned int &niterations, unsigned int &ending_iterations, float &threshold, float &ending_threshold, 
+int read_options(int ArgC, const char *ArgV[], Directory &input_dir, Ext &input_ext, vector<string> &filenames,
+		 unsigned int &nmix, string &gmm_filename,
+		 unsigned int &niterations, unsigned int &ending_iterations, float &threshold, float &ending_threshold,
 		 int &init_method, unsigned int &verbose);
 
 int main(int argc, const char *argv[]) {
-  
+
   Directory input_dir;
   Ext input_ext(DEF_INPUT_EXT);
   vector<string> filenames;
@@ -37,7 +37,7 @@ int main(int argc, const char *argv[]) {
 
   ///Read command line options
   int retv = read_options(argc, argv, input_dir, input_ext, filenames,
-		      nmix, gmm_filename, 
+		      nmix, gmm_filename,
 		      niterations, ending_iterations, threshold, ending_threshold,
 		      init_method, verbose);
   if (retv != 0)
@@ -54,36 +54,36 @@ int main(int argc, const char *argv[]) {
   //See the options and select a number for each option
 
   switch (init_method) {
-  case 1:
+  case 1: gmm.random_init(data, nmix); //random
     break;
-  case 2:
+  case 2: gmm.em_split(data, nmix, niterations, threshold, verbose);
     break;
-  case 3:
+  case 3: gmm.vq_lbg(data, nmix, niterations, threshold, verbose);
     break;
-  default:
+  default: gmm.vq_lbg(data, nmix, niterations, threshold, verbose);
     ;
   }
 
   //TODO: Apply EM to estimate GMM parameters (complete the funcion in gmm.cpp)
-
+	gmm.em(data, ending_iterations, ending_threshold, verbose);
 
   //Create directory, if it is needed
   gmm_filename.checkDir();
   //Save gmm
   ofstream ofs(gmm_filename.c_str(), ios::binary);
   ofs << gmm;
-  
+
   bool show_gmm=false;
   if (show_gmm)
     gmm.print(cout);
 
-  return 0;  
+  return 0;
 }
 
 int usage(const char *progname, int err)  {
   cerr << "Usage: " << progname << " [options] list_of_train_files\n";
   cerr << "Usage: " << progname << " [options] -F train_file1 ...\n\n";
-  
+
   cerr << "Options can be: \n"
        << "  -d dir\tDirectory of the input files (def. \".\")\n"
        << "  -e ext\tExtension of the input files (def. \"" << DEF_INPUT_EXT << "\")\n"
@@ -98,9 +98,9 @@ int usage(const char *progname, int err)  {
   return err;
 }
 
-int read_options(int ArgC, const char *ArgV[], Directory &input_dir, Ext &input_ext, vector<string> &filenames, 
-		 unsigned int &nmix, string &gmm_filename, 
-		 unsigned int &niterations, unsigned int &ending_iterations, float &threshold, float &ending_threshold, 
+int read_options(int ArgC, const char *ArgV[], Directory &input_dir, Ext &input_ext, vector<string> &filenames,
+		 unsigned int &nmix, string &gmm_filename,
+		 unsigned int &niterations, unsigned int &ending_iterations, float &threshold, float &ending_threshold,
 		 int &init_method, unsigned int &verbose) {
 
   char option;
@@ -156,10 +156,10 @@ int read_options(int ArgC, const char *ArgV[], Directory &input_dir, Ext &input_
     for (int i=0; i<ArgC; ++i)
       filenames.push_back(ArgV[i]);
   }
-  return 0;      
+  return 0;
 }
 
-int read_data(const string & input_directory, const string & input_extension, 
+int read_data(const string & input_directory, const string & input_extension,
 	      const vector<string> &filenames, fmatrix &dat) {
   fmatrix dat1;
 
@@ -178,7 +178,7 @@ int read_data(const string & input_directory, const string & input_extension,
       ncol = dat1.ncol();
     } else {
       if (dat1.ncol() != ncol) {
-	cerr << "Error in vector dimension: " << filenames[i] << dat1.ncol() 
+	cerr << "Error in vector dimension: " << filenames[i] << dat1.ncol()
 	     << " (expected: " << ncol << ")\n";
 	return -1;
       }
@@ -199,7 +199,7 @@ int read_data(const string & input_directory, const string & input_extension,
 
     is >> dat1;
     if (dat1.ncol() != dat.ncol()) {
-      cerr << "Error in vector dimension: " << filenames[i] << dat1.ncol() 
+      cerr << "Error in vector dimension: " << filenames[i] << dat1.ncol()
 	   << " (expected: " << dat.ncol() << ")\n";
       dat.reset();
       return -1;
@@ -209,5 +209,5 @@ int read_data(const string & input_directory, const string & input_extension,
 	dat[irow][j] = dat1[i][j];
   }
 
-  return 0;    
+  return 0;
 }
