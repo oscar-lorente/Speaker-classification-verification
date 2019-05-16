@@ -224,13 +224,12 @@ for cmd in $*; do
       create_lists_verif
    elif [[ $cmd == trainworld ]]; then
        # TODO
-       echo "Implement the trainworld option ..."
+       gmm_train -d $w/mcp -e mcp -m 8 -g $w/gmm/world/trainworld.gmm -N 20 $w/lists_verif/users_and_others.train || exit 1
+      # echo "Implement the trainworld option ..."
    elif [[ $cmd == verify ]]; then
        # TODO gmm_verify --> put std output in $w/spk_verify.log, ej gmm_verify .... > $w/spk_verify.log   or gmm_verify ... | tee $w/spk_verify.log
-	gmm_verify  -d $w/mcp -e mcp -D $w/gmm/mcp -E gmm $w/lists/gmm.list
-	$w/lists_verify/all.test $w/lists_verify/all.test.candidates | tee $w
-
-       echo "Implement the verify option ..."
+       gmm_verify -d $w/mcp -e mcp -D $w/gmm/mcp -E gmm -w world/trainworld $w/lists/gmm.list $w/lists_verif/all.test $w/lists_verif/all.test.candidates > $w/spk_verify.log
+      # echo "Implement the verify option ..."
    elif [[ $cmd == verif_err ]]; then
        if [[ ! -s $w/spk_verify.log ]] ; then
           echo "ERROR: $w/spk_verify.log not created"

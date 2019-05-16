@@ -14,10 +14,10 @@ const string DEF_GMM_EXT  = "gmc";
 
 int usage(const char *progname, int err);
 
-int read_options(int ArgC, const char *ArgV[], vector<Directory> &input_dirs, vector<Ext> &input_exts, 
-		 vector<Directory> &gmm_dirs, vector<Ext> &gmm_exts, 
-		 vector<string> &input_filenames, vector<string> &candidates, 
-		 vector<string> &gmm_filenames, string &world_name); 
+int read_options(int ArgC, const char *ArgV[], vector<Directory> &input_dirs, vector<Ext> &input_exts,
+		 vector<Directory> &gmm_dirs, vector<Ext> &gmm_exts,
+		 vector<string> &input_filenames, vector<string> &candidates,
+		 vector<string> &gmm_filenames, string &world_name);
 
 int read_gmms(const Directory &dir, const Ext &ext, const vector<string> &gmm_filenames, map<string, GMM> &mgmm);
 
@@ -32,6 +32,7 @@ float verify(const GMM &gmm_candidate, const fmatrix &dat) {
    */
 
   float score = 0.0F;
+	score = gmm_candidate.logprob(dat);
   return score;
 }
 
@@ -49,6 +50,9 @@ float verify(const GMM &gmm_candidate, const GMM & gmm_world, const fmatrix &dat
   lprobcand = 0.0F;
   lprobbackground = 0.0F;
 
+	lprobcand = gmm_candidate.logprob(dat);
+	lprobbackground = gmm_world.logprob(dat);
+	score = lprobcand - lprobbackground; 
 
   return score;
 
@@ -59,11 +63,11 @@ float verify(const GMM &gmm_candidate, const GMM & gmm_world, const fmatrix &dat
 int main(int argc, const char *argv[]) {
 
   vector<Directory> input_dirs, gmm_dirs;
-  vector<Ext> input_exts, gmm_exts; 
+  vector<Ext> input_exts, gmm_exts;
   vector<string> input_filenames, gmm_filenames, candidates;
   string  world_name;
 
-  int retv = read_options(argc, argv, input_dirs, input_exts, 
+  int retv = read_options(argc, argv, input_dirs, input_exts,
 			  gmm_dirs, gmm_exts, input_filenames, candidates, gmm_filenames, world_name);
 
   if (retv != 0)
@@ -82,11 +86,11 @@ int main(int argc, const char *argv[]) {
   /*
     Toni: I have implemented the reading of arguments for multiple GMM/Features. Read GMMs
     But here I will only use the first set of GMM/vectors.
-    
+
     You can use data like this ...
-    <vector<vector<GMM> > mgmm; mgmm.resize(3); mgmm[0] = vgmm; 
-    <vector<fmatrix> vfmat; 
- 
+    <vector<vector<GMM> > mgmm; mgmm.resize(3); mgmm[0] = vgmm;
+    <vector<fmatrix> vfmat;
+
   */
 
 
@@ -104,7 +108,7 @@ int main(int argc, const char *argv[]) {
       return -1;
     }
   }
-    
+
 
   /* In this implementation, we assume that the world model is a gmm (gmm_world)
      and that each candidate has its onw gmm */
@@ -139,8 +143,8 @@ int main(int argc, const char *argv[]) {
       float score, probCandidate, probWorld;
       const GMM &gmm_world = igmm_world->second;
       score = verify(gmm_candidate, gmm_world, dat, probCandidate, probWorld);
-      cout << input_filenames[i] << '\t' << candidates[i] << '\t' << score 
-	   << '\t' << probCandidate <<'\t' << probWorld << endl; 
+      cout << input_filenames[i] << '\t' << candidates[i] << '\t' << score
+	   << '\t' << probCandidate <<'\t' << probWorld << endl;
     }
   }
   return 0;
@@ -149,7 +153,7 @@ int main(int argc, const char *argv[]) {
 int read_gmms(const Directory &dir, const Ext &ext, const vector<string> &filenames, map<string, GMM> &vgmm) {
   vgmm.clear();
   GMM gmm;
-  
+
   for (unsigned int i=0; i<filenames.size(); ++i) {
     string path = dir + filenames[i] + ext;
     ifstream ifs(path.c_str(), ios::binary);
@@ -168,7 +172,7 @@ int read_gmms(const Directory &dir, const Ext &ext, const vector<string> &filena
 
 int usage(const char *progname, int err)  {
   cerr << "Usage: " << progname << " [options] list_gmm list_of_test_files list_of_candidate\n\n";
-  
+
   cerr << "Options can be: \n"
        << "  -d dir\tDirectory of the feature files (def. \".\")\n"
        << "  -e ext\tExtension of the feature files (def. \"" << DEF_FEAT_EXT << "\")\n"
@@ -186,11 +190,11 @@ int usage(const char *progname, int err)  {
   return err;
 }
 
-int read_options(int ArgC, const char *ArgV[], vector<Directory> &input_dirs, vector<Ext> &input_exts, 
-		 vector<Directory> &gmm_dirs, vector<Ext> &gmm_exts, 
-		 vector<string> &input_filenames, 
-		 vector<string> &candidates, 
-		 vector<string> &gmm_filenames, string &world_name) { 
+int read_options(int ArgC, const char *ArgV[], vector<Directory> &input_dirs, vector<Ext> &input_exts,
+		 vector<Directory> &gmm_dirs, vector<Ext> &gmm_exts,
+		 vector<string> &input_filenames,
+		 vector<string> &candidates,
+		 vector<string> &gmm_filenames, string &world_name) {
   char option;
   //optarg and optind are global variables declared and set by the getopt() function
 
@@ -214,7 +218,7 @@ int read_options(int ArgC, const char *ArgV[], vector<Directory> &input_dirs, ve
       input_dirs.size() != gmm_dirs.size() or
       input_dirs.size() != gmm_exts.size()) {
     cerr << ArgV[0] << ": ERROR - Same number of feature/gmm directories/extensions need to be provided." << endl;
-    return -2;    
+    return -2;
   }
 
   //Add ending '/' to directories, and leading '.' to extensions
@@ -228,7 +232,7 @@ int read_options(int ArgC, const char *ArgV[], vector<Directory> &input_dirs, ve
   //advance argc and argv to skip read options
   ArgC -= optind;
   ArgV += optind;
-  
+
   if (ArgC != 3)
     return -3;
 
@@ -246,7 +250,7 @@ int read_options(int ArgC, const char *ArgV[], vector<Directory> &input_dirs, ve
       bFound = true;
   }
   is.close();
-  
+
   if (!bFound and not world_name.empty())
     gmm_filenames.push_back(world_name);
 
@@ -276,5 +280,5 @@ int read_options(int ArgC, const char *ArgV[], vector<Directory> &input_dirs, ve
 	 << "does not match with number of candidates ( " << candidates.size() << ")\n";
     return -7;
   }
-  return 0;      
+  return 0;
 }

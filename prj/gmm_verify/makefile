@@ -24,6 +24,9 @@ PROG1 := $(BIN_DIR)/$(MODULE_NAME)
 # TO DO: All the .cpp files, ... or choose the ones you need
 CPPSRC1  := $(notdir $(wildcard $(SOURCE_DIR)/*.cpp))
 
+# TO DO: All the .c files, ... or choose the ones you need
+CSRC1 := $(notdir $(wildcard $(SOURCE_DIR)/*.c))
+
 # TO DO: Add the requiered libraries using the -l form (-lmy -> libmy.a)
 LDLIBS1 :=
 
