@@ -224,7 +224,7 @@ for cmd in $*; do
       create_lists_verif
    elif [[ $cmd == trainworld ]]; then
        # TODO
-       gmm_train -d $w/mcp -e mcp -m 8 -g $w/gmm/world/trainworld.gmm -N 20 $w/lists_verif/users_and_others.train || exit 1
+       gmm_train -d $w/mcp -e mcp -m 15 -g $w/gmm/mcp/world/trainworld.gmm -N 20 $w/lists_verif/users_and_others.train || exit 1
       # echo "Implement the trainworld option ..."
    elif [[ $cmd == verify ]]; then
        # TODO gmm_verify --> put std output in $w/spk_verify.log, ej gmm_verify .... > $w/spk_verify.log   or gmm_verify ... | tee $w/spk_verify.log
