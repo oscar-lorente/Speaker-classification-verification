@@ -94,7 +94,8 @@ compute_mcp() {
     for line in $(cat $w/lists/all.train) $(cat $w/lists/all.test); do
         mkdir -p `dirname $w/mcp/$line.mcp`
         echo "wav2mfcc 24 16 $db/$line.wav" "$w/mcp/$line.mcp"
-        wav2lpcc.sh 15 17 "$db/$line.wav" "$w/mcp/$line.mcp" || exit 1 # || wav2mfcc 24 "$db/$line.wav" "$w/mcp/$line.mcp" || exit 1 ???
+        #wav2lpcc.sh 15 17 "$db/$line.wav" "$w/mcp/$line.mcp" || exit 1 #
+        wav2mfcc.sh 18 24 "$db/$line.wav" "$w/mcp/$line.mcp" || exit 1
     done
 }
 
