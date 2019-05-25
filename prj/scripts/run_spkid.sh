@@ -93,9 +93,9 @@ create_lists() {
 compute_mcp() {
     for line in $(cat $w/lists/all.train) $(cat $w/lists/all.test); do
         mkdir -p `dirname $w/mcp/$line.mcp`
-        echo "wav2mfcc 24 16 $db/$line.wav" "$w/mcp/$line.mcp"
-        #wav2lpcc.sh 15 17 "$db/$line.wav" "$w/mcp/$line.mcp" || exit 1 #
-        wav2mfcc.sh 18 24 "$db/$line.wav" "$w/mcp/$line.mcp" || exit 1
+        echo "wav2mfcc 12 20 $db/$line.wav" "$w/mcp/$line.mcp"
+        wav2mfcc.sh 16 24 "$db/$line.wav" "$w/mcp/$line.mcp" || exit 1
+      #  wav2lpcc.sh 10 15 "$db/$line.wav" "$w/mcp/$line.mcp" || exit 1
     done
 }
 
@@ -198,8 +198,7 @@ for cmd in $*; do
        for dir in $db/BLOCK*/SES* ; do
 	   name=${dir/*\/}
 	   echo $name ----
-	  # gmm_train  -v 1 -T 0.01 -N5 -m 1 -d $w/mcp -e mcp -g $w/gmm/mcp/$name.gmm $w/lists/$name.train || exit 1
-     gmm_train -d $w/mcp -e mcp -m 8 -g $w/gmm/mcp/$name.gmm -N 20 $w/lists/$name.train || exit 1
+     gmm_train -d $w/mcp -e mcp -m 15 -g $w/gmm/mcp/$name.gmm -N 20 $w/lists/$name.train || exit 1
 
            echo
        done
@@ -230,7 +229,7 @@ for cmd in $*; do
        # TODO gmm_verify --> put std output in $w/spk_verify.log, ej gmm_verify .... > $w/spk_verify.log   or gmm_verify ... | tee $w/spk_verify.log
        gmm_verify -d $w/mcp -e mcp -D $w/gmm/mcp -E gmm -w world/trainworld $w/lists/gmm.list $w/lists_verif/all.test $w/lists_verif/all.test.candidates > $w/spk_verify.log
       # echo "Implement the verify option ..."
-   elif [[ $cmd == verif_err ]]; then
+   elif [[ $cmd == verifyerr ]]; then
        if [[ ! -s $w/spk_verify.log ]] ; then
           echo "ERROR: $w/spk_verify.log not created"
           exit 1
