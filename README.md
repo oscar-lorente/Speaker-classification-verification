@@ -8,3 +8,5 @@ The program - implemented in C ++ - basically consists of four parts:
 - Speaker verification.
 
 Finally, a Deep Learning algorithm based on a multilayer perceptron (artificial multilayer neural network) for speaker classification has been developed and implemented, studying the influence of different parameters - activation function, number of units per layer, leraning rate. ..- on its behaviour and precision.
+
+For more information read the "Speaker_classification_verification.pdf" document (spanish).
